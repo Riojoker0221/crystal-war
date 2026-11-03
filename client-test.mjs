@@ -81,7 +81,7 @@ test('selected mineral stock counts down to exhausted in the actual client',asyn
   const c=client();await c.get('start').click();let board=c.get('board'),event={button:0,clientX:80,clientY:180,pointerId:1};
   board.onpointerdown(event);board.onpointerup(event);assert.equal(c.get('mineInfo').hidden,false);assert.match(c.get('mineInfo').innerHTML,/1400 \/ 1400/);
   for(let i=0;i<1600;i++)c.tick();c.frame();assert.match(c.get('mineInfo').innerHTML,/已枯竭/);assert.match(c.get('mineInfo').innerHTML,/剩余 0 \/ 1400/);
-  assert.equal(c.get('mapView').textContent,'100%');
+  assert.match(c.get('mapView').textContent,/2400 × 1520/);
 });
 test('camera controls preserve mineral picking and base jump after overview',async()=>{
   const c=client();await c.get('start').click();await c.get('mapOverview').click();c.frame();assert.match(c.get('mapView').textContent,/50%/);
