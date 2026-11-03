@@ -47,10 +47,29 @@ export class Game{
   this.time=0;this.id=1;this.entities=[];this.effects=[];this.events=[];this.scans=[];this.seed=(Number.isFinite(opts.seed)?opts.seed:Math.floor(Math.random()*4294967296))>>>0;
   this.mines=mines.map(m=>({...m}));this.knownMines=[new Set(),new Set()];this.mode=opts.rule||'normal';this.difficulty=opts.difficulty||'normal';this.ai=opts.ai!==false;
   this.players=[opts.f0||0,opts.f1??1].map(f=>({f,money:250,tech:[],kills:0,hold:0,control:0,larvae:4,larvaClock:0}));this.winner=null;this.reason='';this.aiClock=0;this.attackClock=0;
-  for(let p=0;p<2;p++){let b=this.spawn(p,'b',0,p?W-150:150,p?H-270:270);for(let i=0;i<4;i++){let u=this.spawn(p,'u',0,b.x+(i-1.5)*18,b.y+(p?-55:55));u.order={type:'mine',mine:p};}}
+  const randomSides=opts.spawnLayout==='random-sides';
+  const starts=randomSides?[this.sideSpawn(0),this.sideSpawn(1)]:[{x:150,y:270},{x:W-150,y:H-270}];
+  for(let p=0;p<2;p++){
+   const start=starts[p];
+   // Each side keeps the same nearby starting deposit and hauling distance.
+   if(randomSides)Object.assign(this.mines[p],{x:start.x+(p?40:-40),y:start.y+(p?90:-90)});
+   let b=this.spawn(p,'b',0,start.x,start.y);for(let i=0;i<4;i++){let u=this.spawn(p,'u',0,b.x+(i-1.5)*18,b.y+(p?-55:55));u.order={type:'mine',mine:p};}
+  }
   this.discoverMines();
  }
  random(){this.seed=(Math.imul(1664525,this.seed)+1013904223)>>>0;return this.seed/4294967296;}
+ sideSpawn(p){
+  const x=p?W-150:150,candidates=[],neutral=this.mines.slice(2);
+  for(let y=140;y<=H-140;y++){
+   const base={x,y,r:34},deposit={x:x+(p?40:-40),y:y+(p?90:-90)};
+   const occupied=[base,...Array.from({length:4},(_,i)=>({x:x+(i-1.5)*18,y:y+(p?-55:55),r:9}))];
+   if(occupied.some(e=>rocks.some(o=>dist(e,o)<e.r+o.r+15)||neutral.some(m=>dist(e,m)<e.r+40)))continue;
+   if(neutral.some(m=>dist(deposit,m)<160)||rocks.some(o=>dist(deposit,o)<o.r+45))continue;
+   candidates.push(y);
+  }
+  if(!candidates.length)throw Error('地图两侧没有安全出生位置');
+  return {x,y:candidates[Math.floor(this.random()*candidates.length)]};
+ }
  def(e){return factions[this.players[e.p].f].units[e.t];}
  tech(p,id){return this.players[p].tech.includes(id);}
  researchDef(p,t){return t<6?research[t]:factionResearch[this.players[p].f].find(r=>r.id===t);}
@@ -72,7 +91,7 @@ export class Game{
  visible(p,e){return e.p===p||this.sight(p,e)&&this.detected(p,e);}
  discoverMines(){for(let p=0;p<2;p++)this.mines.forEach((m,i)=>{if(this.sight(p,m))this.knownMines[p].add(i);});}
  nearestMine(p,e){let best=-1,bestDistance=Infinity;for(let i of this.knownMines[p]){let m=this.mines[i],d=dist(e,m);if(m.remaining>0&&d<bestDistance){best=i;bestDistance=d;}}return best;}
- openSpot(x,y,r,ignore){return x>r&&x<W-r&&y>r&&y<H-r&&!this.entities.some(e=>e.k==='b'&&e.id!==ignore&&e.hp>0&&dist(e,{x,y})<e.r+r+10)&&!rocks.some(o=>dist(o,{x,y})<o.r+r+5)&&!mines.some(m=>dist(m,{x,y})<r+25);}
+ openSpot(x,y,r,ignore){return x>r&&x<W-r&&y>r&&y<H-r&&!this.entities.some(e=>e.k==='b'&&e.id!==ignore&&e.hp>0&&dist(e,{x,y})<e.r+r+10)&&!rocks.some(o=>dist(o,{x,y})<o.r+r+5)&&!this.mines.some(m=>dist(m,{x,y})<r+25);}
  validSpot(p,t,x,y){return pointValid({x,y})&&this.openSpot(x,y,t===0?34:25)&&this.own(p).some(e=>dist(e,{x,y})<230);}
  syncLarvae(p){this.players[p].larvae=this.own(p).filter(e=>e.k==='b'&&(e.t===0||e.t===5)&&!e.build).reduce((n,e)=>n+e.larvae,0);}
  spendLarvae(p,n){let sources=this.own(p).filter(e=>e.k==='b'&&(e.t===0||e.t===5)&&!e.build);for(let b of sources){let use=Math.min(n,b.larvae);b.larvae-=use;n-=use;if(!n)break;}this.syncLarvae(p);}
