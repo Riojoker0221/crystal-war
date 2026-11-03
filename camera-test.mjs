@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {Camera} from './public/camera.js';
+test('camera world coordinates remain correct after pan and anchored zoom',()=>{let c=new Camera(2400,1520);c.center(1200,760);let before=c.world(600,380);c.setZoom(1.6,600,380);assert.deepEqual(c.world(600,380),before);assert.equal(c.world(0,0).x,c.x);c.pan(160,0);assert.equal(c.world(600,380).x,before.x+100);});
+test('camera covers full map and clamps at every map edge',()=>{let c=new Camera(2400,1520);c.center(9999,9999);assert.equal(c.x,1200);assert.equal(c.y,760);c.setZoom(.01);assert.equal(c.zoom,.5);assert.equal(c.x,0);assert.equal(c.y,0);assert.deepEqual(c.world(1200,760),{x:2400,y:1520});c.center(-5,-5);assert.equal(c.x,0);assert.equal(c.y,0);});

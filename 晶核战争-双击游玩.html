@@ -1,0 +1,429 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>晶核战争 · Crystal War</title><style>
+:root{color-scheme:dark;--bg:#0a111a;--panel:#111e2b;--line:#263949;--text:#e4edf1;--muted:#8097a8;--cyan:#73efcb;--gold:#e4c78d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px 'Microsoft YaHei',system-ui,sans-serif}button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:#142432;border:1px solid var(--line);padding:12px 15px;transition:background .15s,border .15s}button:hover{border-color:var(--cyan);background:#1d3740}button:disabled{opacity:.4;cursor:not-allowed}button.active{border-color:var(--cyan);background:#193b3b;color:var(--cyan)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}header{height:75px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:30px;padding:0 4%;font-size:12px;color:var(--muted)}.brand{font-weight:800;letter-spacing:3px;font-size:16px;color:var(--text)}.status{margin-left:auto;color:var(--cyan)}.intro{max-width:1260px;margin:45px auto 30px;padding:0 35px;display:grid;grid-template-columns:1fr 470px;gap:80px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:3px}h1{font-size:76px;margin:22px 0;font-weight:900;letter-spacing:9px;line-height:1.2}h1 span{color:var(--cyan)}.lead{color:#a4b5c1;font-size:17px;line-height:1.9}.visual{height:270px;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,#1e4244aa,transparent 65%)}.crystal{position:absolute;width:100px;height:155px;left:42%;top:40px;background:linear-gradient(112deg,#b4ffe9 0 25%,#58cbb9 26% 48%,#246e78 49% 73%,#163e51 74%);clip-path:polygon(50% 0,100% 32%,83% 76%,50% 100%,15% 77%,0 32%);filter:drop-shadow(0 0 25px #70edcb)}.orbit{position:absolute;border:1px solid #4c8073;transform:rotateX(65deg) rotateZ(-20deg);width:320px;height:260px;left:18%;top:40px;border-radius:50%}.o2{transform:rotateX(65deg) rotateZ(35deg);width:420px;left:8%}.spark{position:absolute;width:8px;height:8px;background:var(--cyan);transform:rotate(45deg)}.s1{left:24%;top:80px}.s2{right:15%;top:180px}.s3{left:37%;bottom:25px}.coordinates{position:absolute;bottom:0;font-size:9px;line-height:1.8;letter-spacing:2px;color:#688d91}.specs{display:flex;gap:36px;border-top:1px solid var(--line);padding-top:24px;margin-top:25px;color:var(--muted);font-size:11px}.specs b{display:block;font-size:27px;color:var(--text);margin-bottom:6px}.setup{padding:28px;background:linear-gradient(135deg,#14232d,#0d1721);border:1px solid #30424d;box-shadow:0 20px 70px #0004}.tabs{display:flex;margin:20px 0 25px}.tabs button{flex:1}label{display:block;color:#b5c4cd;font-size:11px;letter-spacing:2px;margin:22px 0 10px}.factions,.rules{display:grid;grid-template-columns:1fr 1fr;gap:8px}.factions button{text-align:left;padding:12px}.factions small,.rules small{display:block;font-size:10px;color:var(--muted);margin-top:7px}.rules button{text-align:left;padding:13px 9px}.rules em{font-size:9px;color:var(--gold);font-style:normal}.row{display:flex;gap:8px}.row>*{min-width:0;flex:1}select,input{border:1px solid var(--line);background:#09151e;padding:11px;color:var(--text);width:100%}#modeNote{font-size:11px;color:var(--muted);margin:16px 0}.primary{background:var(--cyan);color:#092221;width:100%;font-weight:700;border-color:var(--cyan);padding:16px}.primary:hover{background:#a4f5df;color:#092221}.primary span{float:right}footer{max-width:1190px;margin:auto;padding:20px 0;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:space-between}footer button{border:0;background:transparent}.divider{margin:18px 0 10px;color:var(--muted);font-size:11px}#joinArea small{display:block;color:var(--muted);font-size:10px;margin-top:12px}#game header{height:64px;padding:0 22px;gap:20px}.resources{margin-left:auto;display:flex;gap:24px;font-size:13px;color:var(--cyan)}#clock{color:var(--gold);font-variant-numeric:tabular-nums}#game header button{padding:7px 12px}.battle{display:grid;grid-template-columns:minmax(0,1fr) 272px;height:calc(100vh - 122px)}.field{position:relative;display:flex;align-items:center;justify-content:center;background:#070d12;overflow:hidden}#board{width:100%;max-height:100%;object-fit:contain;image-rendering:pixelated;cursor:crosshair;user-select:none}aside{background:#101b26;border-left:1px solid var(--line);padding:16px;overflow:auto}.panelTitle{font-size:12px;letter-spacing:2px;margin-bottom:12px}.panelTitle span{float:right;font-size:9px;color:var(--cyan)}#minimap{width:100%;image-rendering:pixelated;border:1px solid #355262}#selection{border-top:1px solid var(--line);margin-top:17px;padding-top:10px}h2{font-size:18px}#selection p{font-size:12px;line-height:1.7;color:var(--muted)}#actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}#actions button{font-size:11px;padding:10px 5px;text-align:left}#actions small{display:block;color:var(--gold);font-size:9px;margin-top:5px}.tips{font-size:11px;color:var(--muted);line-height:1.9;margin-top:20px;border-top:1px solid var(--line);padding-top:15px}.tips b{color:#cad5dc}#queue{font-size:11px;color:var(--cyan);line-height:1.8;margin-top:15px}.commandbar{height:58px;padding:10px 22px;display:flex;align-items:center;gap:12px;background:#101c25;border-top:1px solid var(--line);font-size:12px}.commandbar span{margin-right:auto;color:var(--muted)}.commandbar button{padding:8px 12px}#banner{position:absolute;top:18px;left:50%;transform:translateX(-50%);background:#101c29e8;border:1px solid var(--gold);padding:12px 24px;color:var(--gold);display:none;text-align:center;white-space:pre-line}#objective{position:absolute;bottom:12px;left:18px;font-size:11px;color:#b1c4cc;pointer-events:none}dialog{background:#13212d;color:var(--text);border:1px solid #527070;max-width:650px;padding:30px;line-height:1.9}dialog::backdrop{background:#02070cce;backdrop-filter:blur(5px)}dialog h1{font-size:42px}.muted{color:var(--muted);font-size:12px}#toast{position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:#203b43;border:1px solid var(--cyan);padding:13px 25px;display:none;z-index:10}[hidden]{display:none!important}@media(max-width:1000px){.intro{gap:30px;grid-template-columns:1fr 420px;padding:0 20px}h1{font-size:54px}.specs{gap:20px}.battle{grid-template-columns:minmax(0,1fr) 240px}.resources{gap:12px}.brand{font-size:12px}}@media(max-width:760px){.intro{display:block;margin-top:20px}.visual{height:150px}.intro>section:first-child{margin-bottom:25px}.specs{display:none}.setup{padding:20px}header>span:not(.status){display:none}footer{padding:20px}.battle{height:auto;display:block}.field{height:60vh}aside{max-height:35vh}.commandbar{height:auto}.tips{display:none}}
+
+.tech-tree{margin-top:18px;border-top:1px solid var(--line);padding-top:14px;font-size:11px}.tech-tree summary{cursor:pointer;color:var(--cyan);font-weight:700}.tech-node{border:1px solid #426459;padding:8px;margin:7px 0;background:#172f30}.tech-node span{float:right;color:var(--cyan);font-size:10px}.tech-node small{display:block;margin-top:6px;line-height:1.6;color:#b4c5ce}.tech-node.locked{border-color:#35414c;background:#14212c}.tech-node.locked span{color:#8b9da9}.tech-branch{border-left:1px solid #51756b;padding-left:10px;margin-left:7px;color:#9bb8ad}.role-summary{color:#b4c5ce;line-height:1.8}
+
+.map-controls{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:5px;background:#0a161ee8;padding:5px}.map-controls button{padding:6px 10px}.map-controls span{font-size:10px;color:var(--muted);padding:0 6px}.map-tips{font-size:10px;color:var(--muted);line-height:1.7}#minimap{cursor:crosshair}#mineInfo{margin-top:14px;padding:12px;background:#17302f;border:1px solid #416d62;font-size:12px}#mineInfo p{margin:8px 0}#mineInfo small{display:block;line-height:1.8;color:var(--muted);margin-top:8px}.ore-meter{height:6px;background:#061820}.ore-meter i{display:block;height:100%;background:#73efcb}#board{touch-action:none}
+
+#actions .ability{border-color:#456373;background:#182d3d}#actions .utility{border-color:#697653}#actions .danger{border-color:#8e5a50;color:#ffc0b3}#targetBar{position:absolute;bottom:45px;left:50%;transform:translateX(-50%);background:#142837f2;border:1px solid #ebc68b;box-shadow:0 8px 25px #0008;padding:12px 16px;min-width:320px;text-align:center;z-index:3}#targetBar p{margin:0 0 9px;font-size:12px;color:#f2d2a1}#targetBar button{padding:9px 16px}#targetConfirm{background:#e4c78d;color:#142632}.ability-guide{font-size:11px;margin-top:18px;border-top:1px solid var(--line);padding-top:12px}.ability-guide summary{cursor:pointer;color:#accfe3;font-weight:700}.roster-item{border-bottom:1px solid var(--line);padding:11px 0}.roster-item b{color:var(--cyan)}.roster-item small{display:block;color:var(--gold);margin:5px 0}.roster-item p{margin:0;color:var(--muted);line-height:1.7}#actions small{line-height:1.6}#selection p{line-height:1.9}.battle{grid-template-columns:minmax(0,1fr) 300px}@media(max-width:1000px){.battle{grid-template-columns:minmax(0,1fr) 260px}}@media(max-width:760px){.battle{display:block}#targetBar{min-width:260px;max-width:90%}}
+</style></head><body><div id="startupError" role="alert" style="padding:16px;background:#442b29;color:#fff;line-height:1.7">游戏正在启动。如果一直显示此提示，请使用完整解压后的新版「晶核战争-双击游玩.html」或「启动游戏.cmd」。</div><noscript><p>请启用浏览器 JavaScript 后重新打开游戏。</p></noscript>
+<div id="lobby"><header><a class="brand">◈ CRYSTAL WAR</a><span>战术指挥终端 / ALPHA 0.2.0</span><span class="status">● 正在启动</span></header><main class="intro"><section><p class="eyebrow">REAL-TIME STRATEGY / 即时战略</p><h1>晶核<span>战争</span></h1><p class="lead">从第一块晶矿，到最后一座基地。<br>建立你的军队，决定战场的命运。</p><div class="visual"><div class="orbit o1"></div><div class="orbit o2"></div><div class="crystal"></div><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><div class="coordinates">SECTOR 07<br>CRYSTAL BASIN / 晶核盆地</div></div><div class="specs"><span><b>04</b> 独立阵营</span><span><b>33</b> 可生产单位</span><span><b>1v1</b> 实时对抗</span></div></section>
+<section class="setup"><p class="eyebrow">DEPLOYMENT / 部署作战</p><div class="tabs"><button class="active" data-kind="pve">单人 PVE</button><button data-kind="pvp">双人对战</button></div><label>01 / 选择你的阵营</label><div id="factions" class="factions"><button>人类联邦</button><button>机械主脑</button><button>星界精灵</button><button>古老虫群</button></div><label>02 / 胜负规则</label><div class="rules"><button class="active" data-rule="normal"><b>普通模式</b><small>不限时 · 摧毁基地或迫使投降</small></button><button data-rule="timed"><b>限时模式 <em>10 MIN</em></b><small>8 分钟晶核激活 · 到时计分</small></button></div><div id="aiOptions"><label>03 / AI 难度与敌方阵营</label><div class="row"><select id="difficulty" aria-label="AI难度"><option value="easy">简单 · 适合熟悉操作</option><option value="normal" selected>普通 · 混编与攻防</option><option value="hard">困难 · 快攻与撤退</option></select><select id="enemy" aria-label="敌方阵营"><option value="0">人类联邦</option><option value="1" selected>机械主脑</option><option value="2">星界精灵</option><option value="3">古老虫群</option></select></div></div><p id="modeNote">AI 与玩家使用相同资源与生产规则。</p><button id="start" class="primary">部署作战 <span>↗</span></button><div id="joinArea" hidden><div class="divider">或加入朋友的房间</div><div class="row"><input id="roomCode" placeholder="输入 6 位房间码" maxlength="6" aria-label="房间码"><button id="join">加入房间 →</button></div><small>两台电脑需连接同一网络，并打开主机提供的地址。</small></div></section></main><footer>原创几何像素美术 · 电脑鼠标与键盘操作 <button id="helpLobby">操作手册 ↗</button></footer></div>
+<div id="game" hidden><header><a class="brand">◈ 晶核战争</a><span id="matchLabel"></span><div class="resources"><span>◈ <b id="money">250</b> 晶矿</span><span>♟ <b id="pop">4</b> / <b id="capacity">36</b></span><span id="larvae"></span><b id="clock">00:00</b></div><button id="soundToggle" aria-pressed="false">音效 关</button><button id="helpGame">?</button><button id="surrender">投降</button><button id="leave">返回部署</button></header><div class="battle"><div class="field"><canvas id="board" width="1200" height="760" aria-label="战场：左键选择，右键指挥"></canvas><div id="banner"></div><div class="map-controls"><button id="zoomOut" aria-label="缩小视野">−</button><button id="zoomIn" aria-label="放大视野">＋</button><button id="mapOverview">全图</button><span id="mapView"></span></div><div id="targetBar" hidden><p id="targetInfo"></p><button id="targetConfirm">确认释放</button><button id="targetCancel">取消 [Esc]</button></div><div id="objective">摧毁敌方全部主基地</div></div><aside><div class="panelTitle">战术情报 <span>LIVE</span></div><p class="map-tips">方向键 / 中键拖动移动 · 滚轮缩放<br>点击小地图跳转 · 金框为当前视野</p><canvas id="minimap" width="240" height="152"></canvas><div id="mineInfo" hidden></div><div id="selection"><h2>指挥中心</h2><p>选择单位或建筑下达命令。</p></div><div id="actions"></div><div id="queue"></div><details class="ability-guide"><summary>阵营技能手册</summary><div id="abilityRoster"></div></details><details class="tech-tree" open><summary>建筑科技树 · 前置与兵种</summary><div id="techTree"></div></details><div class="tips"><b>指挥快捷键</b><p>左键 / 拖动：选择 / 框选<br>右键：移动、攻击或采矿<br>A + 左键：攻击移动<br>Ctrl + 1–9：建立编队<br>1–9：选择编队 · S：停止<br>空格：选择全部战斗单位<br>Esc：取消建造 / 指令<br>方向键 / 中键：移动地图<br>滚轮：缩放 · 小地图：跳转</p></div></aside></div><div class="commandbar"><span id="hint">先选择工人，建造兵营，开始训练部队。</span><button id="workers">选择工兵</button><button id="army">选择全军 [空格]</button><button id="home">选择主基地</button></div></div>
+<dialog id="help"><h2>战地手册</h2><p>① 开局 4 名工人自动往返采矿。选中工人，在右侧选择建筑，然后点击战场放置。</p><p>② 选择基地生产工人；兵营生产基础兵，工厂生产高级兵。科技建筑可以研究强化与终极兵种。</p><p>③ 左键选择或拖动框选，右键移动 / 集火敌军 / 指派工人采矿。按 A 后左键指定进攻地点，部队会沿途交战。</p><p>④ 队列在下单时扣费和占人口；取消末项返还 75%。注意保护主基地，最多建两座。第二座主基地完成后人口上限从36升至54，基地被毁后相应减少；已有单位保留，超额时暂停新增生产。</p><p>⑤ 普通模式不限时。限时模式第 8 分钟激活中央晶核，战斗单位独占范围连续 45 秒获胜；第 10 分钟按基地存续、军队价值与控制时间计分。</p><p>⑥ 大地图含分散的有限矿区。矿石会随开采逐渐缩小，枯竭后留下灰色底座。左键矿区查看储量；工兵会转向已发现的其他矿区，找不到时等待侦察。点击小地图、按方向键或中键拖动查看远方，滚轮缩放。建议在新矿区附近扩建基地缩短运矿距离。</p><p>⑦ 选中工兵可点击「处死选中工兵」，确认后释放人口，不返还资源。选中主基地可收拢，以低速移动；展开后恢复生产与矿物接收。人口扩容研究可再增加12人口。</p><p>双人对战：一人创建房间，朋友使用同一局域网地址打开游戏并输入房间码。断线时对局暂停，页面会自动尝试重连。</p><p class="muted">所有阵营的专属主动技能列在右侧「阵营技能手册」。区域技能需要先选择目标，再点击确认释放。终极研究解锁顶级单位与阵营特色能力，隐身协议需先完成终极研究；专属科技最多选择3项，互斥路线不可同时研究。</p><button id="closeHelp" class="primary">返回指挥 →</button></dialog>
+<dialog id="result"><p class="eyebrow">OPERATION COMPLETE</p><h1 id="resultTitle"></h1><p id="resultReason"></p><p id="resultScore"></p><button id="back" class="primary">返回部署界面 →</button></dialog><div id="toast" role="status"></div><script>window.addEventListener('error',function(){if(!window.crystalReady){document.querySelector('.status').textContent='● 启动失败';document.getElementById('startupError').hidden=false;}});</script><script>/* Crystal War 0.2.0 — generated by build-client.mjs */
+(()=>{
+const W=2400,H=1520;
+const factions=[
+ {name:'人类联邦',tag:'火力 · 医疗 · 机械化',build:['指挥中心','步兵兵营','机械工厂','军事研究院','自动炮塔','雷达站'],cost:[340,140,205,220,100,110],time:[42,18,27,30,16,18],units:[['工程兵',50,8,65,0,3,1.2,24,60,1],['步枪兵',70,10,85,0,9,.8,108,60,1],['火箭兵',110,15,100,0,24,1.9,120,54,1],['医疗兵',120,18,85,0,0,1,96,62,1],['突击车',145,20,175,1,24,1.1,96,86,2],['攻城坦克',230,32,310,2,48,2.8,144,40,3],['战斗机',260,35,195,1,16,.9,108,92,3],['毁灭机甲',390,50,540,3,40,1.5,120,46,5],['爆破兵',280,38,115,1,5,1.5,80,60,2]]},
+ {name:'机械主脑',tag:'重甲 · 电弧 · 能源网络',build:['主脑核心','自动装配厂','重械工厂','主脑实验室','激光防御塔','能源节点'],cost:[360,145,210,230,115,90],time:[45,19,29,32,17,14],units:[['采集机器人',50,8,70,1,2,1.2,24,58,1],['哨卫机器人',80,12,110,1,11,1.1,96,56,1],['电弧机器人',110,16,90,0,8,.8,96,64,1],['维修无人机',125,18,85,0,0,1,96,66,1],['悬浮猎手',165,23,175,1,15,.9,108,84,2],['重装巨像',250,34,410,3,37,1.6,72,36,3],['轨道炮台机',285,39,210,1,75,3.2,168,36,3],['主脑歼灭者',420,52,630,3,68,2.3,132,44,5]]},
+ {name:'星界精灵',tag:'护盾 · 机动 · 奥术',build:['星界主殿','月华兵营','星辉祭坛','奥术圣殿','星晶防御塔','传送方尖碑'],cost:[350,145,205,235,110,120],time:[42,18,28,32,17,20],units:[['晶灵',50,8,55,0,2,1.2,24,62,1,25],['星弓手',85,12,65,0,12,1,120,64,1,40],['魔刃使',110,16,100,1,17,.9,24,76,1,45],['影刃刺客',150,21,85,0,25,1.3,24,90,2,55],['星界法师',175,24,80,0,30,2.4,120,54,2,80],['元素守卫',240,34,240,2,30,1.7,36,48,3,110],['虚空射手',255,36,120,0,36,2.5,168,60,3,85],['星界凤凰',400,50,300,1,34,1.7,96,88,5,220]]},
+ {name:'古老虫群',tag:'孵化 · 酸液 · 数量压制',build:['原初母巢','基础孵化巢','生物变异巢','原初进化池','棘刺防御巢','育虫池'],cost:[325,135,200,225,95,105],time:[40,18,27,31,16,17],units:[['工虫',45,7,55,0,3,1.1,24,62,1],['裂爪虫',45,6,55,0,7,.6,24,80,1],['喷酸虫',85,11,75,0,13,1.4,96,56,1],['飞翼虫',110,16,95,0,9,.7,72,86,1],['掘地猎虫',145,20,165,1,23,1.1,24,72,2],['爆裂虫',120,16,65,0,75,1,24,68,1],['装甲巨兽',260,35,390,3,34,1.4,36,44,3],['原初虫王',390,48,520,2,42,1.6,84,50,5]]}
+];
+const prerequisites=[-1,0,1,2,1,1];
+const research=[{id:0,name:'武器强化',cost:130,time:22,desc:'全军伤害 +15%'},{id:1,name:'防护强化',cost:140,time:24,desc:'全军护甲 +1'},{id:2,name:'高效采集',cost:150,time:25,desc:'每次采集 +3 晶矿'},{id:3,name:'终极单位与专属协议',cost:260,time:36,desc:'解锁终极单位及阵营终极技能'},{id:4,name:'人口扩展',cost:180,time:30,desc:'永久人口上限 +12'},{id:5,name:'隐匿协议',cost:200,time:30,requires:3,desc:'新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15%'}];
+const mines=[
+ [110,180,1400],[330,340,1600],[170,650,2000],[420,1120,2200],
+ [780,220,2400],[830,760,2600],[830,1300,2400],[1120,480,3000],[1080,1000,3000]
+].flatMap(([x,y,capacity])=>[{x,y,capacity,remaining:capacity},{x:W-x,y:H-y,capacity,remaining:capacity}]);
+const rocks=[{x:880,y:220,r:48},{x:1520,y:1300,r:48},{x:840,y:880,r:38},{x:1560,y:640,r:38},{x:530,y:650,r:46},{x:1870,y:870,r:46},{x:500,y:200,r:36},{x:1900,y:1320,r:36},{x:1120,y:1240,r:44},{x:1280,y:280,r:44}];
+// Faction research IDs are stable within a player's faction.
+const factionResearch=[
+ [{id:6,name:'强化弹药',cost:115,time:20,desc:'步枪兵伤害 +15%',exclusive:[9]},{id:7,name:'战地医疗',cost:135,time:24,desc:'医疗兵治疗效率 +25%'},{id:8,name:'火炮增程',cost:185,time:32,desc:'坦克攻城模式射程 +36'},{id:9,name:'快速装填',cost:160,time:28,desc:'步枪兵攻速 +12%',exclusive:[6]}],
+ [{id:6,name:'激光聚焦',cost:130,time:22,desc:'哨卫与悬浮猎手伤害 +12%',exclusive:[9]},{id:7,name:'能源循环',cost:140,time:25,desc:'能源节点范围 +72'},{id:8,name:'电磁穿甲',cost:195,time:32,desc:'轨道炮对重甲伤害 +25%'},{id:9,name:'自我修复',cost:175,time:29,desc:'机械单位脱战后每秒恢复2生命',exclusive:[6]}],
+ [{id:6,name:'护盾强化',cost:145,time:22,desc:'护盾恢复速度 +40%',exclusive:[7]},{id:7,name:'奥术穿透',cost:165,time:28,desc:'远程武器忽略1护甲',exclusive:[6]},{id:8,name:'星界折跃',cost:135,time:24,desc:'方尖碑传送冷却减为30秒'},{id:9,name:'魔法共鸣',cost:185,time:32,desc:'冰霜风暴伤害 +20%'}],
+ [{id:6,name:'利爪进化',cost:110,time:20,desc:'裂爪虫伤害 +15%',exclusive:[7]},{id:7,name:'甲壳强化',cost:145,time:24,desc:'虫群单位护甲 +1',exclusive:[6]},{id:8,name:'毒液变异',cost:165,time:28,desc:'喷酸虫伤害 +20%'},{id:9,name:'繁殖进化',cost:175,time:30,desc:'幼虫产生速度 +20%'}]
+];
+const abilities=[
+ {id:'repair',name:'修理',f:[0,1],kind:'u',types:[0],tech:null,mode:'point',range:80,radius:0,cooldown:0,desc:'修理附近友方机械与建筑，每秒消耗2晶矿恢复10生命'},
+ {id:'siege',name:'切换攻城模式',f:0,kind:'u',types:[5],tech:null,mode:'toggle',range:0,radius:0,cooldown:0,desc:'固定在原地，射程192，范围炮击'},
+ {id:'scan',name:'雷达扫描',f:0,kind:'b',types:[5],tech:null,mode:'point',range:Math.hypot(W,H),radius:180,cooldown:30,desc:'揭示目标范围及隐身敌人8秒'},
+ {id:'mechBlast',name:'聚能轰击',f:0,kind:'u',types:[7],tech:3,mode:'point',range:240,radius:75,cooldown:18,desc:'对目标范围造成85伤害'},
+ {id:'demolition',name:'定点爆破',f:0,kind:'u',types:[8],tech:3,mode:'point',range:300,radius:110,cooldown:40,desc:'确认区域后预警1.5秒，引爆大范围140伤害；隐匿协议使新爆破兵35%获得隐身'},
+ {id:'beam',name:'毁灭光束',f:1,kind:'u',types:[7],tech:3,mode:'point',range:260,radius:28,cooldown:22,desc:'对前方直线敌军造成100伤害'},
+ {id:'overclock',name:'主脑超频',f:1,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:150,cooldown:35,desc:'附近友军攻击与移动速度 +25%，持续10秒'},
+ {id:'cloak',name:'隐匿/显形',f:1,kind:'u',types:[4],tech:5,mode:'toggle',range:0,radius:0,cooldown:12,desc:'悬浮猎手进入隐身，攻击后显形12秒'},
+ {id:'cloak',name:'隐匿/显形',f:2,kind:'u',types:[3],tech:null,mode:'toggle',range:0,radius:0,cooldown:12,desc:'影刃刺客进入隐身，攻击后显形12秒'},
+ {id:'storm',name:'冰霜风暴',f:2,kind:'u',types:[4],tech:null,mode:'point',range:230,radius:65,cooldown:16,desc:'3秒内造成60伤害并使敌军减速25%'},
+ {id:'teleport',name:'方尖碑传送',f:2,kind:'b',types:[5],tech:null,mode:'point',range:Math.hypot(W,H),radius:100,cooldown:40,desc:'选择另一座己方方尖碑，2秒后传送附近最多8人口地面部队'},
+ {id:'sanctuary',name:'星界庇护',f:2,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:150,cooldown:35,desc:'附近友军恢复80护盾，移动速度 +20%，持续8秒'},
+ {id:'burrow',name:'潜伏/破土',f:3,kind:'u',types:[4],tech:null,mode:'toggle',range:0,radius:0,cooldown:0,desc:'潜伏时不能移动且隐身，破土首次攻击伤害 +50%'},
+ {id:'detonate',name:'自爆',f:3,kind:'u',types:[5],tech:null,mode:'self',range:0,radius:55,cooldown:0,desc:'对周围敌军造成75伤害，爆裂虫死亡'},
+ {id:'summon',name:'召唤裂爪虫',f:3,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:0,cooldown:25,desc:'召唤2只裂爪虫，持续12秒，不占人口且不计分'},
+ {id:'frenzy',name:'原初狂潮',f:3,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:150,cooldown:35,desc:'附近虫群攻击速度 +25%，持续12秒'}
+];
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+const pointValid=c=>Number.isFinite(c.x)&&Number.isFinite(c.y)&&c.x>=0&&c.x<=W&&c.y>=0&&c.y<=H;
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+const matches=(a,f)=>Array.isArray(a.f)?a.f.includes(f):a.f===f;
+const lineDistance=(t,a,b)=>{let dx=b.x-a.x,dy=b.y-a.y,len=dx*dx+dy*dy,q=len?clamp(((t.x-a.x)*dx+(t.y-a.y)*dy)/len,0,1):0;return Math.hypot(t.x-a.x-q*dx,t.y-a.y-q*dy);};
+class Game{
+ constructor(opts={}){
+  this.time=0;this.id=1;this.entities=[];this.effects=[];this.events=[];this.scans=[];this.seed=(Number.isFinite(opts.seed)?opts.seed:Math.floor(Math.random()*4294967296))>>>0;
+  this.mines=mines.map(m=>({...m}));this.knownMines=[new Set(),new Set()];this.mode=opts.rule||'normal';this.difficulty=opts.difficulty||'normal';this.ai=opts.ai!==false;
+  this.players=[opts.f0||0,opts.f1??1].map(f=>({f,money:250,tech:[],kills:0,hold:0,control:0,larvae:4,larvaClock:0}));this.winner=null;this.reason='';this.aiClock=0;this.attackClock=0;
+  for(let p=0;p<2;p++){let b=this.spawn(p,'b',0,p?W-150:150,p?H-270:270);for(let i=0;i<4;i++){let u=this.spawn(p,'u',0,b.x+(i-1.5)*18,b.y+(p?-55:55));u.order={type:'mine',mine:p};}}
+  this.discoverMines();
+ }
+ random(){this.seed=(Math.imul(1664525,this.seed)+1013904223)>>>0;return this.seed/4294967296;}
+ def(e){return factions[this.players[e.p].f].units[e.t];}
+ tech(p,id){return this.players[p].tech.includes(id);}
+ researchDef(p,t){return t<6?research[t]:factionResearch[this.players[p].f].find(r=>r.id===t);}
+ spawn(p,k,t,x,y){
+  let f=this.players[p].f,d=factions[f].units[t];let hp=k==='b'?[[1600,750,850,650,480,500],[1700,800,900,700,520,550],[1300,600,700,550,390,450],[1450,700,800,650,500,500]][f][t]:d[3];
+  let shield=f===2?(k==='b'?[350,150,180,150,120,100][t]:d[10]||0):0;
+  let e={id:this.id++,p,k,t,x,y,hp,max:hp,shield,maxShield:shield,r:k==='b'?(t===0?34:25):(t>=5?14:9),queue:[],order:null,cd:0,lastHit:-99,build:0,fullBuild:0,packed:false,siege:false,burrowed:false,stealth:false,abilityCD:{},status:{},carry:0,larvaClock:0,larvae:0};
+  if(k==='b'&&f===3&&(t===0||t===5))e.larvae=t===0?4:0;
+  if(k==='u'&&f===2&&t===3)e.cloakCapable=true;
+  if(k==='u'&&f===0&&t===8&&this.tech(p,5)){e.cloakCapable=this.random()<.35;e.stealth=e.cloakCapable;}
+  this.entities.push(e);return e;
+ }
+ own(p){return this.entities.filter(e=>e.p===p&&e.hp>0);}
+ pop(p){return this.own(p).reduce((n,e)=>n+(e.k==='u'&&!e.summonedUntil?this.def(e)[9]:0)+(e.replacementWorker?1:0)+e.queue.reduce((a,q)=>a+(q.kind==='unit'?factions[this.players[p].f].units[q.t][9]:0),0),0);}
+ capacity(p){return 36+Math.max(0,this.own(p).filter(e=>e.k==='b'&&e.t===0&&!e.build).length-1)*18+(this.tech(p,4)?12:0);}
+ has(p,t){return this.own(p).some(e=>e.k==='b'&&e.t===t&&!e.build&&!e.packed);}
+ sight(p,e){return e.p===p||this.scans.some(s=>s.p===p&&dist(s,e)<s.radius)||this.own(p).some(a=>dist(a,e)<(a.k==='b'?210:170));}
+ detected(p,e){return !e.stealth&&!e.burrowed||this.scans.some(s=>s.p===p&&dist(s,e)<s.radius)||this.own(p).some(a=>a.k==='b'&&a.t===5&&!a.build&&!a.packed&&dist(a,e)<160);}
+ visible(p,e){return e.p===p||this.sight(p,e)&&this.detected(p,e);}
+ discoverMines(){for(let p=0;p<2;p++)this.mines.forEach((m,i)=>{if(this.sight(p,m))this.knownMines[p].add(i);});}
+ nearestMine(p,e){let best=-1,bestDistance=Infinity;for(let i of this.knownMines[p]){let m=this.mines[i],d=dist(e,m);if(m.remaining>0&&d<bestDistance){best=i;bestDistance=d;}}return best;}
+ openSpot(x,y,r,ignore){return x>r&&x<W-r&&y>r&&y<H-r&&!this.entities.some(e=>e.k==='b'&&e.id!==ignore&&e.hp>0&&dist(e,{x,y})<e.r+r+10)&&!rocks.some(o=>dist(o,{x,y})<o.r+r+5)&&!mines.some(m=>dist(m,{x,y})<r+25);}
+ validSpot(p,t,x,y){return pointValid({x,y})&&this.openSpot(x,y,t===0?34:25)&&this.own(p).some(e=>dist(e,{x,y})<230);}
+ syncLarvae(p){this.players[p].larvae=this.own(p).filter(e=>e.k==='b'&&(e.t===0||e.t===5)&&!e.build).reduce((n,e)=>n+e.larvae,0);}
+ spendLarvae(p,n){let sources=this.own(p).filter(e=>e.k==='b'&&(e.t===0||e.t===5)&&!e.build);for(let b of sources){let use=Math.min(n,b.larvae);b.larvae-=use;n-=use;if(!n)break;}this.syncLarvae(p);}
+ entityAbilities(e){let f=this.players[e.p].f;return abilities.filter(a=>a.kind===e.k&&a.types.includes(e.t)&&matches(a,f)&&!(a.id==='cloak'&&!((f===1&&e.t===4)||(f===2&&e.t===3))));}
+ reveal(e){e.stealth=false;e.cloakReady=this.time+12;if(e.burrowed){e.burrowed=false;e.ambush=true;}}
+ command(p,c){
+  if(this.winner!==null)return '对局已经结束';if(p!==0&&p!==1)return '无效玩家';let pl=this.players[p],f=factions[pl.f],e=this.entities.find(v=>v.id===c.id&&v.p===p&&v.hp>0);
+  if(c.type==='surrender'){this.end(1-p,'对手投降');return '';}
+  if(c.type==='execute'){if(!Array.isArray(c.ids))return '请选择己方工兵';let victims=this.own(p).filter(v=>v.k==='u'&&v.t===0&&c.ids.includes(v.id));if(!victims.length)return '只能处死己方工兵';for(let u of victims){u.hp=0;u.carry=0;}this.entities=this.entities.filter(v=>v.hp>0);return '';}
+  if(c.type==='pack'){
+   if(!e||e.k!=='b'||e.t!==0||e.build)return '请选择已完成的主基地';if(e.queue.length)return '请先完成或取消生产队列';
+   if(e.packed){if(!this.openSpot(e.x,e.y,e.r,e.id))return '此处无法展开基地，请移动到空地';e.packed=false;e.order=null;}else{e.packed=true;e.order=null;}return '';
+  }
+  if(c.type==='build'){
+   let t=c.t;if(!Number.isInteger(t)||t<0||t>5)return '无效建筑';let bs=this.own(p).filter(v=>v.k==='b');
+   if(t===0&&bs.filter(v=>v.t===0).length>=2)return '最多两座主基地';
+   if(t===5&&pl.f===2&&bs.filter(v=>v.t===5).length>=2)return '最多两座传送方尖碑';
+   if(t===5&&pl.f===3&&bs.filter(v=>v.t===5).length>=bs.filter(v=>v.t===0&&!v.build).length)return '每座母巢最多对应一座育虫池';
+   if(prerequisites[t]>=0&&!this.has(p,prerequisites[t]))return '需要先完成：'+f.build[prerequisites[t]];
+   let workers=this.own(p).filter(v=>v.k==='u'&&v.t===0);if(!workers.length)return '需要一名工兵';if(!this.validSpot(p,t,c.x,c.y))return '无法在此建造：请靠近己方部队，并避开矿区、石块和建筑';if(pl.money<f.cost[t])return '晶矿不足';
+   pl.money-=f.cost[t];let b=this.spawn(p,'b',t,c.x,c.y);b.build=b.fullBuild=f.time[t];
+   if(pl.f===3){let worker=workers.sort((a,b)=>dist(a,c)-dist(b,c))[0];worker.hp=0;b.replacementWorker=true;this.entities=this.entities.filter(v=>v.hp>0);}return '';
+  }
+  if(c.type==='train'){
+   let t=c.t;if(!Number.isInteger(t)||!f.units[t]||t<0||!e||e.k!=='b'||e.build||e.packed)return '请选择已完成且展开的生产建筑';
+   if(e.t!==(t===0?0:t<4?1:2))return '生产建筑不匹配';if(t>=7&&!this.tech(p,3))return '请先研究终极单位与专属协议';let d=f.units[t];
+   if(e.queue.length>=5)return '队列已满';if(pl.money<d[1])return '晶矿不足';if(this.pop(p)+d[9]>this.capacity(p))return '人口已达上限';let l=t>=7?3:t>=4?2:1;
+   this.syncLarvae(p);if(pl.f===3&&pl.larvae<l)return '幼虫不足';if(pl.f===3)this.spendLarvae(p,l);pl.money-=d[1];e.queue.push({kind:'unit',t,left:d[2],total:d[2],cost:d[1]});return '';
+  }
+  if(c.type==='research'){
+   let t=c.t;if(!Number.isInteger(t)||t<0||t>9)return '无效研究';let d=this.researchDef(p,t);if(!d||!e||e.k!=='b'||e.t!==3||e.build||e.packed)return '请选择已完成的科技建筑';if(t===5&&!this.tech(p,3))return '隐匿协议需要先完成终极研究';
+   let pending=this.own(p).flatMap(b=>b.queue.filter(q=>q.kind==='tech').map(q=>q.t));if(pl.tech.includes(t)||pending.includes(t))return '已研究或正在研究';
+   if(t>=6&&pl.tech.filter(v=>v>=6).length+pending.filter(v=>v>=6).length>=3)return '每局最多选择三项阵营科技';
+   if(d.exclusive?.some(id=>pl.tech.includes(id)||pending.includes(id)))return '与已选择的科技路线互斥';if(pl.money<d.cost)return '晶矿不足';
+   pl.money-=d.cost;e.queue.push({kind:'tech',t,left:d.time,total:d.time,cost:d.cost});return '';
+  }
+  if(c.type==='cancel'){if(e?.queue.length){let q=e.queue.pop();pl.money+=Math.floor(q.cost*.75);}return '';}
+  if(c.type==='ability')return this.useAbility(p,e,c);
+  if(c.type==='order'){
+   if(c.action==='mine'&&Number.isInteger(c.mine)&&this.mines[c.mine]?.remaining===0)return '这处晶矿已枯竭，请寻找其他矿区';
+   if(!Array.isArray(c.ids)||!pointValid(c))return '无效指令';let target=this.entities.find(v=>v.id===c.target&&this.visible(p,v));
+   let units=this.own(p).filter(v=>(v.k==='u'||v.k==='b'&&v.t===0&&v.packed)&&c.ids.includes(v.id));
+   units.forEach((u,i)=>{
+    u.miningIdle=false;if(c.action==='stop'){u.order=null;return;}if(u.siege||u.burrowed)return;
+    if(c.action==='mine'&&u.k==='u'&&u.t===0&&Number.isInteger(c.mine)&&this.mines[c.mine]){u.order={type:'mine',mine:c.mine};u.mineClock=0;return;}
+    u.order={type:target&&target.p!==p?'attack':c.action==='attack'?'attackmove':'move',x:clamp(c.x+(i%5-2)*20,15,W-15),y:clamp(c.y+Math.floor(i/5)*20,15,H-15),target:target?.id};
+   });return '';
+  }
+  return '未知指令';
+ }
+ useAbility(p,e,c){
+  if(!e||e.build||e.hp<=0)return '请选择己方已完成的单位或建筑';let a=this.entityAbilities(e).find(v=>v.id===c.ability);if(!a)return '此单位没有该能力';
+  let f=this.players[p].f;if(a.tech!==null&&!this.tech(p,a.tech)&&!(a.id==='cloak'&&f===2))return '请先完成所需研究';if(e.abilityCD[a.id]>0)return '技能冷却中：'+Math.ceil(e.abilityCD[a.id])+'秒';
+  if(e.packed)return '基地移动中无法使用能力';if(a.mode==='point'&&(!pointValid(c)||dist(e,c)>a.range))return '目标超出施放范围';
+  if(a.mode==='point'&&!['scan','teleport','repair'].includes(a.id)&&!this.sight(p,c))return '必须先侦察目标区域';
+  let enemies=this.entities.filter(v=>v.p!==p&&v.hp>0),pl=this.players[p];
+  if(a.id==='siege'){e.siege=!e.siege;e.order=null;return '';}
+  if(a.id==='burrow'){e.burrowed=!e.burrowed;e.stealth=e.burrowed;e.order=null;if(!e.burrowed)e.ambush=true;return '';}
+  if(a.id==='cloak'){e.cloakCapable=true;e.stealth=!e.stealth;if(e.stealth&&e.cloakReady>this.time){e.stealth=false;return '显形后需要等待12秒';}e.abilityCD[a.id]=e.stealth?0:12;return '';}
+  if(a.id==='repair'){let target=this.own(p).filter(v=>v.id!==e.id&&v.hp<v.max&&(v.k==='b'||this.mechanical(v))&&dist(v,c)<v.r+35).sort((a,b)=>dist(a,c)-dist(b,c))[0];if(!target)return '请选择附近受伤的友方机械或建筑';e.order={type:'repair',target:target.id};return '';}
+  if(a.id==='scan'){this.scans.push({p,x:c.x,y:c.y,radius:a.radius,until:this.time+8});}
+  if(a.id==='teleport'){
+   let target=this.own(p).find(v=>v.k==='b'&&v.t===5&&!v.build&&v.id!==e.id&&dist(v,c)<55);if(!target)return '请选择另一座己方已完成的方尖碑';
+   let units=[],population=0;for(let u of this.own(p).filter(v=>v.k==='u'&&!this.flying(v)&&dist(v,e)<100).sort((a,b)=>a.id-b.id)){let pop=this.def(u)[9];if(population+pop<=8){population+=pop;units.push(u.id);}}
+   if(!units.length)return '方尖碑附近没有可传送地面部队';this.events.push({kind:'teleport',p,x:e.x,y:e.y,target:target.id,source:e.id,units,remaining:2,radius:100});e.abilityCD[a.id]=this.tech(p,8)?30:40;return '';
+  }
+  if(a.id==='demolition'){this.events.push({kind:'blast',p,source:e.id,x:c.x,y:c.y,radius:a.radius,damage:140,remaining:1.5});this.reveal(e);}
+  if(a.id==='mechBlast'){for(let t of enemies)if(dist(t,c)<a.radius+t.r)this.hit(t,85,e);this.areaEffect(c.x,c.y,a.radius,p,'blast');this.reveal(e);}
+  if(a.id==='beam'){let d=dist(e,c)||1,goal={x:e.x+(c.x-e.x)/d*a.range,y:e.y+(c.y-e.y)/d*a.range};for(let t of enemies)if(lineDistance(t,e,goal)<a.radius+t.r)this.hit(t,100,e);this.effects.push({x:e.x,y:e.y,tx:goal.x,ty:goal.y,p,life:.5,kind:'beam'});this.reveal(e);}
+  if(a.id==='storm'){this.events.push({kind:'storm',p,source:e.id,x:c.x,y:c.y,radius:a.radius,damage:this.tech(p,9)?24:20,remaining:3,until:this.time+3,nextTick:this.time+1});this.reveal(e);}
+  if(['overclock','sanctuary','frenzy'].includes(a.id)){
+   for(let u of this.own(p).filter(v=>v.k==='u'&&dist(v,e)<=a.radius)){if(a.id==='sanctuary'){u.shield=Math.min(u.maxShield,u.shield+80);u.status.sanctuaryUntil=this.time+8;}if(a.id==='overclock')u.status.overclockUntil=this.time+10;if(a.id==='frenzy')u.status.frenzyUntil=this.time+12;}this.areaEffect(e.x,e.y,a.radius,p,a.id);
+  }
+  if(a.id==='summon'){for(let i=0;i<2;i++){let u=this.spawn(p,'u',1,clamp(e.x+(i?22:-22),12,W-12),clamp(e.y+20,12,H-12));u.summonedUntil=this.time+12;u.order=e.order?{...e.order}:null;}this.areaEffect(e.x,e.y,45,p,'summon');}
+  if(a.id==='detonate'){for(let t of enemies)if(dist(t,e)<a.radius+t.r)this.hit(t,75,e);e.hp=0;this.areaEffect(e.x,e.y,a.radius,p,'blast');}
+  e.abilityCD[a.id]=a.cooldown;return '';
+ }
+ areaEffect(x,y,radius,p,kind){this.effects.push({x,y,tx:x,ty:y,radius,p,kind,life:.7});}
+ mechanical(e){let f=this.players[e.p].f;return e.k==='b'||f===1||f===0&&[4,5,6,7].includes(e.t);}
+ flying(e){return e.k==='u'&&((this.players[e.p].f===0&&e.t===6)||(this.players[e.p].f===2&&e.t===7)||(this.players[e.p].f===3&&e.t===3));}
+ move(e,target,dt){
+  if(e.siege||e.burrowed)return false;let d=dist(e,target);if(d<3)return true;let speed=e.k==='b'?14:this.def(e)[8];
+  if(e.status.slowUntil>this.time)speed*=.75;if(e.status.overclockUntil>this.time)speed*=1.25;if(e.status.sanctuaryUntil>this.time)speed*=1.2;
+  let dx=(target.x-e.x)/d,dy=(target.y-e.y)/d;
+  if(!this.flying(e)){for(let o of [...rocks,...this.entities.filter(b=>b.k==='b'&&b.id!==e.id&&b.hp>0)]){let rr=o.r+e.r+6,dd=dist(e,o);if(dd<rr+20){let dot=dx*(o.x-e.x)+dy*(o.y-e.y);if(dot>0){let side=dx*(o.y-e.y)-dy*(o.x-e.x)>=0?1:-1;dx+=side*dy*1.8+(e.x-o.x)/Math.max(1,dd);dy-=side*((target.x-e.x)/d)*1.8;}}}}
+  let len=Math.hypot(dx,dy);if(!len)return false;e.x=clamp(e.x+dx/len*Math.min(d,speed*dt),e.r,W-e.r);e.y=clamp(e.y+dy/len*Math.min(d,speed*dt),e.r,H-e.r);return false;
+ }
+ hit(target,damage,source,{ignore=0}={}){
+  if(target.hp<=0)return;let f=this.players[target.p].f,armor=target.k==='b'?2:this.def(target)[4];armor+=(this.tech(target.p,1)?1:0)+(f===3&&this.tech(target.p,7)?1:0);if(target.status.acidUntil>this.time)armor--;armor=Math.max(0,armor-ignore);
+  damage=Math.max(1,damage-armor);let absorbed=Math.min(target.shield,damage);target.shield-=absorbed;target.hp-=damage-absorbed;target.lastHit=this.time;
+  if(target.hp<=0&&source?.p!==undefined&&source.p!==target.p&&!target.summonedUntil)this.players[source.p].kills++;
+ }
+ processEvents(dt){
+  for(let event of this.events){event.remaining-=dt;let source=this.entities.find(e=>e.id===event.source&&e.hp>0);
+   if(event.kind==='storm'){while(this.time>=event.nextTick&&event.nextTick<=event.until){event.nextTick+=1;for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r){this.hit(t,event.damage,source||{p:event.p});t.status.slowUntil=this.time+1.1;}}}
+   if(event.remaining>0)continue;
+   if(event.kind==='blast'){for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r)this.hit(t,event.damage,source||{p:event.p});this.areaEffect(event.x,event.y,event.radius,event.p,'blast');}
+   if(event.kind==='teleport'){let target=this.entities.find(e=>e.id===event.target&&e.hp>0&&!e.build);if(source&&target){event.units.forEach((id,i)=>{let u=this.entities.find(e=>e.id===id&&e.hp>0);if(u&&dist(u,source)<120&&!u.burrowed){u.x=clamp(target.x+45+(i%3)*20,15,W-15);u.y=clamp(target.y+(Math.floor(i/3)-1)*20,15,H-15);u.order=null;}});this.areaEffect(target.x,target.y,90,event.p,'teleport');}}
+  }this.events=this.events.filter(e=>e.remaining>0);this.scans=this.scans.filter(s=>s.until>this.time);
+ }
+ mining(e,dt){
+  let pl=this.players[e.p],bases=this.own(e.p).filter(b=>b.k==='b'&&b.t===0&&!b.build&&!b.packed).sort((a,b)=>dist(a,e)-dist(b,e)),b=bases[0];if(!b){e.miningIdle=true;return;}
+  if(e.carry>0){if(dist(e,b)<b.r+15){pl.money+=e.carry;e.carry=0;e.mineClock=0;}else this.move(e,b,dt);return;}
+  let m=this.mines[e.order.mine];if(!m||m.remaining<=0){e.order.mine=this.nearestMine(e.p,e);e.mineClock=0;m=this.mines[e.order.mine];}e.miningIdle=!m;if(!m)return;
+  if(dist(e,m)<24){e.mineClock=(e.mineClock||0)+dt;if(e.mineClock>=1.2){e.carry=Math.min(m.remaining,this.tech(e.p,2)?13:10);m.remaining-=e.carry;e.mineClock=0;}}else this.move(e,m,dt);
+ }
+ healAndRepair(e,dt){
+  let f=this.players[e.p].f,pl=this.players[e.p];
+  if(e.maxShield&&this.time-e.lastHit>5)e.shield=Math.min(e.maxShield,e.shield+5*(f===2&&this.tech(e.p,6)?1.4:1)*dt);
+  if(f===3&&e.k==='b'&&this.time-e.lastHit>5)e.hp=Math.min(e.max,e.hp+2*dt);
+  if(f===1&&this.time-e.lastHit>5){let range=170+(this.tech(e.p,7)?72:0),node=this.own(e.p).some(b=>b.k==='b'&&b.t===5&&!b.build&&dist(e,b)<range);if(node||e.k==='u'&&this.tech(e.p,9))e.hp=Math.min(e.max,e.hp+(node?3:2)*dt);}
+  if(e.k==='u'&&e.t===0&&[0,1].includes(f)&&e.order?.type==='repair'){
+   let target=this.entities.find(t=>t.id===e.order.target&&t.p===e.p&&t.hp>0);if(!target||target.hp>=target.max){e.order=null;return;}if(dist(e,target)>target.r+45){this.move(e,target,dt);return;}let spend=Math.min(pl.money,2*dt);pl.money-=spend;target.hp=Math.min(target.max,target.hp+spend*5);return;
+  }
+  if(e.k==='u'&&e.t===3&&[0,1].includes(f)){
+   let target=this.own(e.p).filter(t=>t.k==='u'&&t.id!==e.id&&t.hp<t.max&&dist(t,e)<96&&(f===0?!this.mechanical(t):this.mechanical(t))).sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];
+   if(target){target.hp=Math.min(target.max,target.hp+(f===0?10*(this.tech(e.p,7)?1.25:1):9)*dt);if(e.cd<=0){this.effects.push({x:e.x,y:e.y,tx:target.x,ty:target.y,p:e.p,heal:true,life:.15});e.cd=.4;}}
+  }
+ }
+ attack(e,target,enemies){
+  let pl=this.players[e.p],f=pl.f,d=e.k==='u'?this.def(e):null,interval=e.k==='b'?1:d[6],damage=e.k==='b'?16:d[5];
+  if(!damage)return;
+  if(e.status.overclockUntil>this.time)interval/=1.25;if(e.status.frenzyUntil>this.time)interval/=1.25;
+  if(f===0&&e.t===1&&this.tech(e.p,9))interval/=1.12;
+  if(f===2&&e.t===2){e.combo=e.comboTarget===target.id?Math.min(5,(e.combo||0)+1):0;e.comboTarget=target.id;interval/=1+e.combo*.04;}
+  e.cd=interval;if(this.tech(e.p,0))damage*=1.15;
+  if(e.k==='u'){
+   let heavy=target.k==='b'||this.def(target)[4]>=2;
+   if(f===0&&e.t===1&&this.tech(e.p,6))damage*=1.15;if(f===0&&e.t===2&&heavy)damage*=1.5;if(f===0&&e.t===4&&!heavy)damage*=1.25;
+   if(f===1&&[1,4].includes(e.t)&&this.tech(e.p,6))damage*=1.12;if(f===1&&e.t===6&&heavy&&this.tech(e.p,8))damage*=1.25;
+   if(f===3&&e.t===1&&this.tech(e.p,6))damage*=1.15;if(f===3&&e.t===2&&this.tech(e.p,8))damage*=1.2;
+   if(this.tech(e.p,5)&&(e.stealth||e.ambush))damage*=1.15;if(e.ambush){damage*=1.5;e.ambush=false;}
+  }
+  let ignore=f===2&&e.k==='u'&&d[7]>30&&this.tech(e.p,7)?1:0;
+  this.hit(target,damage,e,{ignore});this.effects.push({x:e.x,y:e.y,tx:target.x,ty:target.y,p:e.p,life:.18});this.reveal(e);
+  if(e.k!=='u')return;
+  if(f===0&&e.t===5||f===2&&e.t===4||f===3&&[5,7].includes(e.t)){let radius=f===3&&e.t===5?55:45;for(let t of enemies)if(t.id!==target.id&&dist(t,target)<radius)this.hit(t,damage*.6,e);if(f===3&&e.t===5){e.hp=0;this.areaEffect(e.x,e.y,55,e.p,'blast');}}
+  if(f===1&&e.t===2){let previous=target;for(let t of enemies.filter(t=>t.id!==target.id&&dist(t,target)<70).slice(0,2)){this.hit(t,damage*.6,e);this.effects.push({x:previous.x,y:previous.y,tx:t.x,ty:t.y,p:e.p,life:.2});previous=t;}}
+  if(f===1&&e.t===5||f===2&&e.t===6){let secondary=enemies.filter(t=>t.id!==target.id&&lineDistance(t,e,target)<t.r+12&&dist(e,t)<=dist(e,target)+35).sort((a,b)=>dist(e,a)-dist(e,b));for(let t of secondary.slice(0,f===2?1:4))this.hit(t,damage*.75,e,{ignore});}
+  if(f===2&&e.t===7){target.status.burnUntil=this.time+3;target.status.burnSource=e.p;target.status.burnTick=target.status.burnTick>this.time?target.status.burnTick:this.time+1;}
+  if(f===3&&e.t===2)target.status.acidUntil=this.time+3;
+  if(f===3&&e.t===6){target.status.slowUntil=this.time+2;let length=dist(e,target)||1;target.x=clamp(target.x+(target.x-e.x)/length*8,target.r,W-target.r);target.y=clamp(target.y+(target.y-e.y)/length*8,target.r,H-target.r);}
+ }
+ step(dt){
+  if(this.winner!==null||!Number.isFinite(dt)||dt<=0)return;this.time+=dt;this.discoverMines();this.effects=this.effects.filter(e=>(e.life-=dt)>0);this.processEvents(dt);
+  for(let e of [...this.entities]){
+   if(e.hp<=0)continue;if(e.summonedUntil&&e.summonedUntil<=this.time){e.hp=0;continue;}
+   for(let id of Object.keys(e.abilityCD))e.abilityCD[id]=Math.max(0,e.abilityCD[id]-dt);e.cd-=dt;
+   while(e.status.burnTick&&e.status.burnTick<=this.time&&e.status.burnTick<=e.status.burnUntil){this.hit(e,4,{p:e.status.burnSource});e.status.burnTick+=1;}
+   if(e.build>0){e.build=Math.max(0,e.build-dt);if(!e.build&&e.replacementWorker){let u=this.spawn(e.p,'u',0,e.x+45,e.y);u.order={type:'mine',mine:this.nearestMine(e.p,u)};e.replacementWorker=false;}continue;}
+   let pl=this.players[e.p],f=pl.f;
+   if(e.cloakCapable&&!e.burrowed&&e.cloakReady&&e.cloakReady<=this.time){e.stealth=true;e.cloakReady=0;}
+   if(f===3&&e.k==='b'&&[0,5].includes(e.t)&&!e.packed){let cycle=(e.t===0?9:12)/(this.tech(e.p,9)?1.2:1),cap=e.t===0?4:3;e.larvaClock+=dt;while(e.larvaClock>=cycle){e.larvaClock-=cycle;e.larvae=Math.min(cap,e.larvae+1);}}
+   this.healAndRepair(e,dt);
+   if(e.packed){if(e.order&&['move','attackmove','attack'].includes(e.order.type)&&this.move(e,e.order,dt))e.order=null;continue;}
+   if(e.queue.length){let q=e.queue[0],range=170+(this.tech(e.p,7)?72:0),boost=f===1&&this.own(e.p).some(b=>b.k==='b'&&b.t===5&&!b.build&&dist(e,b)<range)?1.1:1;q.left-=dt*boost;if(q.left<=0){e.queue.shift();if(q.kind==='tech')pl.tech.push(q.t);else{let u=this.spawn(e.p,'u',q.t,e.x+(e.p?-48:48),e.y+((this.id%3)-1)*22);if(q.t===0)u.order={type:'mine',mine:this.nearestMine(e.p,u)};}}}
+   if(e.k==='b'&&e.t!==4)continue;
+   if(e.k==='u'&&e.t===0&&e.order?.type==='mine'){this.mining(e,dt);continue;}
+   if(e.k==='u'&&e.t===0&&e.order?.type==='repair')continue;
+   let d=e.k==='u'?this.def(e):null,heal=d&&d[5]===0;if(e.burrowed)continue;
+   let range=e.k==='b'?145:d[7];if(e.siege)range=192+(this.tech(e.p,8)?36:0);
+   let groundOnly=e.k==='u'&&((f===0&&[0,5,8].includes(e.t))||(f===1&&[0,5,6].includes(e.t))||(f===2&&[0,2,3,4,5].includes(e.t))||(f===3&&[0,1,4,5,6].includes(e.t)));
+   let enemies=this.entities.filter(t=>t.p!==e.p&&t.hp>0&&this.visible(e.p,t)&&(!groundOnly||!this.flying(t))),target=enemies.find(t=>t.id===e.order?.target);
+   if(!target&&e.order?.type!=='move'&&!heal)target=enemies.filter(t=>dist(e,t)<range+t.r+35).sort((a,b)=>dist(e,a)-dist(e,b))[0];
+   if(target&&!heal){if(dist(e,target)<=range+target.r){if(e.cd<=0)this.attack(e,target,enemies);}else if(e.k==='u'&&!e.siege)this.move(e,target,dt);}
+   else if(e.k==='u'&&e.order&&['move','attackmove','attack'].includes(e.order.type)){if(this.move(e,e.order,dt))e.order=null;}
+  }
+  let us=this.entities.filter(e=>e.k==='u'&&e.hp>0&&!e.burrowed);for(let i=0;i<us.length;i++)for(let j=i+1;j<us.length;j++){let a=us[i],b=us[j],dd=dist(a,b),rr=(a.r+b.r)*.8;if(dd>0&&dd<rr&&this.flying(a)===this.flying(b)){let push=(rr-dd)*.25,dx=(a.x-b.x)/dd,dy=(a.y-b.y)/dd;if(!a.siege){a.x=clamp(a.x+dx*push,a.r,W-a.r);a.y=clamp(a.y+dy*push,a.r,H-a.r);}if(!b.siege){b.x=clamp(b.x-dx*push,b.r,W-b.r);b.y=clamp(b.y-dy*push,b.r,H-b.r);}}}
+  this.entities=this.entities.filter(e=>e.hp>0);for(let p=0;p<2;p++){if(this.players[p].f===3)this.syncLarvae(p);if(!this.own(p).some(e=>e.k==='b'&&e.t===0)){this.end(1-p,'所有敌方主基地已被摧毁');return;}}
+  if(this.mode==='timed'&&this.time>=480){let present=[0,1].map(p=>this.own(p).some(e=>e.k==='u'&&e.t>0&&!e.summonedUntil&&dist(e,{x:W/2,y:H/2})<90));for(let p=0;p<2;p++){if(present[p]&&!present[1-p]){this.players[p].hold+=dt;this.players[p].control+=dt;}else this.players[p].hold=0;if(this.players[p].hold>=45)this.end(p,'连续控制中央晶核45秒');}if(this.time>=600&&this.winner===null){let score=[this.score(0),this.score(1)];this.end(score[0]===score[1]?2:score[0]>score[1]?0:1,'限时结束 · 按战场得分结算');}}
+  if(this.ai)this.think(dt);
+ }
+ score(p){return Math.round(this.own(p).reduce((n,e)=>n+(e.summonedUntil?0:e.k==='b'?(e.t===0?1000:100):this.def(e)[1])*e.hp/e.max,0)+this.players[p].control*20);}
+ end(p,reason){this.winner=p;this.reason=reason;}
+ think(dt){
+  this.aiClock-=dt;this.attackClock+=dt;if(this.aiClock>0)return;let level=Math.max(0,['easy','normal','hard'].indexOf(this.difficulty));this.aiClock=[5,2.5,1][level];let p=1,own=this.own(p),workers=own.filter(e=>e.k==='u'&&e.t===0),army=own.filter(e=>e.k==='u'&&e.t>0),base=own.find(e=>e.k==='b'&&e.t===0);if(!base)return;
+  if(workers.length<[5,7,9][level]&&!base.queue.length)this.command(p,{type:'train',id:base.id,t:0});let builds=own.filter(e=>e.k==='b'),planned=[1,...(level?[2,4,3,5]:[])],next=planned.find(t=>!builds.some(e=>e.t===t));
+  if(next!==undefined){let spots=[[-120,-10],[0,-130],[-150,100],[-170,-80],[-60,160],[-250,20],[70,-80],[100,100]].map(([dx,dy])=>[base.x+dx,base.y+dy]);for(let [x,y]of spots)if(this.validSpot(p,next,x,y)){this.command(p,{type:'build',t:next,x,y});break;}}
+  if(level&&this.players[p].money>500&&builds.filter(e=>e.t===0).length<2){let m=[...this.knownMines[p]].map(i=>this.mines[i]).filter(m=>m.remaining>500&&dist(m,base)>220).sort((a,b)=>dist(a,base)-dist(b,base))[0];if(m){let x=m.x-80,y=m.y;if(this.validSpot(p,0,x,y))this.command(p,{type:'build',t:0,x,y});else if(workers[0])this.command(p,{type:'order',ids:[workers[0].id],action:'move',x,y});}}
+  for(let b of builds.filter(e=>!e.build&&!e.queue.length&&!e.packed)){
+   if(b.t===1)this.command(p,{type:'train',id:b.id,t:level===0?1:1+Math.floor(this.time/17)%3});
+   if(b.t===2)this.command(p,{type:'train',id:b.id,t:this.tech(p,3)&&Math.floor(this.time/19)%3===0?7:4+Math.floor(this.time/23)%3});
+   if(b.t===3){let t=[0,1,3,4,6,7,8].find(t=>!this.tech(p,t));if(t!==undefined)this.command(p,{type:'research',id:b.id,t});}
+  }
+  let threat=this.entities.find(e=>e.p===0&&this.visible(1,e)&&dist(e,base)<260),threshold=[7,6,4][level],interval=[110,70,40][level];
+  if(threat||army.length>=threshold&&this.attackClock>interval||this.mode==='timed'&&this.time>480){let goal=threat||(this.mode==='timed'&&this.time>480?{x:W/2,y:H/2}:{x:150,y:270});this.command(p,{type:'order',ids:army.map(e=>e.id),action:'attack',x:goal.x,y:goal.y,target:threat?.id});this.attackClock=0;}
+  if(level===2)for(let u of army)if(u.hp<u.max*.25)this.command(p,{type:'order',ids:[u.id],action:'move',x:base.x-55,y:base.y});
+  if(level)for(let e of own){let enemy=this.entities.filter(v=>v.p!==p&&v.hp>0&&this.sight(p,v)).sort((a,b)=>dist(a,e)-dist(b,e))[0];for(let a of this.entityAbilities(e)){if(e.abilityCD[a.id]>0||a.tech!==null&&!this.tech(p,a.tech))continue;if(['overclock','frenzy','sanctuary','summon'].includes(a.id)&&enemy&&dist(enemy,e)<220)this.command(p,{type:'ability',id:e.id,ability:a.id});if(['mechBlast','beam','storm','demolition','scan'].includes(a.id)&&enemy)this.command(p,{type:'ability',id:e.id,ability:a.id,x:enemy.x,y:enemy.y});}}
+ }
+ snapshot(p){
+  let entities=this.entities.filter(e=>this.visible(p,e)).map(e=>({...e,queue:e.queue.map(q=>({...q})),order:e.order?{...e.order}:null,status:{...e.status},abilityCD:{...e.abilityCD},abilities:e.p===p?this.entityAbilities(e).map(a=>a.id):[]}));
+  return {time:this.time,mines:this.mines.map(m=>({...m})),mode:this.mode,players:this.players.map((v,i)=>i===p?{...v,tech:[...v.tech],pop:this.pop(i),capacity:this.capacity(i)}:{f:v.f,hold:v.hold}),entities,effects:this.effects.filter(e=>this.sight(p,e)).map(e=>({...e})),events:this.events.filter(e=>this.sight(p,e)).map(e=>({...e})),scans:this.scans.filter(s=>s.p===p).map(s=>({...s})),winner:this.winner,reason:this.reason,scores:this.winner!==null?[this.score(0),this.score(1)]:null};
+ }
+}
+
+class Camera{
+ constructor(w,h,vw=1200,vh=760){this.w=w;this.h=h;this.vw=vw;this.vh=vh;this.zoom=1;this.x=0;this.y=0;}
+ clamp(){this.x=Math.max(0,Math.min(this.w-this.vw/this.zoom,this.x));this.y=Math.max(0,Math.min(this.h-this.vh/this.zoom,this.y));}
+ center(x,y){this.x=x-this.vw/this.zoom/2;this.y=y-this.vh/this.zoom/2;this.clamp();}
+ pan(dx,dy){this.x+=dx/this.zoom;this.y+=dy/this.zoom;this.clamp();}
+ world(x,y){return {x:this.x+x/this.zoom,y:this.y+y/this.zoom};}
+ setZoom(zoom,sx=this.vw/2,sy=this.vh/2){let anchor=this.world(sx,sy);this.zoom=Math.max(Math.max(this.vw/this.w,this.vh/this.h),Math.min(1.8,zoom));this.x=anchor.x-sx/this.zoom;this.y=anchor.y-sy/this.zoom;this.clamp();}
+}
+
+const $=id=>document.getElementById(id),canvas=$('board'),ctx=canvas.getContext('2d'),mini=$('minimap').getContext('2d');
+let kind='pve',rule='normal',faction=0,token='',player=0,state=null,stream=null,selected=[],groups={},placing=null,attack=false,drag=null,mouse={x:0,y:0},lastPanel='',ended=false,explored=new Set(),toastTimer;
+let localGame=null,localTimer=null,pendingAbility=null;
+let soundEnabled=false,audioContext=null,heardEffects=new Set(),heardTech=0;
+const offline=location.protocol==='file:';
+const camera=new Camera(W,H),rememberedMines=new Map(),panKeys=new Set();
+let selectedMine=null,cameraReady=false,panning=null,lastFrame=0;
+const colors=['#73efcb','#ff927f'];
+function toast(s){if(!s)return;$('toast').textContent=s;$('toast').style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').style.display='none',3600);}
+$('factions').replaceChildren();$('enemy').replaceChildren();
+factions.forEach((f,i)=>{let b=document.createElement('button');b.innerHTML=`${['▣','⌘','✧','❖'][i]} ${f.name}<small>${f.tag}</small>`;b.className=i===0?'active':'';b.setAttribute('aria-pressed',i===0);b.onclick=()=>{faction=i;[...$('factions').children].forEach((b,j)=>{b.classList.toggle('active',i===j);b.setAttribute('aria-pressed',i===j);});};$('factions').append(b);$('enemy').add(new Option(f.name,i));});$('enemy').value='1';
+document.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{kind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(a=>a.classList.toggle('active',a===b));$('aiOptions').hidden=kind==='pvp';$('joinArea').hidden=kind!=='pvp';$('start').innerHTML=kind==='pvp'?'创建双人房间 ↗':'部署作战 ↗';$('modeNote').textContent=kind==='pvp'?'真实双人实时对战 · 由主机统一计算战场。':'AI 与玩家使用相同资源与生产规则。';});
+document.querySelectorAll('[data-rule]').forEach(b=>b.onclick=()=>{rule=b.dataset.rule;document.querySelectorAll('[data-rule]').forEach(a=>a.classList.toggle('active',a===b));});
+async function api(path,data){if(offline)throw Error('双人联机请运行文件夹中的「启动游戏.cmd」，再通过打开的网页创建或加入房间。');let res;try{res=await fetch('/api/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(7000)});}catch{throw Error('无法连接游戏主机。请运行「启动游戏.cmd」并保持服务器窗口开启。');}let r;try{r=await res.json();}catch{throw Error('当前地址不是游戏服务器，请通过「启动游戏.cmd」打开游戏。');}if(!res.ok){let err=Error(r.error||'连接失败');err.status=res.status;throw err;}return r;}
+function resetMatch(){stream?.close();stream=null;clearInterval(localTimer);localGame=null;state=null;ended=false;selected=[];groups={};placing=null;attack=false;drag=null;pendingAbility=null;heardEffects.clear();heardTech=0;updateTargetUI();explored.clear();rememberedMines.clear();selectedMine=null;cameraReady=false;panKeys.clear();panning=null;lastPanel='';$('banner').style.display='none';$('hint').textContent='先选择工人，建造兵营，开始训练部队。';}
+function startLocal(){resetMatch();player=0;token='';localGame=new Game({rule,f0:faction,f1:+$('enemy').value,difficulty:$('difficulty').value});$('lobby').hidden=true;$('game').hidden=false;state=localGame.snapshot(0);update();localTimer=setInterval(()=>{if(document.hidden||$('help').open)return;localGame.step(.1);state=localGame.snapshot(0);selected=selected.filter(id=>state.entities.some(e=>e.id===id&&e.p===player));update();},100);}
+async function begin(join){if(offline&&!join&&kind==='pve'){startLocal();return;}let b=join?$('join'):$('start');b.disabled=true;try{let data=await api(join?'join':'create',join?{code:$('roomCode').value,faction}:{kind,rule,faction,enemy:+$('enemy').value,difficulty:$('difficulty').value});connect(data);try{sessionStorage.setItem('crystalSession',JSON.stringify(data));}catch{}}catch(e){toast(e.message);}finally{b.disabled=false;}}
+$('start').onclick=()=>begin(false);$('join').onclick=()=>begin(true);
+function pollStream(sessionToken){
+ let closed=false,timer=null;
+ const transport={onmessage:null,onerror:null,close(){closed=true;if(timer!==null)clearTimeout(timer);timer=null;}};
+ async function poll(){
+  if(closed)return;
+  try{let result=await api('state',{token:sessionToken});if(!closed)transport.onmessage?.({data:JSON.stringify(result)});}
+  catch(error){if(!closed)transport.onerror?.(error);}
+  finally{if(!closed)timer=setTimeout(poll,150);}
+ }
+ // Start after connect has assigned its handlers; each request finishes before scheduling the next.
+ timer=setTimeout(poll,0);
+ return transport;
+}
+function connect(data){resetMatch();token=data.token;player=data.p;$('lobby').hidden=true;$('game').hidden=false;stream=pollStream(token);stream.onmessage=e=>{let r=JSON.parse(e.data);if(r.error){returnLobby();toast(r.error);return;}state=r.state;$('banner').style.display=r.waiting||r.paused?'block':'none';$('banner').textContent=r.waiting?`等待另一位指挥官\n房间码：${r.code}\n朋友打开同一网络地址后输入此代码`:r.paused?'连接中断 · 对局已暂停\n等待双方重新连接':'';if(state){selected=selected.filter(id=>state.entities.some(e=>e.id===id&&e.p===player));update();}};let validatingSession=false;stream.onerror=async()=>{$('banner').style.display='block';$('banner').textContent='正在重新连接服务器…\n对局将在连接恢复后继续';if(!validatingSession){validatingSession=true;let key=token;try{await api('session',{token:key});}catch(err){if(err.status===403&&token===key){returnLobby();toast('主机已重启或房间已结束，请重新开始。');}}finally{validatingSession=false;}}};}
+async function command(c){try{if(localGame){let error=localGame.command(player,c);toast(error);state=localGame.snapshot(player);update();return error||'';}let r=await api('command',{token,command:c});toast(r.error);return r.error||'';}catch(e){toast(e.message);return e.message;}}
+function own(){return state?.entities.filter(e=>e.p===player)||[];}
+function update(){let pl=state.players[player];if(!cameraReady){let base=own().find(e=>e.k==='b'&&e.t===0);if(base){camera.zoom=1;camera.center(base.x,base.y);cameraReady=true;}}rememberResources();updateMineInfo();updateSound();$('money').textContent=Math.floor(pl.money);$('pop').textContent=pl.pop;$('capacity').textContent=pl.capacity;updateTree();updateRoster();updateTargetUI();$('larvae').textContent=pl.f===3?'幼虫 '+pl.larvae:'';let t=state.mode==='timed'?Math.max(0,600-state.time):state.time;$('clock').textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;$('matchLabel').textContent=`${factions[pl.f].name} / ${state.mode==='timed'?'限时 · 倒计时':'普通 · 不限时'}`;$('objective').textContent=state.mode==='timed'&&state.time>=480?`中央晶核已激活 · 我方连续控制 ${Math.floor(pl.hold)} / 45 秒`:'目标：摧毁敌方全部主基地';panel();if(state.winner!==null&&!ended){ended=true;$('resultTitle').textContent=state.winner===2?'势均力敌':state.winner===player?'作战胜利':'作战失利';$('resultReason').textContent=state.reason;$('resultScore').textContent=`本局用时 ${Math.floor(state.time/60)} 分 ${Math.floor(state.time%60)} 秒 · 双方得分 ${state.scores.join(' : ')}`;$('result').showModal();}}
+function researchList(f){return [...research.map((r,id)=>({...r,id,...(id===5?{desc:['新爆破兵35%获得隐身，破隐一击伤害+15%','悬浮猎手解锁隐身，破隐一击伤害+15%','隐匿刺客破隐一击伤害+15%','潜伏猎虫破土一击额外强化15%'][f]}:{})})),...(factionResearch[f]||[]).map((r,i)=>({...r,id:r.id??i+6}))];}
+function researchById(f,id){return researchList(f).find(r=>r.id===id);}
+function selectedOwn(){return own().filter(e=>selected.includes(e.id));}
+function factionMatches(a,f){return Array.isArray(a.f)?a.f.includes(f):a.f===f;}
+function abilityFor(e){return abilities.filter(a=>factionMatches(a,state.players[player].f)&&a.kind===e.k&&a.types.includes(e.t)&&(!e.abilities||e.abilities.includes(a.id)));}
+function panel(){
+ let es=selectedOwn(),e=es[0],pl=state.players[player],f=factions[pl.f];
+ let key=JSON.stringify([selected,e?.build>0,e?.packed,e?.siege,e?.burrowed,e?.stealth,pl.tech,placing,es.map(u=>[u.id,Object.entries(u.abilityCD||{}).map(([k,v])=>[k,Math.ceil(v)]),u.status]),own().filter(b=>b.k==='b').map(b=>[b.id,b.t,b.build>0,b.packed,b.queue.map(q=>[q.kind,q.t])])]);
+ if(key!==lastPanel){
+  lastPanel=key;$('actions').innerHTML='';
+  $('selection').innerHTML=e?'<h2>'+(es.length>1?es.length+' 个单位':e.k==='b'?f.build[e.t]:(e.t===0?'工兵 · ':'战斗单位 · ')+f.units[e.t][0])+'</h2><p id="unitStats"></p>':'<h2>等待指令</h2><p>选择工兵建造、修理，或选择战斗单位指挥作战。主基地可收拢缓慢移动。</p>';
+  let button=(name,sub,fn,locked=false,style='')=>{let b=document.createElement('button');b.innerHTML=name+'<small>'+sub+'</small>';b.onclick=fn;b.disabled=locked;if(style)b.className=style;$('actions').append(b);return b;};
+  let workers=es.filter(u=>u.k==='u'&&u.t===0);
+  if(workers.length){
+   f.build.forEach((name,t)=>{let required=prerequisites[t],locked=required>=0&&!own().some(b=>b.k==='b'&&b.t===required&&!b.build&&!b.packed);button(name,'◈ '+f.cost[t]+' · '+f.time[t]+'秒'+(t===0?' · 人口+18':'')+(locked?' · 需'+f.build[required]:''),()=>{cancelAbility();placing=t;attack=false;$('hint').textContent='点击战场放置 '+name+' · Esc 取消';},locked);});
+   button('处死选中工兵','仅作用于 '+workers.length+' 名己方工兵 · 不返还资源',()=>{if(confirm('确定处死选中的 '+workers.length+' 名工兵？此操作不返还晶矿，只释放人口。'))command({type:'execute',ids:workers.map(u=>u.id)});},false,'danger');
+  }
+  if(e?.k==='b'&&!e.build){
+   if(e.t===0)button(e.packed?'展开基地':'收拢并移动',e.packed?'在合法空地展开后恢复采矿与生产':'缓慢移动；收拢时暂停采矿与生产',()=>command({type:'pack',id:e.id}),false,'utility');
+   let list=e.packed?[]:e.t===0?[0]:e.t===1?[1,2,3]:e.t===2?f.units.map((d,i)=>i).filter(i=>i>=4):[];
+   list.forEach(t=>{let d=f.units[t],locked=t>=7&&!pl.tech.includes(3);button((t===0?'工兵 · ':'战斗 · ')+d[0],'◈ '+d[1]+' · '+d[2]+'秒 · '+d[9]+'人口'+(locked?' · 需终极研究':''),()=>command({type:'train',id:e.id,t}),locked);});
+   if(e.t===3&&!e.packed)researchList(pl.f).forEach(r=>{
+    let done=pl.tech.includes(r.id),pending=own().some(b=>b.queue.some(q=>q.kind==='tech'&&q.t===r.id)),conflict=(r.exclusive||[]).some(t=>pl.tech.includes(t)||own().some(b=>b.queue.some(q=>q.kind==='tech'&&q.t===t))),needs=r.requires??r.tech;
+    let unmet=typeof needs==='number'&&!pl.tech.includes(needs),limit=r.id>=6&&pl.tech.filter(t=>t>=6).length>=3;
+    button((done?'✓ ':pending?'◷ ':'')+r.name,'◈ '+r.cost+' · '+r.time+'秒 · '+r.desc+(conflict?' · 路线互斥':unmet?' · 需终极研究':limit?' · 专属科技已达3项':''),()=>command({type:'research',id:e.id,t:r.id}),done||pending||conflict||unmet||limit);
+   });
+  }
+  if(e){
+   abilityFor(e).forEach(a=>{let cooldown=Math.max(0,e.abilityCD?.[a.id]||0),locked=a.tech!=null&&!pl.tech.includes(a.tech);button(a.name,(locked?'需'+(researchById(pl.f,a.tech)?.name||'研究')+' · ':'')+(cooldown>0?'冷却 '+Math.ceil(cooldown)+'秒 · ':'')+a.desc,()=>activateAbility(e,a),locked||cooldown>0,'ability');});
+   if(e.k==='u'&&e.t>0){button('攻击移动 [A]','点击目标位置，沿途自动交战',()=>{cancelAbility();attack=true;placing=null;});button('停止 [S]','原地警戒',()=>issue(mouse,'stop'));}
+  }
+ }
+ if($('unitStats')&&e){let states=[e.packed?'基地已收拢 · 右键缓慢移动':'',e.siege?'攻城架设中':'',e.burrowed?'地下潜伏':'',e.stealth?'隐身':'',e.summonedUntil?'限时召唤物 '+Math.max(0,Math.ceil(e.summonedUntil-state.time))+'秒':''];let labels={overclockUntil:'能源过载',frenzyUntil:'虫群狂热',sanctuaryUntil:'星界庇护',slowUntil:'减速',burnUntil:'灼烧',acidUntil:'腐蚀'};for(let [k,label] of Object.entries(labels)){let left=(e.status?.[k]||0)-state.time;if(left>0)states.push(label+' '+Math.ceil(left)+'秒');}$('unitStats').textContent='生命 '+Math.ceil(e.hp)+' / '+e.max+(e.maxShield?' · 护盾 '+Math.ceil(e.shield):'')+(e.build?' · 建造剩余 '+Math.ceil(e.build)+'秒':'')+(e.miningIdle&&e.order?.type==='mine'?' · 等待发现新矿区':e.k==='u'&&e.t===0?' · 运输 '+(Number(e.carry)||0)+'晶矿':'')+(states.filter(Boolean).length?' · '+states.filter(Boolean).join(' · '):'');}
+ $('queue').innerHTML='';if(e?.queue.length){let title=document.createElement('div');title.textContent='生产队列';$('queue').append(title);e.queue.forEach((q,i)=>{let div=document.createElement('div');div.textContent=(i+1)+'. '+(q.kind==='unit'?f.units[q.t][0]:researchById(pl.f,q.t)?.name||'科技')+' · '+Math.ceil(q.left)+'秒';$('queue').append(div);});let b=document.createElement('button');b.textContent='取消末项（返还75%）';b.onclick=()=>command({type:'cancel',id:e.id});$('queue').append(b);}
+}
+function activateAbility(e,a){cancelAbility();placing=null;attack=false;drag=null;if(a.mode==='self'||a.mode==='toggle'){command({type:'ability',id:e.id,ability:a.id,x:e.x,y:e.y});return;}pendingAbility={source:e.id,ability:a,target:null};$('hint').textContent=a.name+'：点击目标区域，再点击「确认释放」；Esc取消。';updateTargetUI();}
+function cancelAbility(){pendingAbility=null;updateTargetUI();}
+function updateTargetUI(){let box=$('targetBar');if(!box)return;box.hidden=!pendingAbility;if(!pendingAbility)return;let e=own().find(u=>u.id===pendingAbility.source);if(!e){pendingAbility=null;box.hidden=true;return;}let a=pendingAbility.ability,target=pendingAbility.target;$('targetInfo').textContent=a.name+' · '+(target?'已选定目标 ('+Math.round(target.x)+', '+Math.round(target.y)+')':'请点击战场选择目标')+(a.radius?' · 半径 '+a.radius:'');$('targetConfirm').disabled=!target;}
+$('targetConfirm').onclick=async()=>{if(!pendingAbility?.target)return;let q=pendingAbility,t=q.target;$('targetConfirm').disabled=true;let error=await command({type:'ability',id:q.source,ability:q.ability.id,x:t.x,y:t.y,target:t.id});if(!error)cancelAbility();else updateTargetUI();};
+$('targetCancel').onclick=cancelAbility;
+function screenPoint(ev){let r=canvas.getBoundingClientRect(),scale=Math.min(r.width/1200,r.height/760),ox=(r.width-1200*scale)/2,oy=(r.height-760*scale)/2;return{x:(ev.clientX-r.left-ox)/scale,y:(ev.clientY-r.top-oy)/scale};}
+function point(ev){let p=screenPoint(ev);return camera.world(p.x,p.y);}
+function entityAt(p){return state?.entities.filter(e=>Math.hypot(e.x-p.x,e.y-p.y)<e.r+8).sort((a,b)=>(a.k==='b')-(b.k==='b'))[0];}
+function mineralAt(p){return (state?.mines||mines).findIndex(m=>Math.hypot(m.x-p.x,m.y-p.y)<36&&rememberedMines.has((state?.mines||mines).indexOf(m)));}
+function issue(p,action){if(!state)return;let target=entityAt(p),m=mineralAt(p);command({type:'order',ids:selected,x:p.x,y:p.y,action:action||(m>=0?'mine':'move'),target:target?.id,mine:m});}
+canvas.oncontextmenu=e=>{e.preventDefault();if(pendingAbility){cancelAbility();return;}if(placing!==null){placing=null;return;}issue(point(e));};
+canvas.onpointerdown=e=>{if(!state)return;let sp=screenPoint(e);if(e.button===1){e.preventDefault();panning=sp;canvas.setPointerCapture(e.pointerId);return;}if(e.button!==0)return;let p=point(e);if(pendingAbility){let target=entityAt(p);pendingAbility.target={...p,id:target?.id};updateTargetUI();return;}if(placing!==null){command({type:'build',t:placing,...p});placing=null;return;}if(attack){issue(p,'attack');attack=false;return;}drag={...p,shift:e.shiftKey};canvas.setPointerCapture(e.pointerId);};
+canvas.onpointermove=e=>{let sp=screenPoint(e);if(panning){camera.pan(panning.x-sp.x,panning.y-sp.y);panning=sp;}mouse=point(e);};
+canvas.onpointerup=e=>{if(e.button===1){panning=null;return;}if(!drag||e.button!==0)return;let p=point(e),dx=Math.abs(p.x-drag.x),dy=Math.abs(p.y-drag.y),ids;selectedMine=null;if(dx+dy>8){ids=own().filter(u=>u.k==='u'&&u.x>=Math.min(p.x,drag.x)&&u.x<=Math.max(p.x,drag.x)&&u.y>=Math.min(p.y,drag.y)&&u.y<=Math.max(p.y,drag.y)).map(u=>u.id);}else{let ent=entityAt(p);ids=ent?.p===player?[ent.id]:[];if(!ent){let index=mineralAt(p);if(index>=0)selectedMine=index;}}selected=drag.shift?[...new Set([...selected,...ids])]:ids;drag=null;panel();updateMineInfo();};
+canvas.onpointercancel=()=>{drag=null;panning=null;};
+canvas.onwheel=e=>{if(!state)return;e.preventDefault();let p=screenPoint(e);camera.setZoom(camera.zoom*(e.deltaY<0?1.12:1/1.12),p.x,p.y);mouse=point(e);};
+$('minimap').onpointerdown=e=>{if(!state)return;let r=$('minimap').getBoundingClientRect();camera.center((e.clientX-r.left)/r.width*W,(e.clientY-r.top)/r.height*H);};
+window.addEventListener('keydown',e=>{if(!state||['INPUT','SELECT'].includes(document.activeElement.tagName)||$('help').open||$('result').open)return;let key=e.key.toLowerCase();if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();panKeys.add(e.key);return;}if(key==='a'){cancelAbility();attack=true;placing=null;toast('左键点击进攻目的地');}if(key==='s')issue(mouse,'stop');if(key==='escape'){cancelAbility();placing=null;attack=false;drag=null;}if(e.code==='Space'){e.preventDefault();selectArmy();}if(/^[1-9]$/.test(key)){e.preventDefault();if(e.ctrlKey)groups[key]=[...selected];else selected=(groups[key]||[]).filter(id=>own().some(e=>e.id===id));panel();}});
+window.addEventListener('keyup',e=>panKeys.delete(e.key));window.addEventListener('blur',()=>panKeys.clear());
+function selectArmy(){if(!state)return;selected=own().filter(e=>e.k==='u'&&e.t>0).map(e=>e.id);panel();}$('army').onclick=selectArmy;$('home').onclick=()=>{if(!state)return;let base=own().find(e=>e.k==='b'&&e.t===0);selected=base?[base.id]:[];selectedMine=null;if(base)camera.center(base.x,base.y);panel();updateMineInfo();};$('surrender').onclick=()=>{if(!state){toast('还在等待对手加入，请使用「返回部署」离开房间。');return;}if(confirm('确定投降并结束本局？'))command({type:'surrender'});};['helpLobby','helpGame'].forEach(id=>$(id).onclick=()=>$('help').showModal());$('closeHelp').onclick=()=>$('help').close();
+function returnLobby(){resetMatch();try{sessionStorage.removeItem('crystalSession');}catch{}token='';if($('result').open)$('result').close();$('game').hidden=true;$('lobby').hidden=false;}
+$('back').onclick=returnLobby;$('leave').onclick=()=>{if(state&&state.winner===null){if(!confirm('返回部署将视为投降，确定离开本局？'))return;command({type:'surrender'}).then(returnLobby);}else returnLobby();};
+function rect(g,x,y,w,h,c){g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h);}function diamond(g,x,y,r,c){g.fillStyle=c;g.beginPath();g.moveTo(x,y-r);g.lineTo(x+r*.65,y);g.lineTo(x,y+r);g.lineTo(x-r*.65,y);g.closePath();g.fill();}
+function terrain(g){rect(g,0,0,W,H,'#182a2b');for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){let n=(x*17+y*31)%97;rect(g,x,y,39,39,n<30?'#1a2e2e':n<60?'#1b3030':'#1c3130');if(n<30)rect(g,x+12,y+14,5,3,'#29413a');}rect(g,0,H/2-25,W,50,'#293b3b');rect(g,W/2-25,0,50,H,'#263b3b');for(let r of rocks){rect(g,r.x-r.r,r.y-r.r,r.r*2,r.r*2,'#101d24');rect(g,r.x-r.r+6,r.y-r.r+3,r.r*1.5,r.r*1.5,'#40505a');rect(g,r.x-r.r+10,r.y-r.r+3,r.r,8,'#59666b');}g.strokeStyle='#628379';g.lineWidth=2;g.beginPath();g.arc(W/2,H/2,85,0,Math.PI*2);g.stroke();diamond(g,W/2,H/2,28,'#53686b');}
+function drawMine(g,m,index){let ratio=Math.max(0,m.remaining/m.capacity),count=Math.ceil(ratio*7);rect(g,m.x-36,m.y+10,72,17,'#102227');for(let i=0;i<7;i++){let x=m.x+(i-3)*10,y=m.y+(i%2)*9;rect(g,x-4,y+8,8,4,'#465c5b');if(i<count){let size=6+12*Math.sqrt(ratio);diamond(g,x,y,size,ratio<.2?'#3b757e':'#359eaa');diamond(g,x-2,y-3,size*.65,ratio<.2?'#79aaa5':'#8df1d2');}}if(m.remaining>0){rect(g,m.x-30,m.y+31,60,4,'#07111a');rect(g,m.x-30,m.y+31,60*ratio,4,ratio<.2?'#e4c78d':'#73efcb');}else{g.strokeStyle='#6b6c66';g.beginPath();g.moveTo(m.x-15,m.y-5);g.lineTo(m.x+15,m.y+15);g.moveTo(m.x+15,m.y-5);g.lineTo(m.x-15,m.y+15);g.stroke();}if(selectedMine===index){g.strokeStyle='#e4c78d';g.strokeRect(m.x-42,m.y-26,84,65);}}
+function hasVision(p,pad=0){return own().some(e=>Math.hypot(e.x-p.x,e.y-p.y)<(e.k==='b'?210:170)+pad)||(state?.scans||[]).some(s=>Math.hypot(s.x-p.x,s.y-p.y)<s.radius+pad);}
+function rememberResources(){for(let [i,m] of (state.mines||mines).entries())if(hasVision(m))rememberedMines.set(i,{...m});}
+function updateMineInfo(){let m=rememberedMines.get(selectedMine),box=$('mineInfo');box.hidden=!m;if(!m)return;let inView=hasVision(m);box.innerHTML='<b>晶矿 '+(selectedMine+1)+(m.remaining===0?' · 已枯竭':m.remaining<m.capacity*.2?' · 即将耗尽':'')+'</b><p>'+(inView?'剩余 ':'上次侦察剩余 ')+m.remaining+' / '+m.capacity+' · '+Math.round(m.remaining/m.capacity*100)+'%</p><div class="ore-meter"><i style="width:'+(100*m.remaining/m.capacity)+'%"></i></div><small>'+(m.remaining===0?'已无法采集，请侦察并寻找新矿区。':'选中工兵，右键此矿区采集；远处建基地可缩短运输。')+'</small>';}
+const terrainCanvas=document.createElement('canvas');terrainCanvas.width=W;terrainCanvas.height=H;terrain(terrainCanvas.getContext('2d'));
+function sprite(g,e){let f=state.players[e.p].f,c=colors[e.p],x=Math.round(e.x),y=Math.round(e.y),r=e.r;rect(g,x-r,y+r-2,r*2,6,'#07151799');if(selected.includes(e.id)){g.strokeStyle='#e4c78d';g.lineWidth=2;g.strokeRect(x-r-5,y-r-5,r*2+10,r*2+10);}g.globalAlpha=e.build?.6:e.stealth?.4:e.burrowed?.45:1;if(e.k==='b'){rect(g,x-r,y-r,r*2,r*2,'#0d1822');rect(g,x-r+4,y-r+4,r*2-8,r*2-8,f===3?'#615064':f===2?'#45646a':'#455d69');rect(g,x-r+4,y-r+4,r*2-8,6,c);if(e.t===0){rect(g,x-19,y-12,38,30,'#233e4a');diamond(g,x,y-4,18,c);rect(g,x-25,y+20,50,7,'#172c36');}else if(e.t===1){rect(g,x-16,y-5,32,25,'#172c36');rect(g,x-10,y-1,20,21,c);}else if(e.t===2){rect(g,x-18,y-13,10,32,'#1b2b35');rect(g,x+8,y-13,10,32,'#1b2b35');rect(g,x-7,y-8,14,20,c);}else if(e.t===3){diamond(g,x,y,18,c);rect(g,x-2,y-28,4,19,'#d0e5de');}else if(e.t===4){rect(g,x-12,y-10,24,24,c);rect(g,x-3,y-30,6,25,'#c1d4d5');}else{diamond(g,x,y-5,20,c);rect(g,x-3,y+8,6,12,'#c8e7dd');}}else{if(f===3){for(let n of [-1,1]){rect(g,x+n*(r+2)-2,y-5,4,15,c);rect(g,x+n*(r+6)-2,y,4,5,c);}diamond(g,x,y,r+2,'#685263');diamond(g,x,y-2,r*.65,c);}else if(f===2){diamond(g,x,y,r+4,'#354d66');diamond(g,x,y-2,r,c);rect(g,x-2,y-7,4,5,'#e9ffef');}else if(f===0&&e.t===8){rect(g,x-6,y+2,5,10,'#17242e');rect(g,x+2,y+2,5,10,'#17242e');rect(g,x-8,y-6,16,13,c);rect(g,x-5,y-13,10,9,'#bac7c5');rect(g,x-11,y-3,6,10,'#e99b70');rect(g,x-10,y-1,4,3,'#faf0b5');rect(g,x+7,y-1,5,5,'#edba7c');}else if(e.t>=4){rect(g,x-r,y-r,r*2,r*2,'#17232e');rect(g,x-r+3,y-r+2,r*2-6,r*2-4,c);rect(g,x-4,y-5,8,12,'#415660');rect(g,x-2,y-r-8,4,r,'#d5e7dd');}else{rect(g,x-7,y+2,5,9,'#13232e');rect(g,x+2,y+2,5,9,'#13232e');rect(g,x-8,y-5,16,12,c);rect(g,x-5,y-11,10,9,'#7e96a2');rect(g,x-3,y-8,7,3,'#d8fff0');rect(g,x+7,y-3,7,e.t===2?6:3,'#c6d7d7');if(e.t===3){rect(g,x-2,y-3,4,10,'#fff');rect(g,x-5,y,10,4,'#fff');}if(e.t===0&&e.carry)diamond(g,x+9,y-12,5,'#9ffff0');}}
+ g.globalAlpha=1;if(e.packed){rect(g,x-r,y+r-1,r*2,7,'#9eb8bc');rect(g,x-10,y+r+6,5,5,'#243a43');rect(g,x+6,y+r+6,5,5,'#243a43');}if(e.siege){rect(g,x-r-8,y+r,8,5,c);rect(g,x+r,y+r,8,5,c);}if(e.burrowed){g.strokeStyle=c;g.beginPath();g.arc(x,y,r+5,0,Math.PI*2);g.stroke();}if(e.stealth){g.strokeStyle='#b9afff';g.strokeRect(x-r-2,y-r-2,r*2+4,r*2+4);}if(e.status){let buff=Object.entries(e.status).some(([k,v])=>['overclockUntil','frenzyUntil','sanctuaryUntil'].includes(k)&&v>state.time);if(buff){g.strokeStyle=f===1?'#f3cf76':f===2?'#a9b8ff':'#db91eb';g.beginPath();g.arc(x,y,r+7,0,Math.PI*2);g.stroke();}}if(e.hp<e.max||selected.includes(e.id)||e.k==='b'){rect(g,x-r,y-r-11,r*2,3,'#07111a');rect(g,x-r,y-r-11,r*2*e.hp/e.max,3,c);if(e.maxShield)rect(g,x-r,y-r-15,r*2*e.shield/e.maxShield,2,'#9eacf3');}if(e.build)rect(g,x-r,y+r+8,r*2*(1-e.build/e.fullBuild),3,'#e4c78d');}
+function render(now=0){requestAnimationFrame(render);let dt=Math.min(.05,Math.max(0,(now-lastFrame)/1000));lastFrame=now;if(!state){ctx.drawImage(terrainCanvas,0,0,1200,760);return;}
+ if(!$('help').open&&!$('result').open){camera.pan(((panKeys.has('ArrowRight')?1:0)-(panKeys.has('ArrowLeft')?1:0))*650*dt,((panKeys.has('ArrowDown')?1:0)-(panKeys.has('ArrowUp')?1:0))*650*dt);}
+ ctx.save();ctx.clearRect(0,0,1200,760);ctx.scale(camera.zoom,camera.zoom);ctx.translate(-camera.x,-camera.y);ctx.drawImage(terrainCanvas,0,0);if(state.mode==='timed'&&state.time>=480)diamond(ctx,W/2,H/2,28,'#e4c78d');
+ for(let [i,m] of rememberedMines)drawMine(ctx,m,i);
+ for(let e of [...state.entities].sort((a,b)=>a.y-b.y))sprite(ctx,e);
+ for(let f of state.effects)drawEffect(ctx,f);for(let f of (state.events||[]))drawEffect(ctx,{...f,warning:f.kind==='blast'});for(let f of (state.scans||[]))drawEffect(ctx,{...f,kind:'scan'});
+ let friends=own();for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){let key=x+','+y,seen=hasVision({x:x+20,y:y+20},15);if(seen)explored.add(key);else rect(ctx,x,y,40,40,explored.has(key)?'#07111bb0':'#050d14ec');}
+ if(pendingAbility){let source=own().find(e=>e.id===pendingAbility.source),a=pendingAbility.ability,p=pendingAbility.target||mouse;if(source&&a.range){ctx.strokeStyle='#76c8e766';ctx.lineWidth=1;ctx.beginPath();ctx.arc(source.x,source.y,a.range,0,Math.PI*2);ctx.stroke();}ctx.fillStyle='#f3b87624';ctx.strokeStyle='#f3cc91';ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,a.radius||24,0,Math.PI*2);ctx.fill();ctx.stroke();rect(ctx,p.x-2,p.y-9,4,18,'#f3cc91');rect(ctx,p.x-9,p.y-2,18,4,'#f3cc91');}if(drag){ctx.strokeStyle='#e4c78d';ctx.fillStyle='#e4c78d15';ctx.fillRect(drag.x,drag.y,mouse.x-drag.x,mouse.y-drag.y);ctx.strokeRect(drag.x,drag.y,mouse.x-drag.x,mouse.y-drag.y);}if(placing!==null){ctx.fillStyle='#73efcb44';ctx.fillRect(mouse.x-28,mouse.y-28,56,56);ctx.strokeStyle='#73efcb';ctx.strokeRect(mouse.x-28,mouse.y-28,56,56);}ctx.restore();
+ mini.drawImage(terrainCanvas,0,0,240,152);for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40)if(!explored.has(x+','+y))rect(mini,x/W*240,y/H*152,4,4,'#050d14');for(let [i,m] of rememberedMines)rect(mini,m.x/W*240-2,m.y/H*152-2,4,4,m.remaining?'#73efcb':'#756a5c');for(let e of state.entities)rect(mini,e.x/W*240-1,e.y/H*152-1,e.k==='b'?4:2,e.k==='b'?4:2,colors[e.p]);mini.strokeStyle='#e4c78d';mini.lineWidth=1;mini.strokeRect(camera.x/W*240,camera.y/H*152,1200/camera.zoom/W*240,760/camera.zoom/H*152);$('mapView').textContent='视野 '+Math.round(camera.zoom*100)+'% · '+W+' × '+H;
+}
+render();window.crystalReady=true;document.querySelector('.status').textContent=offline?'● 单机就绪 · 双击即可游玩':'● 系统就绪';$('startupError').hidden=true;
+if(!offline){try{let saved=JSON.parse(sessionStorage.getItem('crystalSession'));if(saved){api('session',{token:saved.token}).then(()=>connect(saved)).catch(()=>{try{sessionStorage.removeItem('crystalSession');}catch{}toast('上次房间已结束，可以重新选择阵营开始。');});}}catch{}}
+
+function updateTree(){
+ let pl=state.players[player],f=factions[pl.f],buildings=own().filter(e=>e.k==='b');
+ let status=t=>buildings.some(b=>b.t===t&&!b.build&&!b.packed)?'已完成':buildings.some(b=>b.t===t&&b.packed)?'已收拢':buildings.some(b=>b.t===t&&b.build)?'建造中':prerequisites[t]<0||buildings.some(b=>b.t===prerequisites[t]&&!b.build&&!b.packed)?'可建造':'未解锁';
+ let node=t=>'<div class="tech-node '+(status(t)==='未解锁'?'locked':'')+'"><b>'+f.build[t]+'</b><span>'+status(t)+'</span><small>'+(t===0?'工兵：'+f.units[0][0]+' · 初始人口36；第二基地完成 +18':t===1?'基础战斗：'+f.units.slice(1,4).map(d=>d[0]).join('、'):t===2?'高级战斗：'+f.units.slice(4,7).map(d=>d[0]).join('、'):t===3?'研究：人口扩容、终极协议与阵营科技':t===4?'自动防御地面与空中':'阵营特色设施与专属能力')+'</small></div>';
+ let terminal=abilities.filter(a=>factionMatches(a,pl.f)&&a.tech===3).map(a=>a.name).join('、');
+ let content='<p class="role-summary">工兵 '+own().filter(e=>e.k==='u'&&e.t===0).length+' · 战斗单位 '+own().filter(e=>e.k==='u'&&e.t>0).length+'<br>工兵负责采矿与建设，部分阵营可修理；战斗单位负责作战与支援。</p>'+node(0)+'<div class="tech-branch">↓ 需要展开的主基地'+node(1)+'<div class="tech-branch">├ 高级路线'+node(2)+'<div class="tech-branch">└ 研究路线'+node(3)+'<div class="tech-node '+(!pl.tech.includes(3)?'locked':'')+'"><b>终极研究</b><span>'+(pl.tech.includes(3)?'已完成':'需科技建筑研究')+'</span><small>'+f.units.slice(7).map(d=>d[0]).join('、')+'<br>'+terminal+'</small></div><div class="tech-node"><b>人口扩容研究</b><small>一次性人口上限 +12 · 不占专属科技数量</small></div><div class="tech-node '+(!pl.tech.includes(5)?'locked':'')+'"><b>隐身协议</b><small>需终极研究 → '+(researchById(pl.f,5)?.desc||'解锁本阵营潜行能力')+'</small></div></div>├ 防御路线'+node(4)+'└ 特色路线'+node(5)+'</div></div>';
+ if($('techTree').innerHTML!==content)$('techTree').innerHTML=content;
+}
+function updateRoster(){let box=$('abilityRoster');if(!box||!state)return;let f=state.players[player].f,defs=factions[f],content='<p class="muted">'+defs.tag+'。选择对应单位或建筑使用技能；需终极研究的能力会显示锁定。</p>';for(let a of abilities.filter(a=>factionMatches(a,f))){let name=a.kind==='b'?a.types.map(t=>defs.build[t]).join(' / '):a.types.map(t=>defs.units[t]?.[0]).join(' / ');content+='<div class="roster-item"><b>'+a.name+'</b><small>'+name+(a.tech!=null?' · 需要'+(researchById(f,a.tech)?.name||'研究'):'')+'</small><p>'+a.desc+' · 冷却'+a.cooldown+'秒</p></div>';}content+='<p class="muted">基础机制：'+['步兵医疗、机械维修、反重甲火箭、轻甲压制、坦克架设与雷达反隐。','能源节点加速生产与修复，电弧弹射、巨像穿透与重甲火力。','脱战护盾恢复、魔刃连击、穿透箭与凤凰灼烧。','幼虫孵化、工虫化巢、酸液腐蚀、爆裂自爆与巨兽压制。'][f]+'</p>';if(box.innerHTML!==content)box.innerHTML=content;}
+function drawEffect(g,f){let kind=f.kind||'',radius=f.radius||f.r||0,warning=f.warning||/warning|target|telegraph/i.test(kind),aoe=radius||/blast|storm|scan|shield|sanctuary|frenzy|overclock|summon|teleport|explosion/i.test(kind);if(aoe){radius=radius||45;let color=warning?'#ffd28c':/scan|shield|sanctuary|teleport|storm/i.test(kind)?'#93d9ff':/frenzy|summon/i.test(kind)?'#e99cff':/overclock/i.test(kind)?'#f7d76c':'#ffb17e';g.strokeStyle=color;g.fillStyle=color+(warning?'18':'30');g.lineWidth=warning?2:3;g.beginPath();g.arc(f.x,f.y,radius,0,Math.PI*2);g.fill();g.stroke();if(warning){g.beginPath();g.moveTo(f.x-radius*.3,f.y);g.lineTo(f.x+radius*.3,f.y);g.moveTo(f.x,f.y-radius*.3);g.lineTo(f.x,f.y+radius*.3);g.stroke();}return;}if(Number.isFinite(f.tx)&&Number.isFinite(f.ty)){g.strokeStyle=f.heal?'#b8f795':/beam/i.test(kind)?'#f9dfa1':colors[f.p]||'#fff';g.lineWidth=/beam/i.test(kind)?7:f.heal?1:2;g.beginPath();g.moveTo(f.x,f.y);g.lineTo(f.tx,f.ty);g.stroke();rect(g,f.tx-3,f.ty-3,6,6,'#f3e1b5');}}
+
+$('workers').onclick=()=>{if(!state)return;selected=own().filter(e=>e.k==='u'&&e.t===0).map(e=>e.id);panel();};
+
+$('zoomOut').onclick=()=>camera.setZoom(camera.zoom/1.25);$('zoomIn').onclick=()=>camera.setZoom(camera.zoom*1.25);$('mapOverview').onclick=()=>camera.setZoom(.5);
+
+function soundTone(frequency,duration,type='triangle',volume=.025){if(!soundEnabled||!audioContext)return;try{let oscillator=audioContext.createOscillator(),gain=audioContext.createGain(),time=audioContext.currentTime;oscillator.type=type;oscillator.frequency.setValueAtTime(frequency,time);oscillator.frequency.exponentialRampToValueAtTime(Math.max(35,frequency*.35),time+duration);gain.gain.setValueAtTime(volume,time);gain.gain.exponentialRampToValueAtTime(.0001,time+duration);oscillator.connect(gain);gain.connect(audioContext.destination);oscillator.start(time);oscillator.stop(time+duration);}catch{}}
+function updateSound(){if(!state)return;let active=new Set();for(let effect of state.effects||[]){let key=[effect.kind||'shot',Math.round(effect.x),Math.round(effect.y),Math.round(effect.tx||0),Math.round(effect.ty||0)].join(':');active.add(key);if(!heardEffects.has(key)&&soundEnabled){if(/blast|explosion/i.test(effect.kind||''))soundTone(95,.3,'sawtooth',.025);else if(effect.heal||/shield|sanctuary/i.test(effect.kind||''))soundTone(520,.12,'sine',.012);else soundTone(/beam/i.test(effect.kind||'')?350:190,.045,'triangle',.012);}}heardEffects=active;let count=state.players[player].tech.length;if(count>heardTech)soundTone(840,.25,'sine',.025);heardTech=count;}
+$('soundToggle').onclick=()=>{soundEnabled=!soundEnabled;if(soundEnabled){try{let Context=window.AudioContext||window.webkitAudioContext;if(!Context)throw Error();audioContext=audioContext||new Context();audioContext.resume();soundTone(660,.1,'sine');}catch{soundEnabled=false;toast('当前浏览器无法播放音效，游戏可继续运行。');}}$('soundToggle').textContent='音效 '+(soundEnabled?'开':'关');$('soundToggle').setAttribute('aria-pressed',soundEnabled);};
+
+})();
+</script></body></html>
