@@ -1,0 +1,98 @@
+[
+  {
+    "title": [
+      "对局模式",
+      "Match modes"
+    ],
+    "paragraphs": [
+      [
+        "单人 PVE 可选择简单、普通、困难三档 AI；双人对战由两位玩家各自选择阵营，进行实时 1v1。",
+        "Single-player PVE offers Easy, Normal and Hard AI. In multiplayer, two players choose their own factions and fight a real-time 1v1 match."
+      ]
+    ]
+  },
+  {
+    "title": [
+      "胜负条件",
+      "Victory conditions"
+    ],
+    "paragraphs": [
+      [
+        "普通模式不限时：摧毁对方全部主基地，或让对方投降，即可获胜。仅摧毁其中一座主基地不会结束对局。",
+        "Standard mode has no time limit. Win by destroying every enemy main base or by your opponent surrendering. Destroying just one of two main bases does not end the match."
+      ],
+      [
+        "限时模式最多 10 分钟，也可通过摧毁全部主基地或对方投降提前获胜。第 8 分钟中央晶核激活；只有己方非召唤的战斗单位在范围内，且没有敌方非召唤的战斗单位在场时，连续控制 45 秒即可获胜。控制被打断后，连续计时归零。",
+        "Timed mode lasts at most 10 minutes. Destroying all enemy main bases or an enemy surrender can end it early. The central crystal activates at minute 8. Control it for 45 uninterrupted seconds with your own non-summoned combat units present and no opposing non-summoned combat units in its area to win. An interruption resets the consecutive-control timer."
+      ],
+      [
+        "时间到后按得分判定胜负，同分为平局。主基地基础价值 1000 分，其他建筑 100 分，非召唤单位按晶矿造价计分，均乘以当前生命比例；中央晶核累计控制时间每秒另加 20 分。",
+        "When time expires, the higher score wins; equal scores draw. Each main base is worth 1,000 points, other buildings 100 points, and non-summoned units their crystal cost, all scaled by their remaining HP fraction. Cumulative central-crystal control adds 20 points per second."
+      ]
+    ]
+  },
+  {
+    "title": [
+      "资源与人口",
+      "Resources and supply"
+    ],
+    "paragraphs": [
+      [
+        "开局拥有 4 名工兵和 250 晶矿。工兵往返采集并运回晶矿；地图共有 18 处有限矿区，储量会随开采减少，最终枯竭，需要侦察并转移到其他矿区。",
+        "Start with 4 workers and 250 crystals. Workers mine crystals and carry them back to a main base. The map has 18 finite deposits that shrink and eventually run out. Scout and move to other deposits as needed."
+      ],
+      [
+        "训练单位时立即扣费并预占人口，完成后才出现单位；取消队列末项返还其造价的 75%。初始人口上限 36，第二座主基地完成后增加 18，人口扩容研究再增加 12。每方最多两座主基地，基地被摧毁会降低人口上限；已有部队保留，超额时暂停新增训练。",
+        "Training deducts crystals and reserves supply immediately; the unit appears only when training finishes. Cancelling the last queued item refunds 75% of its cost. The starting supply cap is 36. Completing a second main base adds 18, and Supply Expansion adds another 12. Each player may have up to two main bases. Losing a base reduces the cap; existing troops remain, but new training is blocked when supply is exceeded."
+      ]
+    ]
+  },
+  {
+    "title": [
+      "建造与研究",
+      "Construction and research"
+    ],
+    "paragraphs": [
+      [
+        "先用工兵建造，按科技树完成前置建筑，再训练更高级的部队。科技建筑可以研究公共强化和阵营科技；每局最多选择 3 项阵营专属研究，互斥路线不能同时选择。终极兵种需要完成终极研究；每方终极特种兵最多 2 名，生产队列也计入上限。",
+        "Use workers to build, follow the technology tree prerequisites, then train advanced troops. Research buildings offer shared upgrades and faction technologies. Choose at most 3 faction-specific upgrades per match; mutually exclusive branches cannot be combined. Ultimate units require Ultimate Research. Each player may have at most 2 ultimate specialists, including those in production queues."
+      ],
+      [
+        "主基地可收拢后缓慢移动，期间暂停生产与接收运矿，展开后恢复。选中己方工兵后可选择处死，确认后释放人口，但不返还资源。",
+        "Pack up a main base to move it slowly. Production and crystal deliveries pause until it deploys again. You may execute selected friendly workers after confirming; this frees supply and refunds no resources."
+      ]
+    ]
+  },
+  {
+    "title": [
+      "指挥与自动追击",
+      "Commands and auto pursuit"
+    ],
+    "paragraphs": [
+      [
+        "左键选择单位，拖动框选；右键移动、指定攻击目标或指派工兵采矿。按 A 后左键指定攻击移动的目的地，按 S 停止；方向键或中键拖动移动地图，滚轮缩放，点击小地图跳转。",
+        "Left-click to select a unit or drag to select a group. Right-click to move, focus an enemy, or assign workers to mine. Press A then left-click for attack-move, or S to stop. Pan with the arrow keys or middle-button drag, zoom with the wheel, and click the minimap to jump."
+      ],
+      [
+        "底部自动追击默认开启：战斗单位会追击自身视野内可见且能够攻击的敌人，优先敌方兵种；手动指定的攻击目标和移动命令优先执行。关闭后仍会攻击射程内敌人，但不会自动追过去。工兵、支援兵、已架设或潜伏单位不会自动离位追击。",
+        "Auto pursuit is on by default in the bottom bar. Combat units pursue visible enemies within their own sight that they can attack, preferring enemy units over buildings. Manual attack targets and move orders take priority. When switched off, units still fire at enemies in weapon range but do not automatically chase them. Workers, support units, deployed siege units and burrowed units do not leave position to auto-pursue."
+      ],
+      [
+        "区域技能需先选择目标位置，再点击确认释放，并遵守射程、科技和冷却要求。迷雾中未被发现的敌军不可直接指定，隐身敌军需要反隐或扫描才能被发现。",
+        "For an area ability, choose a target position and then confirm the cast. Range, research and cooldown requirements apply. You cannot directly target undiscovered enemies in the fog of war; cloaked enemies require detection or scanning."
+      ]
+    ]
+  },
+  {
+    "title": [
+      "双人联机",
+      "Multiplayer"
+    ],
+    "paragraphs": [
+      [
+        "一人创建双人房间，另一人打开同一游戏网址，选择自己的阵营并输入房间码加入。双方分别在地图左右两侧独立随机出生，起始晶矿随基地调整。断线时对局暂停，页面会尝试重连；服务器重启后原房间无法继续，需要重新创建。",
+        "One player creates a multiplayer room. The other opens the same game website, chooses a faction and joins using the room code. Players spawn at independently randomized positions on the left and right edges, with their starting deposits placed near their bases. A disconnect pauses the match while the page tries to reconnect. If the server restarts, the room is lost and a new match must be created."
+      ]
+    ]
+  }
+]
