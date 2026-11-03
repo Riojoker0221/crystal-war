@@ -9,3 +9,5 @@
 
 /* Simplify the lobby while retaining battle guidance. */
 .intro{align-items:center;margin-top:55px;margin-bottom:45px}.intro>section:first-child h1{margin:0 0 30px}.tabs{margin-top:0}.factions button{min-height:48px}.setup>.primary{margin-top:24px}label{font-size:13px;letter-spacing:0}footer{justify-content:flex-end}.status:empty{display:none}#help{max-height:85vh;overflow:auto}
+
+.language-setting{display:inline-flex;align-items:center;gap:8px;font-size:12px}.language-setting select{width:auto;min-width:100px;padding:7px}.manual-link{color:#73efcb;padding:12px;text-decoration:none}html[lang=en] .setup button{overflow-wrap:anywhere}html[lang=en] #actions button small{line-height:1.5}

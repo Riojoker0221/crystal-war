@@ -1,0 +1,527 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>晶核战争 · 战地说明书</title><style>body{background:#0b151e;color:#dbe7e8;font:16px/1.8 system-ui;max-width:1100px;margin:auto;padding:30px}a{color:#73efcb}header{position:sticky;top:0;background:#0b151e;padding:12px;z-index:2}select{padding:8px;background:#183039;color:white}.cover{min-height:85vh;text-align:center;display:grid;align-content:center;border:1px solid #38555d;background:radial-gradient(ellipse,#173e43,#0b151e 70%)}h1{font-size:64px;margin:10px;color:#73efcb}.crystal{font-size:120px;color:#73efcb;text-shadow:12px 10px #285667}h2{border-bottom:1px solid #426068;padding-top:25px}article{background:#12242e;border:1px solid #2d4952;padding:20px;margin:15px 0;break-inside:avoid}.unit canvas{float:right;image-rendering:pixelated}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #37515a;padding:7px;text-align:center;font-size:13px}th{color:#73efcb} @media print{header{display:none}body{background:white;color:black}.cover{page-break-after:always}article{background:white}h1{color:#185e53}}</style><header><a href="index.html">← 返回游戏</a> <label>Language <select id="language"><option value="zh">中文</option><option value="en">English</option></select></label></header><section class="cover"><div>CRYSTAL WAR / FIELD MANUAL</div><h1>晶核战争</h1><h2>战地说明书</h2><p>阵营 · 兵种 · 建筑</p><div class="crystal">◆</div><p>36 种兵种 / 24 种建筑 / 4 个阵营</p><p>版本 0.3.1 · 数值来自当前游戏基础数据</p><a href="#contents">打开说明书 ↓</a></section><nav id="contents"><h2>分类目录</h2><a href="#factions">阵营</a> · <a href="#units">兵种</a> · <a href="#buildings">建筑</a> · <a href="#research">研究</a></nav><p>下列数值为基础值；科技、护甲、克制、攻城模式及状态效果会影响实战结果。速度为每秒世界距离，射程为世界距离，攻击间隔和训练时间以秒计。伤害为单次基础伤害；支援单位通过治疗或维修发挥作用。</p><h2 id="factions">阵营</h2><article><h3>人类联邦</h3><p>火力 · 医疗 · 机械化</p><p>火力、治疗与机械维修配合推进。</p></article><article><h3>机械主脑</h3><p>重甲 · 电弧 · 能源网络</p><p>重甲与能源网络协同作战。</p></article><article><h3>星界精灵</h3><p>护盾 · 机动 · 奥术</p><p>护盾、机动与奥术保护。</p></article><article><h3>古老虫群</h3><p>孵化 · 酸液 · 数量压制</p><p>幼虫孵化与数量压制；工虫建造时消耗，建筑完成后补回工虫。</p></article><h2 id="units">兵种</h2><h3>人类联邦</h3><article class="unit"><canvas width="100" height="100" data-f="0" data-t="0"></canvas><h3>工程兵</h3><p>采矿、建设、付费维修机械单位</p><p>前置：指挥中心</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>50</td><td>8</td><td>65</td><td>0</td><td>0</td><td>3</td><td>1.2</td><td>24</td><td>60</td><td>1</td></tr></table><p><b>修理</b>：修理附近友方机械与建筑，每秒消耗2晶矿恢复10生命 · 冷却 0 秒 · 距离 80</p></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="1"></canvas><h3>步枪兵</h3><p>基础远程火力</p><p>前置：步兵兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>70</td><td>10</td><td>85</td><td>0</td><td>0</td><td>9</td><td>0.8</td><td>108</td><td>60</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="2"></canvas><h3>火箭兵</h3><p>反重甲火力</p><p>前置：步兵兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>110</td><td>15</td><td>100</td><td>0</td><td>0</td><td>24</td><td>1.9</td><td>120</td><td>54</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="3"></canvas><h3>医疗兵</h3><p>自动治疗生物友军</p><p>前置：步兵兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>120</td><td>18</td><td>85</td><td>0</td><td>0</td><td>0</td><td>1</td><td>96</td><td>62</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="4"></canvas><h3>突击车</h3><p>快速压制轻甲</p><p>前置：机械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>145</td><td>20</td><td>175</td><td>0</td><td>1</td><td>24</td><td>1.1</td><td>96</td><td>86</td><td>2</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="5"></canvas><h3>攻城坦克</h3><p>架设后提高射程的重炮</p><p>前置：机械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>230</td><td>32</td><td>310</td><td>0</td><td>2</td><td>48</td><td>2.8</td><td>144</td><td>40</td><td>3</td></tr></table><p><b>切换攻城模式</b>：固定在原地，射程192，范围炮击 · 冷却 0 秒</p></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="6"></canvas><h3>战斗机</h3><p>高速空中火力</p><p>前置：机械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>260</td><td>35</td><td>195</td><td>0</td><td>1</td><td>16</td><td>0.9</td><td>108</td><td>92</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="7"></canvas><h3>毁灭机甲</h3><p>终极重型机甲</p><p>前置：机械工厂 · 终极研究</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>390</td><td>50</td><td>540</td><td>0</td><td>3</td><td>40</td><td>1.5</td><td>120</td><td>46</td><td>5</td></tr></table><p><b>聚能轰击</b>：对目标范围造成85伤害 · 冷却 18 秒 · 距离 240 · 半径 75 · 需要 终极单位与专属协议</p></article><article class="unit"><canvas width="100" height="100" data-f="0" data-t="8"></canvas><h3>爆破兵</h3><p>选区爆破；隐匿协议下新兵35%概率隐身</p><p>前置：机械工厂 · 终极研究 · 每方上限2名，包含生产队列</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>280</td><td>38</td><td>115</td><td>0</td><td>1</td><td>5</td><td>1.5</td><td>80</td><td>60</td><td>2</td></tr></table><p><b>定点爆破</b>：确认区域后预警1.5秒，引爆大范围140伤害；隐匿协议使新爆破兵35%获得隐身 · 冷却 40 秒 · 距离 300 · 半径 110 · 需要 终极单位与专属协议</p></article><h3>机械主脑</h3><article class="unit"><canvas width="100" height="100" data-f="1" data-t="0"></canvas><h3>采集机器人</h3><p>采矿、建设、维修</p><p>前置：主脑核心</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>50</td><td>8</td><td>70</td><td>0</td><td>1</td><td>2</td><td>1.2</td><td>24</td><td>58</td><td>1</td></tr></table><p><b>修理</b>：修理附近友方机械与建筑，每秒消耗2晶矿恢复10生命 · 冷却 0 秒 · 距离 80</p></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="1"></canvas><h3>哨卫机器人</h3><p>基础重甲远程单位</p><p>前置：自动装配厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>80</td><td>12</td><td>110</td><td>0</td><td>1</td><td>11</td><td>1.1</td><td>96</td><td>56</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="2"></canvas><h3>电弧机器人</h3><p>电弧弹射攻击</p><p>前置：自动装配厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>110</td><td>16</td><td>90</td><td>0</td><td>0</td><td>8</td><td>0.8</td><td>96</td><td>64</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="3"></canvas><h3>维修无人机</h3><p>自动维修机械友军</p><p>前置：自动装配厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>125</td><td>18</td><td>85</td><td>0</td><td>0</td><td>0</td><td>1</td><td>96</td><td>66</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="4"></canvas><h3>悬浮猎手</h3><p>高速悬浮远程单位，可研究隐身</p><p>前置：重械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>165</td><td>23</td><td>175</td><td>0</td><td>1</td><td>15</td><td>0.9</td><td>108</td><td>84</td><td>2</td></tr></table><p><b>隐匿/显形</b>：悬浮猎手进入隐身，攻击后显形12秒 · 冷却 12 秒 · 需要 隐匿协议</p></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="5"></canvas><h3>重装巨像</h3><p>近距离重甲与穿透火力</p><p>前置：重械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>250</td><td>34</td><td>410</td><td>0</td><td>3</td><td>37</td><td>1.6</td><td>72</td><td>36</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="6"></canvas><h3>轨道炮台机</h3><p>远距离反重甲炮击</p><p>前置：重械工厂</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>285</td><td>39</td><td>210</td><td>0</td><td>1</td><td>75</td><td>3.2</td><td>168</td><td>36</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="7"></canvas><h3>主脑歼灭者</h3><p>终极毁灭光束与超频</p><p>前置：重械工厂 · 终极研究</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>420</td><td>52</td><td>630</td><td>0</td><td>3</td><td>68</td><td>2.3</td><td>132</td><td>44</td><td>5</td></tr></table><p><b>毁灭光束</b>：对前方直线敌军造成100伤害 · 冷却 22 秒 · 距离 260 · 半径 28 · 需要 终极单位与专属协议</p><p><b>主脑超频</b>：附近友军攻击与移动速度 +25%，持续10秒 · 冷却 35 秒 · 半径 150 · 需要 终极单位与专属协议</p></article><article class="unit"><canvas width="100" height="100" data-f="1" data-t="8"></canvas><h3>电磁裁决者</h3><p>范围电磁干扰、封锁技能与防御塔</p><p>前置：重械工厂 · 终极研究 · 每方上限2名，包含生产队列</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>320</td><td>42</td><td>150</td><td>0</td><td>1</td><td>7</td><td>1.5</td><td>100</td><td>50</td><td>3</td></tr></table><p><b>电磁封锁</b>：预警1秒后造成60范围伤害；敌军攻速降低35%、主动技能与防御塔停用6秒 · 冷却 45 秒 · 距离 300 · 半径 120 · 需要 终极单位与专属协议</p></article><h3>星界精灵</h3><article class="unit"><canvas width="100" height="100" data-f="2" data-t="0"></canvas><h3>晶灵</h3><p>采矿、建设</p><p>前置：星界主殿</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>50</td><td>8</td><td>55</td><td>25</td><td>0</td><td>2</td><td>1.2</td><td>24</td><td>62</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="1"></canvas><h3>星弓手</h3><p>远程弓箭火力</p><p>前置：月华兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>85</td><td>12</td><td>65</td><td>40</td><td>0</td><td>12</td><td>1</td><td>120</td><td>64</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="2"></canvas><h3>魔刃使</h3><p>高速近战连击</p><p>前置：月华兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>110</td><td>16</td><td>100</td><td>45</td><td>1</td><td>17</td><td>0.9</td><td>24</td><td>76</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="3"></canvas><h3>影刃刺客</h3><p>隐身近战与破隐攻击</p><p>前置：月华兵营</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>150</td><td>21</td><td>85</td><td>55</td><td>0</td><td>25</td><td>1.3</td><td>24</td><td>90</td><td>2</td></tr></table><p><b>隐匿/显形</b>：影刃刺客进入隐身，攻击后显形12秒 · 冷却 12 秒</p></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="4"></canvas><h3>星界法师</h3><p>冰霜范围伤害与减速</p><p>前置：星辉祭坛</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>175</td><td>24</td><td>80</td><td>80</td><td>0</td><td>30</td><td>2.4</td><td>120</td><td>54</td><td>2</td></tr></table><p><b>冰霜风暴</b>：3秒内造成60伤害并使敌军减速25% · 冷却 16 秒 · 距离 230 · 半径 65</p></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="5"></canvas><h3>元素守卫</h3><p>重甲近战保护</p><p>前置：星辉祭坛</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>240</td><td>34</td><td>240</td><td>110</td><td>2</td><td>30</td><td>1.7</td><td>36</td><td>48</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="6"></canvas><h3>虚空射手</h3><p>长射程穿透攻击</p><p>前置：星辉祭坛</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>255</td><td>36</td><td>120</td><td>85</td><td>0</td><td>36</td><td>2.5</td><td>168</td><td>60</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="7"></canvas><h3>星界凤凰</h3><p>空中火力与持续灼烧</p><p>前置：星辉祭坛 · 终极研究</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>400</td><td>50</td><td>300</td><td>220</td><td>1</td><td>34</td><td>1.7</td><td>96</td><td>88</td><td>5</td></tr></table><p><b>星界庇护</b>：附近友军恢复80护盾，移动速度 +20%，持续8秒 · 冷却 35 秒 · 半径 150 · 需要 终极单位与专属协议</p></article><article class="unit"><canvas width="100" height="100" data-f="2" data-t="8"></canvas><h3>星界织命者</h3><p>结界临时护盾、移速与远程减伤</p><p>前置：星辉祭坛 · 终极研究 · 每方上限2名，包含生产队列</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>300</td><td>42</td><td>100</td><td>70</td><td>0</td><td>6</td><td>1.4</td><td>110</td><td>60</td><td>3</td></tr></table><p><b>星界结界</b>：结界持续8秒，友军单位获得一次80临时护盾；区域内移速+20%、远程伤害降低25%，护盾随结界消失 · 冷却 45 秒 · 距离 300 · 半径 130 · 需要 终极单位与专属协议</p></article><h3>古老虫群</h3><article class="unit"><canvas width="100" height="100" data-f="3" data-t="0"></canvas><h3>工虫</h3><p>采矿、建设；建造时化为虫巢</p><p>前置：原初母巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>45</td><td>7</td><td>55</td><td>0</td><td>0</td><td>3</td><td>1.1</td><td>24</td><td>62</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="1"></canvas><h3>裂爪虫</h3><p>低成本快速近战</p><p>前置：基础孵化巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>45</td><td>6</td><td>55</td><td>0</td><td>0</td><td>7</td><td>0.6</td><td>24</td><td>80</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="2"></canvas><h3>喷酸虫</h3><p>远程酸液腐蚀护甲</p><p>前置：基础孵化巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>85</td><td>11</td><td>75</td><td>0</td><td>0</td><td>13</td><td>1.4</td><td>96</td><td>56</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="3"></canvas><h3>飞翼虫</h3><p>快速飞行火力</p><p>前置：基础孵化巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>110</td><td>16</td><td>95</td><td>0</td><td>0</td><td>9</td><td>0.7</td><td>72</td><td>86</td><td>1</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="4"></canvas><h3>掘地猎虫</h3><p>潜伏与破土攻击</p><p>前置：生物变异巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>145</td><td>20</td><td>165</td><td>0</td><td>1</td><td>23</td><td>1.1</td><td>24</td><td>72</td><td>2</td></tr></table><p><b>潜伏/破土</b>：潜伏时不能移动且隐身，破土首次攻击伤害 +50% · 冷却 0 秒</p></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="5"></canvas><h3>爆裂虫</h3><p>自爆范围伤害</p><p>前置：生物变异巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>120</td><td>16</td><td>65</td><td>0</td><td>0</td><td>75</td><td>1</td><td>24</td><td>68</td><td>1</td></tr></table><p><b>自爆</b>：对周围敌军造成75伤害，爆裂虫死亡 · 冷却 0 秒 · 半径 55</p></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="6"></canvas><h3>装甲巨兽</h3><p>重甲近战与减速</p><p>前置：生物变异巢</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>260</td><td>35</td><td>390</td><td>0</td><td>3</td><td>34</td><td>1.4</td><td>36</td><td>44</td><td>3</td></tr></table></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="7"></canvas><h3>原初虫王</h3><p>召唤临时虫群</p><p>前置：生物变异巢 · 终极研究</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>390</td><td>48</td><td>520</td><td>0</td><td>2</td><td>42</td><td>1.6</td><td>84</td><td>50</td><td>5</td></tr></table><p><b>召唤裂爪虫</b>：召唤2只裂爪虫，持续12秒，不占人口且不计分 · 冷却 25 秒 · 需要 终极单位与专属协议</p><p><b>原初狂潮</b>：附近虫群攻击速度 +25%，持续12秒 · 冷却 35 秒 · 半径 150 · 需要 终极单位与专属协议</p></article><article class="unit"><canvas width="100" height="100" data-f="3" data-t="8"></canvas><h3>寄生主宰</h3><p>持续菌雾、减速与寄生孵化</p><p>前置：生物变异巢 · 终极研究 · 每方上限2名，包含生产队列</p><table><tr><th>晶矿</th><th>训练时间</th><th>生命</th><th>护盾</th><th>护甲</th><th>伤害</th><th>攻击间隔</th><th>射程</th><th>速度</th><th>人口</th></tr><tr><td>320</td><td>42</td><td>170</td><td>0</td><td>1</td><td>8</td><td>1.4</td><td>95</td><td>54</td><td>3</td></tr></table><p><b>寄生孵化</b>：预警0.75秒后菌雾持续8秒，每秒8伤害并减速25%；感染战斗单位死亡孵化15秒寄生虫，每次最多6只 · 冷却 45 秒 · 距离 300 · 半径 120 · 需要 终极单位与专属协议</p></article><h2 id="buildings">建筑</h2><h3>人类联邦</h3><article><h3>指挥中心</h3><p>训练工兵、接收运矿；最多两座，第二座完成增加18人口；收拢后以14速度移动，暂停生产与接收资源</p><p>前置：无 · 晶矿 340 · 建造时间 42 秒 · 生命 1600 · 护盾 0 · 护甲 2</p></article><article><h3>步兵兵营</h3><p>训练基础兵种</p><p>前置：指挥中心 · 晶矿 140 · 建造时间 18 秒 · 生命 750 · 护盾 0 · 护甲 2</p></article><article><h3>机械工厂</h3><p>训练高级兵种与终极兵种；终极兵种需要终极研究</p><p>前置：步兵兵营 · 晶矿 205 · 建造时间 27 秒 · 生命 850 · 护盾 0 · 护甲 2</p></article><article><h3>军事研究院</h3><p>研究公共与阵营科技；最多选择3项阵营专属研究，互斥路线不能同时选择</p><p>前置：机械工厂 · 晶矿 220 · 建造时间 30 秒 · 生命 650 · 护盾 0 · 护甲 2</p></article><article><h3>自动炮塔</h3><p>自动攻击敌军</p><p>前置：步兵兵营 · 晶矿 100 · 建造时间 16 秒 · 生命 480 · 护盾 0 · 护甲 2 · 伤害 16 · 攻击间隔 1 秒 · 射程 145</p></article><article><h3>雷达站</h3><p>阵营特色设施：扫描反隐</p><p>前置：步兵兵营 · 晶矿 110 · 建造时间 18 秒 · 生命 500 · 护盾 0 · 护甲 2</p><p>雷达扫描：揭示目标范围及隐身敌人8秒 · 冷却 30 秒</p></article><h3>机械主脑</h3><article><h3>主脑核心</h3><p>训练工兵、接收运矿；最多两座，第二座完成增加18人口；收拢后以14速度移动，暂停生产与接收资源</p><p>前置：无 · 晶矿 360 · 建造时间 45 秒 · 生命 1700 · 护盾 0 · 护甲 2</p></article><article><h3>自动装配厂</h3><p>训练基础兵种</p><p>前置：主脑核心 · 晶矿 145 · 建造时间 19 秒 · 生命 800 · 护盾 0 · 护甲 2</p></article><article><h3>重械工厂</h3><p>训练高级兵种与终极兵种；终极兵种需要终极研究</p><p>前置：自动装配厂 · 晶矿 210 · 建造时间 29 秒 · 生命 900 · 护盾 0 · 护甲 2</p></article><article><h3>主脑实验室</h3><p>研究公共与阵营科技；最多选择3项阵营专属研究，互斥路线不能同时选择</p><p>前置：重械工厂 · 晶矿 230 · 建造时间 32 秒 · 生命 700 · 护盾 0 · 护甲 2</p></article><article><h3>激光防御塔</h3><p>自动攻击敌军</p><p>前置：自动装配厂 · 晶矿 115 · 建造时间 17 秒 · 生命 520 · 护盾 0 · 护甲 2 · 伤害 16 · 攻击间隔 1 秒 · 射程 145</p></article><article><h3>能源节点</h3><p>阵营特色设施：加速附近生产与修复</p><p>前置：自动装配厂 · 晶矿 90 · 建造时间 14 秒 · 生命 550 · 护盾 0 · 护甲 2</p></article><h3>星界精灵</h3><article><h3>星界主殿</h3><p>训练工兵、接收运矿；最多两座，第二座完成增加18人口；收拢后以14速度移动，暂停生产与接收资源</p><p>前置：无 · 晶矿 350 · 建造时间 42 秒 · 生命 1300 · 护盾 350 · 护甲 2</p></article><article><h3>月华兵营</h3><p>训练基础兵种</p><p>前置：星界主殿 · 晶矿 145 · 建造时间 18 秒 · 生命 600 · 护盾 150 · 护甲 2</p></article><article><h3>星辉祭坛</h3><p>训练高级兵种与终极兵种；终极兵种需要终极研究</p><p>前置：月华兵营 · 晶矿 205 · 建造时间 28 秒 · 生命 700 · 护盾 180 · 护甲 2</p></article><article><h3>奥术圣殿</h3><p>研究公共与阵营科技；最多选择3项阵营专属研究，互斥路线不能同时选择</p><p>前置：星辉祭坛 · 晶矿 235 · 建造时间 32 秒 · 生命 550 · 护盾 150 · 护甲 2</p></article><article><h3>星晶防御塔</h3><p>自动攻击敌军</p><p>前置：月华兵营 · 晶矿 110 · 建造时间 17 秒 · 生命 390 · 护盾 120 · 护甲 2 · 伤害 16 · 攻击间隔 1 秒 · 射程 145</p></article><article><h3>传送方尖碑</h3><p>阵营特色设施：引导传送友军</p><p>前置：月华兵营 · 晶矿 120 · 建造时间 20 秒 · 生命 450 · 护盾 100 · 护甲 2</p><p>方尖碑传送：选择另一座己方方尖碑，2秒后传送附近最多8人口地面部队 · 冷却 40 秒</p></article><h3>古老虫群</h3><article><h3>原初母巢</h3><p>训练工兵、接收运矿；最多两座，第二座完成增加18人口；收拢后以14速度移动，暂停生产与接收资源</p><p>前置：无 · 晶矿 325 · 建造时间 40 秒 · 生命 1450 · 护盾 0 · 护甲 2</p></article><article><h3>基础孵化巢</h3><p>训练基础兵种</p><p>前置：原初母巢 · 晶矿 135 · 建造时间 18 秒 · 生命 700 · 护盾 0 · 护甲 2</p></article><article><h3>生物变异巢</h3><p>训练高级兵种与终极兵种；终极兵种需要终极研究</p><p>前置：基础孵化巢 · 晶矿 200 · 建造时间 27 秒 · 生命 800 · 护盾 0 · 护甲 2</p></article><article><h3>原初进化池</h3><p>研究公共与阵营科技；最多选择3项阵营专属研究，互斥路线不能同时选择</p><p>前置：生物变异巢 · 晶矿 225 · 建造时间 31 秒 · 生命 650 · 护盾 0 · 护甲 2</p></article><article><h3>棘刺防御巢</h3><p>自动攻击敌军</p><p>前置：基础孵化巢 · 晶矿 95 · 建造时间 16 秒 · 生命 500 · 护盾 0 · 护甲 2 · 伤害 16 · 攻击间隔 1 秒 · 射程 145</p></article><article><h3>育虫池</h3><p>阵营特色设施：生成幼虫</p><p>前置：基础孵化巢 · 晶矿 105 · 建造时间 17 秒 · 生命 500 · 护盾 0 · 护甲 2</p></article><h2 id="research">研究</h2><h3>人类联邦</h3><p><b>武器强化</b> · 晶矿 130 · 22 秒：全军伤害 +15%</p><p><b>防护强化</b> · 晶矿 140 · 24 秒：全军护甲 +1</p><p><b>高效采集</b> · 晶矿 150 · 25 秒：每次采集 +3 晶矿</p><p><b>终极单位与专属协议</b> · 晶矿 260 · 36 秒：解锁终极单位及阵营终极技能</p><p><b>人口扩展</b> · 晶矿 180 · 30 秒：永久人口上限 +12</p><p><b>隐匿协议</b> · 晶矿 200 · 30 秒：新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15% · 前置 终极单位与专属协议</p><p><b>强化弹药</b> · 晶矿 115 · 20 秒：步枪兵伤害 +15% · 互斥 快速装填</p><p><b>战地医疗</b> · 晶矿 135 · 24 秒：医疗兵治疗效率 +25%</p><p><b>火炮增程</b> · 晶矿 185 · 32 秒：坦克攻城模式射程 +36</p><p><b>快速装填</b> · 晶矿 160 · 28 秒：步枪兵攻速 +12% · 互斥 强化弹药</p><h3>机械主脑</h3><p><b>武器强化</b> · 晶矿 130 · 22 秒：全军伤害 +15%</p><p><b>防护强化</b> · 晶矿 140 · 24 秒：全军护甲 +1</p><p><b>高效采集</b> · 晶矿 150 · 25 秒：每次采集 +3 晶矿</p><p><b>终极单位与专属协议</b> · 晶矿 260 · 36 秒：解锁终极单位及阵营终极技能</p><p><b>人口扩展</b> · 晶矿 180 · 30 秒：永久人口上限 +12</p><p><b>隐匿协议</b> · 晶矿 200 · 30 秒：新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15% · 前置 终极单位与专属协议</p><p><b>激光聚焦</b> · 晶矿 130 · 22 秒：哨卫与悬浮猎手伤害 +12% · 互斥 自我修复</p><p><b>能源循环</b> · 晶矿 140 · 25 秒：能源节点范围 +72</p><p><b>电磁穿甲</b> · 晶矿 195 · 32 秒：轨道炮对重甲伤害 +25%</p><p><b>自我修复</b> · 晶矿 175 · 29 秒：机械单位脱战后每秒恢复2生命 · 互斥 激光聚焦</p><h3>星界精灵</h3><p><b>武器强化</b> · 晶矿 130 · 22 秒：全军伤害 +15%</p><p><b>防护强化</b> · 晶矿 140 · 24 秒：全军护甲 +1</p><p><b>高效采集</b> · 晶矿 150 · 25 秒：每次采集 +3 晶矿</p><p><b>终极单位与专属协议</b> · 晶矿 260 · 36 秒：解锁终极单位及阵营终极技能</p><p><b>人口扩展</b> · 晶矿 180 · 30 秒：永久人口上限 +12</p><p><b>隐匿协议</b> · 晶矿 200 · 30 秒：新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15% · 前置 终极单位与专属协议</p><p><b>护盾强化</b> · 晶矿 145 · 22 秒：护盾恢复速度 +40% · 互斥 奥术穿透</p><p><b>奥术穿透</b> · 晶矿 165 · 28 秒：远程武器忽略1护甲 · 互斥 护盾强化</p><p><b>星界折跃</b> · 晶矿 135 · 24 秒：方尖碑传送冷却减为30秒</p><p><b>魔法共鸣</b> · 晶矿 185 · 32 秒：冰霜风暴伤害 +20%</p><h3>古老虫群</h3><p><b>武器强化</b> · 晶矿 130 · 22 秒：全军伤害 +15%</p><p><b>防护强化</b> · 晶矿 140 · 24 秒：全军护甲 +1</p><p><b>高效采集</b> · 晶矿 150 · 25 秒：每次采集 +3 晶矿</p><p><b>终极单位与专属协议</b> · 晶矿 260 · 36 秒：解锁终极单位及阵营终极技能</p><p><b>人口扩展</b> · 晶矿 180 · 30 秒：永久人口上限 +12</p><p><b>隐匿协议</b> · 晶矿 200 · 30 秒：新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15% · 前置 终极单位与专属协议</p><p><b>利爪进化</b> · 晶矿 110 · 20 秒：裂爪虫伤害 +15% · 互斥 甲壳强化</p><p><b>甲壳强化</b> · 晶矿 145 · 24 秒：虫群单位护甲 +1 · 互斥 利爪进化</p><p><b>毒液变异</b> · 晶矿 165 · 28 秒：喷酸虫伤害 +20%</p><p><b>繁殖进化</b> · 晶矿 175 · 30 秒：幼虫产生速度 +20%</p><script>(()=>{function unitPainter(g,e){
+ const x=Math.round(e.x),y=Math.round(e.y);
+ const box=(dx,dy,w,h,color)=>{g.fillStyle=color;g.fillRect(x+Math.round(dx),y+Math.round(dy),Math.round(w),Math.round(h));};
+ const poly=(points,color)=>{g.fillStyle=color;g.beginPath();points.forEach(([dx,dy],i)=>i?g.lineTo(x+Math.round(dx),y+Math.round(dy)):g.moveTo(x+Math.round(dx),y+Math.round(dy)));g.closePath();g.fill();};
+ const line=(x0,y0,x1,y1,color,width=2)=>{
+  x0=Math.round(x0);y0=Math.round(y0);x1=Math.round(x1);y1=Math.round(y1);
+  const dx=Math.abs(x1-x0),sx=x0<x1?1:-1,dy=-Math.abs(y1-y0),sy=y0<y1?1:-1;let err=dx+dy;
+  for(;;){box(x0-Math.floor(width/2),y0-Math.floor(width/2),width,width,color);if(x0===x1&&y0===y1)break;const step=2*err;if(step>=dy){err+=dy;x0+=sx;}if(step<=dx){err+=dx;y0+=sy;}}
+ };
+ const gem=(dx,dy,rx,ry,color)=>poly([[dx,dy-ry],[dx+rx,dy],[dx,dy+ry],[dx-rx,dy]],color);
+ return {box,poly,line,gem,ink:'#08151e',steel:'#9ab3bf',white:'#dcecf0'};
+}
+
+// Pixel silhouettes share the battlefield palette, with amber reserved for work gear.
+function drawWorker(g,e,{f,color,time=0}){
+ const x=Math.round(e.x),y=Math.round(e.y),ink='#09161e',amber='#f4c568',light='#ffe6a0';
+ const box=(dx,dy,w,h,c)=>{g.fillStyle=c;g.fillRect(x+dx,y+dy,w,h);};
+ const poly=(points,c)=>{g.fillStyle=c;g.beginPath();points.forEach(([dx,dy],i)=>i?g.lineTo(x+dx,y+dy):g.moveTo(x+dx,y+dy));g.closePath();g.fill();};
+ const ore=(dx,dy)=>{poly([[dx,dy-6],[dx+4,dy],[dx,dy+6],[dx-4,dy]],'#8df1d2');box(dx-1,dy-4,2,5,'#d6fff0');};
+ const working=e.order?.type==='mine'&&!e.carry;
+ const swing=working?Math.round(Math.sin(time*8+(e.id||0))*2):0;
+ if(f===0){
+  // Engineer: hard hat, large tool pack, safety vest and an angled mining pick.
+  box(-7,4,5,8,ink);box(2,4,5,8,ink);box(-10,-5,19,12,ink);
+  box(-11,-7,5,13,'#87623c');box(-10,-6,3,5,amber);
+  box(-6,-4,13,10,color);box(-5,-3,3,9,amber);box(2,-3,3,9,amber);box(-5,1,10,2,light);
+  box(-5,-11,10,7,'#a7b6bd');box(-3,-8,7,3,'#173744');
+  box(-7,-13,14,4,ink);box(-5,-15,10,4,amber);box(-7,-11,15,3,amber);box(-1,-15,2,4,light);
+  box(7,-2,4,4,'#bdc9c5');
+  poly([[10,6],[12,7],[18+swing,-6],[16+swing,-7]],'#9e7960');
+  poly([[12+swing,-8],[18+swing,-8],[22+swing,-3],[18+swing,-4],[16+swing,-5],[12+swing,-5]],'#d4e4df');
+  if(e.carry)ore(-10,-10);
+ }else if(f===1){
+  // Collector: low twin treads, square ore hopper, sensor mast and drill arm.
+  box(-13,-2,7,15,ink);box(6,-2,7,15,ink);
+  for(let i=0;i<3;i++){box(-12,i*4,5,2,'#657982');box(7,i*4,5,2,'#657982');}
+  box(-8,-8,16,19,'#405966');box(-6,-6,12,12,color);
+  box(-6,-5,12,3,amber);box(-5,1,10,7,'#192e39');box(-4,6,8,2,amber);
+  box(-4,-13,8,6,ink);box(-3,-12,6,3,'#dafbf0');box(-1,-16,2,4,'#9bb2b8');
+  box(8,-1,6,4,'#aabec5');poly([[13,-4+swing],[20,1+swing],[13,5+swing]],amber);box(14,-1+swing,3,2,light);
+  if(e.carry)ore(0,1);
+ }else if(f===2){
+  // Crystal worker: crescent cradle and orbiting crystal arms, without a humanoid body.
+  poly([[-13,-5],[-8,-10],[-7,6],[0,12],[-8,9],[-14,1]],'#4f7690');
+  poly([[13,-5],[8,-10],[7,6],[0,12],[8,9],[14,1]],'#4f7690');
+  poly([[-8,-8],[-5,-6],[-4,5],[0,8],[-5,7],[-9,0]],color);
+  poly([[8,-8],[5,-6],[4,5],[0,8],[5,7],[9,0]],color);
+  poly([[0,-13],[5,-4],[0,5],[-5,-4]],light);box(-1,-10,2,7,'#fff3d2');
+  for(const side of [-1,1]){const dy=swing*side;poly([[side*17,-5+dy],[side*20,-1+dy],[side*17,3+dy],[side*14,-1+dy]],color);box(side*17-1,-2+dy,2,3,light);}
+  box(-3,9,6,2,amber);
+  if(e.carry)ore(0,-2);
+ }else{
+  // Worker drone: broad segmented harvesting abdomen and blunt digging claws.
+  for(const side of [-1,1])for(let i=0;i<3;i++){
+   box(side<0?-13:9,-3+i*5,4,3,'#a79774');
+   box(side<0?-15:12,-1+i*5,3,4,'#706171');
+  }
+  poly([[-8,-4],[8,-4],[11,3],[8,11],[-8,11],[-11,3]],ink);
+  poly([[-7,-3],[7,-3],[9,3],[6,9],[-6,9],[-9,3]],'#9b7856');
+  box(-6,-1,12,3,amber);box(-7,4,14,2,'#6b5362');box(-5,7,10,2,amber);
+  poly([[0,-12],[7,-8],[6,-3],[-6,-3],[-7,-8]],color);
+  box(-4,-8,2,2,'#f7f1c6');box(2,-8,2,2,'#f7f1c6');
+  poly([[-5,-10],[-9,-14-swing],[-10,-9],[-6,-6]],'#d9c58a');
+  poly([[5,-10],[9,-14+swing],[10,-9],[6,-6]],'#d9c58a');
+  if(e.carry)ore(0,1);
+ }
+ // A small pick symbol below the feet identifies every worker, even when idle.
+ box(-6,15,13,10,ink);box(-5,18,3,2,amber);box(-3,17,5,2,light);box(2,18,3,2,amber);box(-1,19,2,2,amber);box(-2,21,2,2,amber);box(-3,23,2,1,amber);
+}
+
+
+function drawHuman(g,e,{color,time=0}){
+ const {box,poly,line,ink,steel,white}=unitPainter(g,e),c=color;
+ const dark='#213744',plate='#526b78',skin='#b9c3bb',orange='#e9a16b',gold='#f0cc82';
+ const moving=['move','attackmove','attack'].includes(e.order?.type),step=moving?Math.round(Math.sin(time*10+(e.id||0))):0;
+ if(e.t===1){
+  // Rifleman: visible boots, compact combat helmet and a long shoulder rifle.
+  box(-7,5,6,9+step,ink);box(2,5,6,9-step,ink);box(-6,10+step,5,3,plate);box(3,10-step,5,3,plate);
+  box(-9,-5,18,13,ink);box(-7,-4,14,10,c);box(-8,-5,5,5,plate);box(5,-5,5,5,plate);
+  box(-3,-2,6,8,dark);box(-2,-1,2,6,steel);box(-6,4,3,3,'#a6b9a4');
+  box(-6,-12,12,9,ink);box(-5,-13,10,5,plate);box(-5,-9,10,3,skin);box(-4,-9,8,2,'#b4ede8');
+  box(-10,0,4,6,skin);box(7,-1,4,6,skin);
+  box(9,-16,5,22,ink);box(10,-14,3,12,steel);box(10,-3,4,7,plate);box(9,-18,4,3,ink);box(11,-14,1,4,white);
+ }else if(e.t===2){
+  // Rocket soldier: oversized shoulder launcher and an exposed orange warhead.
+  box(-6,5,6,9+step,ink);box(3,5,6,9-step,ink);box(-6,11+step,6,3,plate);box(3,11-step,6,3,plate);
+  box(-8,-5,17,13,ink);box(-5,-4,12,10,c);box(-4,1,10,3,dark);box(4,3,4,4,steel);
+  box(-3,-12,11,9,ink);box(-2,-13,9,4,plate);box(-1,-9,7,3,skin);box(1,-9,6,2,'#c6ece6');
+  box(-12,-14,8,23,ink);box(-11,-12,6,18,plate);box(-11,-8,6,3,c);box(-11,2,6,3,c);
+  poly([[-12,-14],[-8,-20],[-4,-14]],orange);box(-10,-14,4,3,gold);box(-10,6,5,4,'#344c59');
+  box(-3,-1,4,4,skin);box(7,0,4,6,skin);box(10,3,3,6,dark);
+ }else if(e.t===3){
+  // Medic: white trauma armour, twin medical cases and a readable red cross.
+  box(-6,5,5,9+step,ink);box(2,5,5,9-step,ink);box(-6,11+step,5,3,steel);box(2,11-step,5,3,steel);
+  box(-9,-5,18,13,ink);box(-7,-4,14,10,white);box(-7,-4,3,10,c);box(4,-4,3,10,c);
+  box(-2,-2,4,7,'#e58481');box(-4,0,8,3,'#e58481');
+  box(-6,-13,12,9,ink);box(-5,-14,10,5,white);box(-6,-10,12,2,c);box(-3,-8,7,3,'#a2c4c8');
+  box(-13,-1,5,10,ink);box(-12,0,4,7,white);box(-11,2,2,3,'#e58481');
+  box(8,-2,6,11,ink);box(9,-1,4,8,white);box(10,1,2,4,'#e58481');box(9,2,4,2,'#e58481');
+ }else if(e.t===4){
+  // Fast assault buggy: four exposed tyres, roll cage and an offset machine gun.
+  for(const side of [-1,1])for(const y of [-8,9]){box(side<0?-17:11,y,7,10,ink);box(side<0?-16:12,y+1,5,2,plate);box(side<0?-16:12,y+6,5,2,plate);}
+  poly([[-9,-15],[9,-15],[13,14],[8,19],[-8,19],[-13,14]],ink);
+  poly([[-7,-13],[7,-13],[11,12],[7,16],[-7,16],[-11,12]],c);
+  box(-7,-7,14,17,dark);box(-5,-5,10,10,'#102531');box(-4,-4,8,4,'#94c8ce');
+  box(-8,-8,3,19,steel);box(5,-8,3,19,steel);box(-7,-9,14,3,steel);box(-7,8,14,3,steel);
+  box(-8,12,16,3,plate);box(-7,-12,4,2,gold);box(3,-12,4,2,gold);
+  box(8,-15,5,17,ink);box(9,-14,3,11,steel);box(7,-3,7,5,plate);box(10,-18,2,5,ink);
+ }else if(e.t===5){
+  // Tank: continuous tracks, broad glacis, rotating turret and a long main gun.
+  box(-18,-14,9,32,ink);box(9,-14,9,32,ink);
+  for(let i=0;i<7;i++){box(-17,-12+i*4,7,2,plate);box(10,-12+i*4,7,2,plate);}
+  poly([[-11,-16],[11,-16],[13,16],[-13,16]],ink);poly([[-9,-14],[9,-14],[11,13],[-11,13]],c);
+  box(-8,9,16,4,plate);box(-9,-12,4,3,white);box(5,-12,4,3,white);
+  box(-8,-8,16,19,ink);box(-6,-7,12,15,plate);box(-5,-5,10,4,c);box(-3,2,6,4,dark);
+  const extension=e.siege?6:0;
+  box(-3,-25-extension,6,23+extension,ink);box(-2,-23-extension,4,20+extension,steel);box(-4,-27-extension,8,5,ink);box(-3,-26-extension,6,2,plate);
+  if(e.siege){for(const side of [-1,1]){box(side<0?-25:15,9,10,4,steel);box(side<0?-26:21,12,6,5,ink);box(side<0?-25:22,12,4,3,gold);}}
+ }else if(e.t===6){
+  // Fighter: pointed nose, swept delta wings and two distinct engine nacelles.
+  poly([[0,-26],[6,-8],[21,8],[20,14],[7,10],[5,21],[-5,21],[-7,10],[-20,14],[-21,8],[-6,-8]],ink);
+  poly([[0,-23],[4,-7],[17,8],[17,11],[5,7],[3,18],[-3,18],[-5,7],[-17,11],[-17,8],[-4,-7]],plate);
+  poly([[-5,-5],[-16,8],[-7,6],[-2,0]],c);poly([[5,-5],[16,8],[7,6],[2,0]],c);
+  poly([[0,-15],[3,-7],[2,-2],[-2,-2],[-3,-7]],'#b5e6e3');box(-1,-18,2,5,white);
+  for(const side of [-1,1]){box(side<0?-10:5,7,5,12,ink);box(side<0?-9:6,8,3,8,steel);box(side<0?-9:6,17,3,4+(Math.floor(time*8)%2),orange);}
+  box(-2,5,4,12,c);box(-14,8,3,4,steel);box(11,8,3,4,steel);
+ }else if(e.t===7){
+  // Heavy mech: huge shoulder blocks, arm cannons and separate armoured legs.
+  box(-13,8,11,15+step,ink);box(3,8,11,15-step,ink);box(-14,18+step,12,6,plate);box(3,18-step,12,6,plate);
+  box(-12,7,10,9,c);box(3,7,10,9,c);box(-10,10,6,4,steel);box(5,10,6,4,steel);
+  poly([[-13,-15],[13,-15],[15,7],[9,13],[-9,13],[-15,7]],ink);
+  poly([[-10,-13],[10,-13],[12,6],[7,10],[-7,10],[-12,6]],plate);
+  box(-10,-12,20,7,c);box(-8,-3,16,9,dark);box(-3,-2,6,8,c);box(-1,-1,2,6,white);
+  box(-7,-22,14,9,ink);box(-5,-21,10,7,plate);box(-4,-19,8,3,gold);box(-8,-24,3,5,steel);
+  for(const side of [-1,1]){
+   box(side<0?-23:12,-15,12,13,ink);box(side<0?-21:13,-13,9,8,c);box(side<0?-22:14,-13,7,2,steel);
+   box(side<0?-22:15,-2,8,17,ink);box(side<0?-21:16,0,6,11,plate);box(side<0?-22:15,11,8,5,steel);
+   box(side<0?-20:17,13,4,3,ink);
+  }
+ }else if(e.t===8){
+  // Demolition soldier: human legs and respirator, orange charge pack, hand trigger.
+  box(-6,5,5,9+step,ink);box(2,5,5,9-step,ink);box(-6,11+step,5,3,plate);box(2,11-step,5,3,plate);
+  box(-11,-7,8,17,ink);box(-10,-6,6,14,orange);box(-9,-5,2,12,gold);box(-10,0,6,3,'#815b44');
+  box(-6,-4,14,12,ink);box(-4,-3,10,10,c);box(-4,2,10,3,orange);box(0,2,2,3,gold);
+  box(-5,-13,11,9,ink);box(-4,-14,9,5,dark);box(-3,-10,8,4,skin);box(-3,-9,7,2,'#293b45');box(3,-8,3,3,steel);
+  box(6,-1,4,6,skin);box(9,0,6,8,ink);box(10,1,4,5,orange);box(11,2,2,2,'#f6d997');box(11,-3,2,4,steel);
+  line(-7,-5,-7,-9,ink,1);line(-7,-9,1,-9,ink,1);box(-10,7,6,2,white);
+ }
+}
+
+function drawMachine(g,e,{color:c,time=0}){
+ const {box,poly,line,gem,ink,steel,white}=unitPainter(g,e),dark='#263c4e',plate='#54717e',energy='#96dfff';
+ const pulse=Math.round(Math.sin(time*5+(e.id||0)));
+ switch(e.t){
+ case 1: // Sentinel: square visor, armored shoulders and a single long laser rifle.
+  box(-8,4,6,10,ink);box(2,4,6,10,ink);box(-7,11,6,3,plate);box(2,11,6,3,plate);
+  box(-10,-6,20,13,ink);box(-7,-5,14,11,c);box(-4,-1,8,5,dark);box(-2,0,4,2,energy);
+  box(-13,-6,5,7,plate);box(8,-6,5,7,plate);box(-6,-15,12,10,ink);box(-4,-13,8,6,steel);box(-3,-11,7,2,energy);
+  box(-1,-18,2,4,plate);box(0,-18,3,2,c);
+  box(9,-11,5,18,ink);box(10,-10,3,13,steel);box(10,-13,3,4,energy);box(8,3,7,3,dark);
+  break;
+ case 2: // Arc unit: twin open electrical forks and a cylindrical battery core.
+  box(-8,7,6,8,ink);box(3,7,6,8,ink);box(-7,11,4,3,steel);box(4,11,4,3,steel);
+  poly([[-7,-9],[7,-9],[10,-4],[8,8],[-8,8],[-10,-4]],ink);
+  box(-6,-7,12,14,plate);box(-4,-5,8,9,c);box(-2,-4,4,8,energy);box(-4,6,8,3,dark);
+  box(-4,-14,8,6,ink);box(-3,-12,6,3,white);
+  for(const s of [-1,1]){box(s<0?-15:10,-8,5,12,dark);box(s<0?-14:11,-7,3,4,c);box(s<0?-14:11,0,3,3,c);line(s*12,-7,s*16,-14,steel,2);line(s*12,-7,s*9,-14,steel,2);box(s<0?-16:14,-16,3,4,energy);}
+  line(-16,-15,-12,-12-pulse,energy,1);line(-12,-12-pulse,-9,-15,white,1);
+  break;
+ case 3: // Repair drone: hovering cross-wing chassis, open maintenance claws.
+  poly([[-5,-10],[5,-10],[10,-4],[8,6],[0,12],[-8,6],[-10,-4]],ink);
+  poly([[-4,-8],[4,-8],[7,-3],[5,5],[0,8],[-5,5],[-7,-3]],white);
+  box(-4,-4,8,8,c);box(-1,-4,2,8,white);box(-4,-1,8,2,white);
+  for(const s of [-1,1]){line(s*6,-3,s*15,-8,plate,4);box(s<0?-18:13,-10,5,5,c);line(s*7,4,s*14,9,steel,2);line(s*14,9,s*12,13,steel,2);box(s<0?-15:12,14+pulse,3,3,energy);}
+  box(-2,-14,4,3,energy);box(-3,12+pulse,6,2,energy);
+  break;
+ case 4: // Hunter: broad crescent hover skates around an exposed forward lens.
+  poly([[-20,6],[-15,-9],[-8,-14],[-6,-4],[6,-4],[8,-14],[15,-9],[20,6],[11,12],[-11,12]],ink);
+  poly([[-17,5],[-13,-7],[-9,-10],[-10,6],[-5,9],[-12,9]],plate);
+  poly([[17,5],[13,-7],[9,-10],[10,6],[5,9],[12,9]],plate);
+  line(-14,-5,-14,3,c,3);line(14,-5,14,3,c,3);
+  poly([[-7,-8],[7,-8],[10,2],[5,10],[-5,10],[-10,2]],c);box(-4,-3,8,9,dark);gem(0,-3,3,5,energy);
+  box(-16,11+pulse,7,2,energy);box(9,11+pulse,7,2,energy);box(-2,-14,4,6,steel);
+  break;
+ case 5: // Colossus: four heavy feet, narrow waist, huge fists and pauldrons.
+  for(const s of [-1,1]){line(s*8,5,s*14,13,plate,6);box(s<0?-18:10,10,8,8,ink);box(s<0?-17:11,13,6,3,c);line(s*9,-4,s*16,2,steel,5);box(s<0?-21:13,0,8,10,ink);box(s<0?-20:14,2,6,6,plate);}
+  poly([[-11,-12],[11,-12],[13,0],[6,9],[-6,9],[-13,0]],ink);
+  poly([[-9,-10],[9,-10],[10,0],[4,6],[-4,6],[-10,0]],c);box(-5,-5,10,7,dark);gem(0,-3,3,4,energy);
+  box(-17,-13,10,8,plate);box(7,-13,10,8,plate);box(-16,-12,8,2,c);box(8,-12,8,2,c);
+  box(-5,-19,10,8,ink);box(-4,-18,8,5,steel);box(-3,-16,6,2,energy);
+  break;
+ case 6: // Railgun walker: splayed stabilizers and a cannon longer than its hull.
+  for(const s of [-1,1]){line(s*7,0,s*17,10,steel,4);box(s<0?-21:14,8,7,7,ink);box(s<0?-20:15,11,5,2,c);line(s*7,-2,s*15,-9,plate,4);box(s<0?-18:13,-12,5,5,ink);}
+  poly([[-11,-7],[11,-7],[13,6],[8,12],[-8,12],[-13,6]],ink);box(-9,-5,18,12,plate);box(-7,0,14,7,c);
+  box(-5,-10,10,18,ink);box(-4,-19,8,20,dark);box(-5,-22,3,18,steel);box(2,-22,3,18,steel);box(-2,-20,4,17,energy);box(-5,-23,10,3,c);
+  box(-6,7,12,3,steel);box(-3,10,6,4,dark);
+  break;
+ case 7: // Annihilator: four armored legs carry a large containment ring and beam core.
+  for(const s of [-1,1]){line(s*10,4,s*18,13,plate,7);box(s<0?-23:15,11,8,9,ink);box(s<0?-22:16,15,6,3,c);line(s*10,-6,s*19,-12,steel,5);box(s<0?-22:17,-14,6,8,ink);box(s<0?-21:18,-13,4,5,c);}
+  poly([[-12,-16],[12,-16],[17,-7],[17,5],[10,14],[-10,14],[-17,5],[-17,-7]],ink);
+  poly([[-10,-13],[10,-13],[14,-5],[14,4],[8,11],[-8,11],[-14,4],[-14,-5]],plate);
+  poly([[-7,-11],[7,-11],[11,-4],[11,3],[6,8],[-6,8],[-11,3],[-11,-4]],c);
+  poly([[-5,-8],[5,-8],[8,-3],[8,2],[4,6],[-4,6],[-8,2],[-8,-3]],dark);
+  gem(0,-2,5,8,energy);box(-2,-6,4,8,white);box(-3,-21,6,9,ink);box(-1,-22,2,8,energy);
+  box(-11,11,22,3,c);box(-5,14,10,4,steel);box(-3,17,6,4,ink);
+  break;
+ case 8: // EMP adjudicator: slender chassis suspended between two tall induction rings.
+  for(const s of [-1,1]){
+   const ring=points=>points.map(([dx,dy])=>[s*13+dx,dy+pulse]);
+   poly(ring([[-5,-17],[3,-17],[7,-12],[7,4],[3,9],[-5,9],[-8,4],[-8,-12]]),ink);
+   poly(ring([[-4,-15],[2,-15],[5,-11],[5,3],[2,7],[-4,7],[-6,3],[-6,-11]]),steel);
+   poly(ring([[-2,-12],[1,-12],[3,-9],[3,1],[0,4],[-2,4],[-4,1],[-4,-9]]),dark);
+   box(s*13-4,-14+pulse,7,2,c);box(s*13-4,5+pulse,7,2,c);
+   box(s*13-7,-7+pulse,2,6,energy);box(s*13+4,-7+pulse,2,6,energy);
+   line(s*6,-2,s*10,-2,plate,3);box(s*13-1,-19+pulse,2,3,energy);
+  }
+  box(-6,2,5,12,ink);box(2,2,5,12,ink);box(-6,10,5,3,plate);box(2,10,5,3,plate);
+  poly([[-6,-12],[6,-12],[8,-2],[4,6],[-4,6],[-8,-2]],ink);
+  poly([[-4,-10],[4,-10],[5,-2],[2,3],[-2,3],[-5,-2]],c);
+  box(-2,-8,4,7,dark);box(-1,-7,2,5,energy);box(-4,2,8,3,steel);
+  box(-5,-20,10,9,ink);box(-3,-18,6,5,plate);box(-3,-17,6,2,energy);
+  box(-1,-23,2,4,steel);box(-2,-24,4,2,c);box(-3,15+pulse,6,2,energy);
+  break;
+ }
+}
+
+
+function drawElf(g,e,{color,time=0}){
+ const {box,poly,line,gem,ink,white}=unitPainter(g,e);
+ const cloth='#615283',shade='#30435d',plate='#5f7896',pearl='#c5d9e7',skin='#bacacb';
+ if(e.t===1){
+  // Star archer: pointed hood, quiver and a tall crescent bow.
+  box(-7,5,5,8,ink);box(2,5,5,8,ink);box(-8,-4,16,11,ink);
+  box(-6,-3,12,9,cloth);box(-5,-2,3,8,color);box(2,-2,3,8,color);
+  box(-9,-7,3,12,'#857697');line(-9,-9,-9,-15,pearl,1);line(-7,-9,-5,-14,pearl,1);
+  poly([[0,-16],[7,-11],[6,-5],[-6,-5],[-7,-11]],ink);
+  poly([[0,-15],[5,-11],[4,-7],[-4,-7],[-5,-11]],cloth);
+  box(-3,-10,6,4,skin);box(-2,-10,4,2,color);box(-7,-10,3,2,pearl);box(5,-10,3,2,pearl);
+  line(8,-11,13,-7,ink,4);line(13,-7,15,0,ink,4);line(15,0,12,8,ink,4);line(12,8,8,11,ink,4);
+  line(8,-11,12,-6,pearl,2);line(12,-6,14,0,color,2);line(14,0,11,7,color,2);line(11,7,8,11,pearl,2);
+  line(8,-11,8,11,'#8293bb',1);line(3,0,15,0,white,1);poly([[17,0],[12,-2],[12,2]],white);
+  box(4,-1,4,3,color);box(-5,6,10,2,'#8d80ad');
+ }else if(e.t===2){
+  // Blade dancer: open stance and two outward sweeping luminous swords.
+  poly([[-5,3],[-9,12],[-4,13],[0,6],[4,13],[9,12],[5,3]],ink);
+  poly([[-8,-5],[0,-9],[8,-5],[7,5],[0,8],[-7,5]],ink);
+  poly([[-6,-4],[0,-7],[6,-4],[5,4],[0,6],[-5,4]],plate);
+  box(-5,-3,10,4,color);gem(0,1,3,4,pearl);
+  poly([[-6,-13],[0,-16],[6,-13],[5,-7],[-5,-7]],ink);box(-4,-12,8,5,skin);box(-5,-14,10,3,cloth);
+  box(-8,-1,3,5,color);box(5,-1,3,5,color);
+  line(-9,3,-14,-2,ink,4);line(9,3,14,-2,ink,4);
+  poly([[-10,3],[-15,-4],[-16,-13],[-12,-9],[-10,-2]],pearl);
+  poly([[10,3],[15,-4],[16,-13],[12,-9],[10,-2]],pearl);
+  line(-12,-2,-14,-9,color,2);line(12,-2,14,-9,color,2);
+  line(-11,4,-7,0,cloth,2);line(11,4,7,0,cloth,2);
+ }else if(e.t===3){
+  // Assassin: hunched dark cowl, split trailing cloak and low paired daggers.
+  poly([[-6,-5],[-11,10],[-4,7],[-3,14],[1,10],[7,13],[10,7],[6,-5]],ink);
+  poly([[-5,-4],[-8,8],[-3,6],[0,10],[6,9],[5,-3]],'#463d62');
+  box(-6,1,12,5,shade);box(-5,5,4,7,ink);box(2,5,4,7,ink);
+  poly([[0,-16],[8,-10],[6,-3],[-6,-3],[-8,-10]],ink);
+  poly([[0,-15],[6,-10],[4,-4],[-4,-4],[-6,-10]],cloth);
+  poly([[0,-12],[4,-8],[3,-5],[-3,-5],[-4,-8]],'#142333');
+  box(-3,-8,2,2,color);box(2,-8,2,2,color);box(-1,-2,3,4,color);
+  line(-6,1,-11,5,plate,3);line(6,1,11,5,plate,3);
+  poly([[-12,3],[-16,-2],[-14,6],[-11,9]],pearl);poly([[12,3],[16,-2],[14,6],[11,9]],pearl);
+  box(-12,6,3,2,cloth);box(10,6,3,2,cloth);
+ }else if(e.t===4){
+  // Mage: long flared robes, high collar and a separate crystal-tipped staff.
+  poly([[-5,-5],[5,-5],[10,12],[6,15],[-8,15],[-11,12]],ink);
+  poly([[-4,-4],[4,-4],[7,12],[3,13],[-6,13],[-8,11]],cloth);
+  poly([[-2,-3],[2,-3],[4,12],[-3,12]],color);box(-7,10,14,2,pearl);
+  poly([[0,-16],[7,-10],[5,-5],[-5,-5],[-7,-10]],ink);
+  poly([[0,-14],[5,-10],[3,-7],[-3,-7],[-5,-10]],plate);box(-3,-9,6,3,skin);
+  box(-7,-4,3,7,pearl);box(5,-3,5,3,color);
+  line(12,-10,12,15,ink,4);line(12,-10,12,14,pearl,2);
+  gem(12,-10,6,6,ink);gem(12,-11,4,4,color);gem(11,-12,2,2,white);
+  box(9,-7,6,2,cloth);box(8,0,5,3,skin);gem(-11,-2,3,4,color);
+ }else if(e.t===5){
+  // Elemental guardian: broad stone armor, a heavy crystal shield and a fist.
+  box(-10,9,8,9,ink);box(3,9,8,9,ink);box(-8,11,5,6,plate);box(4,11,5,6,plate);
+  poly([[-13,-9],[13,-9],[14,8],[8,14],[-8,14],[-14,8]],ink);
+  poly([[-10,-7],[10,-7],[11,7],[6,11],[-6,11],[-11,7]],shade);
+  box(-8,-5,16,4,plate);gem(0,2,6,8,color);gem(-1,0,2,4,white);
+  poly([[-8,-16],[0,-21],[8,-16],[7,-8],[-7,-8]],ink);
+  poly([[-5,-16],[0,-19],[5,-16],[4,-10],[-4,-10]],plate);box(-4,-14,8,3,color);
+  poly([[-11,-11],[-17,-8],[-17,2],[-11,7],[-7,-2]],ink);
+  poly([[-13,-9],[-16,-6],[-15,1],[-11,4],[-9,-2]],pearl);
+  poly([[-13,-6],[-15,-3],[-13,1],[-11,-2]],color);
+  poly([[11,-9],[17,-5],[18,4],[14,9],[10,4]],ink);box(12,-4,5,8,plate);box(12,3,5,4,color);
+  box(-9,8,4,3,pearl);box(6,8,4,3,pearl);
+ }else if(e.t===6){
+  // Void marksman: a masked cloak behind a very wide arcane crossbow.
+  poly([[-5,-6],[5,-6],[11,12],[4,9],[0,15],[-5,10],[-11,12]],ink);
+  poly([[-4,-4],[4,-4],[7,10],[2,8],[0,12],[-4,8],[-7,10]],'#544568');
+  box(-4,2,8,6,shade);box(-5,8,4,5,ink);box(2,8,4,5,ink);
+  poly([[0,-17],[7,-11],[5,-5],[-5,-5],[-7,-11]],ink);
+  box(-4,-12,8,6,plate);box(-3,-11,6,3,'#26313f');box(-1,-11,3,2,color);box(-5,-14,10,3,cloth);
+  line(-17,-4,-9,-8,ink,4);line(-9,-8,0,-4,ink,4);line(0,-4,9,-8,ink,4);line(9,-8,17,-4,ink,4);
+  line(-17,-4,-9,-7,pearl,2);line(-9,-7,-1,-3,color,2);line(1,-3,9,-7,color,2);line(9,-7,17,-4,pearl,2);
+  line(-16,-3,16,-3,'#8b77b5',1);box(-3,-6,6,7,ink);box(-2,-5,4,5,color);
+  line(0,1,0,-15,pearl,2);gem(0,-16,3,5,color);box(-7,-2,4,3,pearl);box(4,-2,4,3,pearl);
+ }else if(e.t===7){
+  // Phoenix: swept feathered wings, beak, talons and a long three-part tail.
+  const flap=Math.round(Math.sin(time*4+(e.id||0))*2);
+  poly([[-3,4],[-11,17],[-4,13],[0,22],[4,13],[11,17],[3,4]],ink);
+  poly([[-2,4],[-8,14],[-2,11],[0,19],[3,10],[8,14],[2,4]],cloth);
+  line(0,7,0,18,color,2);line(-3,6,-7,13,pearl,2);line(3,6,7,13,pearl,2);
+  for(const side of [-1,1]){
+   const wing=points=>points.map(([x,y])=>[side*x,y+flap]);
+   poly(wing([[2,-8],[9,-13],[20,-19],[23,-13],[19,-10],[23,-7],[17,-6],[20,-2],[13,-2],[15,3],[8,1],[3,6]]),ink);
+   poly(wing([[4,-6],[10,-11],[20,-16],[19,-12],[15,-8],[20,-7],[14,-5],[17,-2],[11,-3],[12,0],[7,-1],[3,4]]),plate);
+   poly(wing([[4,-5],[11,-9],[18,-13],[14,-7],[17,-6],[11,-4],[13,-1],[7,-2],[4,2]]),color);
+   line(side*8,-6+flap,side*17,-12+flap,pearl,2);
+  }
+  poly([[0,-16],[6,-8],[5,5],[0,11],[-5,5],[-6,-8]],ink);
+  poly([[0,-14],[4,-7],[3,4],[0,8],[-3,4],[-4,-7]],color);gem(0,0,2,5,white);
+  poly([[-4,-16],[-1,-20],[4,-18],[6,-14],[3,-10],[-3,-11]],ink);
+  poly([[-2,-16],[0,-18],[3,-16],[4,-13],[1,-11],[-2,-12]],pearl);
+  box(1,-16,2,2,'#1b3446');poly([[3,-14],[9,-12],[4,-10]],'#ecd59b');
+  line(-3,7,-6,10,'#e4cf9a',2);line(3,7,6,10,'#e4cf9a',2);
+ }else if(e.t===8){
+  // Starweaver: a broad segmented ward halo surrounds a floating, open-handed robe.
+  const glow=Math.round(Math.sin(time*3+(e.id||0))),gold='#e7cc8d';
+  const halo=[[-18,1],[-18,-12],[-10,-22],[10,-22],[18,-12],[18,1],[10,12],[-10,12]];
+  for(let i=0;i<halo.length;i++){
+   const a=halo[i],b=halo[(i+1)%halo.length];
+   line(a[0],a[1],b[0],b[1],ink,5);line(a[0],a[1],b[0],b[1],i%2?cloth:gold,2);
+  }
+  for(const side of [-1,1]){
+   gem(side*18,-6,3,5,pearl);gem(side*18,-6,1,3,color);
+   line(side*5,-4,side*10,-6,ink,5);line(side*10,-6,side*13,-11,ink,4);
+   line(side*5,-4,side*10,-6,color,2);line(side*10,-6,side*13,-11,pearl,2);
+   box(side<0?-15:12,-14,3,4,skin);
+  }
+  poly([[-6,-7],[6,-7],[10,3],[14,15],[6,12],[0,19],[-6,12],[-14,15],[-10,3]],ink);
+  poly([[-4,-5],[4,-5],[7,4],[10,12],[4,10],[0,15],[-4,10],[-10,12],[-7,4]],cloth);
+  poly([[-3,-5],[3,-5],[5,5],[0,14],[-5,5]],color);line(0,-2,0,9,pearl,2);
+  poly([[-5,-17],[0,-21],[5,-17],[4,-8],[-4,-8]],ink);
+  poly([[-3,-16],[0,-19],[3,-16],[3,-10],[-3,-10]],pearl);box(-3,-15,6,2,cloth);
+  gem(0,-6,3,4,gold);box(-1,-8,2,3,white);
+  line(-7,18+glow,7,18+glow,shade,2);line(-3,20+glow,3,20+glow,color,1);
+ }
+}
+
+
+// Chitin, exposed membranes and bone tools give each caste its own silhouette.
+function drawSwarm(g,e,{color,time=0}){
+ const {box,poly,line,gem,ink}=unitPainter(g,e);
+ const shell='#73556b',shade='#453448',plate='#a27c89',bone='#e0d1a5';
+ const acid='#b5ed76',acidShade='#517b51',orange='#f5a55c';
+ const stride=e.order?Math.round(Math.sin(time*9+(e.id||0))):0;
+ if(e.parasite){
+  // Temporary parasites are tiny lime ticks with a thin tail, not full-sized mantises.
+  for(const s of [-1,1]){line(s*3,-1,s*8,-5,ink,3);line(s*3,3,s*8,7,ink,3);line(s*3,-1,s*7,-4,bone,1);line(s*3,3,s*7,6,bone,1);}
+  poly([[0,-8],[5,-3],[4,5],[0,9],[-4,5],[-5,-3]],ink);
+  poly([[0,-6],[3,-2],[2,4],[0,6],[-2,4],[-3,-2]],acid);
+  box(-3,-3,6,2,color);box(-2,-4,1,1,bone);box(2,-4,1,1,bone);
+  line(0,7,3,12,shade,2);line(3,12,5,11,acid,1);return;
+ }
+ switch(e.t){
+  case 1:{
+   // Fast mantis: slim waist and two tall, unmistakable scythe arms.
+   for(const s of [-1,1]){
+    line(s*3,5,s*8,10+stride,ink,4);line(s*8,10+stride,s*10,13,ink,3);
+    line(s*3,5,s*8,10+stride,shell,2);line(s*8,10+stride,s*10,13,bone,1);
+    poly([[s*5,-5],[s*11,-12],[s*16,-10],[s*13,-1],[s*9,2],[s*10,-7]],ink);
+    poly([[s*7,-5],[s*12,-10],[s*14,-9],[s*11,-2],[s*9,-1],[s*11,-7]],bone);
+   }
+   poly([[0,-6],[5,-2],[4,7],[0,10],[-4,7],[-5,-2]],ink);
+   poly([[0,-4],[3,-1],[2,6],[0,8],[-2,6],[-3,-1]],shell);
+   box(-3,-1,6,3,color);box(-2,4,4,2,plate);
+   poly([[-6,-10],[0,-14],[6,-10],[4,-4],[-4,-4]],ink);
+   poly([[-4,-10],[0,-12],[4,-10],[3,-6],[-3,-6]],color);
+   box(-3,-9,2,2,bone);box(2,-9,2,2,bone);
+   line(-3,-13,-5,-16,bone,1);line(3,-13,5,-16,bone,1);
+   break;
+  }
+  case 2:{
+   // Acid spitter: a round venom abdomen and a protruding organic nozzle.
+   for(const s of [-1,1])for(let i=0;i<2;i++){
+    line(s*7,2+i*6,s*12,5+i*6,ink,4);
+    line(s*8,2+i*6,s*12,5+i*6,shell,2);box(s<0?-14:11,5+i*6,3,2,bone);
+   }
+   poly([[-7,-5],[6,-5],[11,1],[10,10],[5,15],[-6,14],[-11,7],[-11,1]],ink);
+   poly([[-6,-3],[5,-3],[9,2],[8,9],[4,12],[-5,12],[-8,7],[-8,1]],acidShade);
+   poly([[-5,-1],[3,-2],[6,2],[4,9],[-4,10],[-7,5]],acid);
+   box(-5,0,3,5,'#d9f5a2');box(2,8,3,3,'#8fbe5f');
+   poly([[-7,-8],[6,-9],[9,-3],[5,1],[-5,1],[-9,-3]],shade);
+   box(-6,-7,12,4,color);
+   poly([[-4,-7],[-3,-13],[1,-16],[5,-13],[4,-7]],ink);
+   poly([[-2,-7],[-1,-12],[1,-14],[3,-12],[2,-7]],plate);
+   box(-2,-15,6,3,shade);box(-1,-15,4,2,acid);
+   box(-7,-4,2,2,bone);box(6,-5,2,2,bone);
+   break;
+  }
+  case 3:{
+   // Flying caste: four membrane wings and a tapered, hanging stinger.
+   const flap=Math.round(Math.sin(time*12+(e.id||0))*2);
+   for(const s of [-1,1]){
+    poly([[s*3,-4],[s*12,-14+flap],[s*21,-9+flap],[s*18,1],[s*7,3]],ink);
+    poly([[s*5,-4],[s*12,-12+flap],[s*18,-8+flap],[s*16,-1],[s*7,1]],'#728b86');
+    poly([[s*6,-3],[s*12,-9+flap],[s*15,-7+flap],[s*12,-2]],'#b5cbb3');
+    line(s*5,-2,s*16,-7+flap,shell,1);
+    poly([[s*4,1],[s*16,3],[s*15,11+flap],[s*7,8],[s*3,5]],ink);
+    poly([[s*6,3],[s*13,4],[s*12,8+flap],[s*7,6]],'#658a7f');
+   }
+   poly([[-4,-8],[4,-8],[6,3],[2,12],[0,18],[-3,11],[-6,3]],ink);
+   poly([[-2,-6],[2,-6],[3,2],[1,10],[0,14],[-1,9],[-3,2]],shell);
+   box(-3,-4,6,6,color);box(-2,4,4,3,plate);
+   poly([[-5,-9],[0,-14],[5,-9],[3,-5],[-3,-5]],shade);
+   box(-4,-10,3,2,bone);box(2,-10,3,2,bone);
+   line(-3,-12,-6,-16,bone,1);line(3,-12,6,-16,bone,1);
+   break;
+  }
+  case 4:{
+   // Low burrow hunter: horizontal armored body, broad digging foreclaws.
+   for(const s of [-1,1]){
+    poly([[s*8,-6],[s*15,-13],[s*20,-8],[s*15,-2],[s*10,0]],ink);
+    poly([[s*10,-5],[s*15,-10],[s*17,-7],[s*13,-3]],bone);
+    line(s*10,3,s*15,7+stride,ink,4);line(s*10,3,s*15,7+stride,plate,2);
+    line(s*7,8,s*10,12-stride,shell,3);
+   }
+   poly([[-9,-8],[8,-8],[14,-1],[11,8],[5,11],[-7,11],[-14,4],[-15,-1]],ink);
+   poly([[-8,-6],[7,-6],[11,0],[9,6],[4,8],[-6,8],[-11,3],[-12,-1]],shell);
+   for(let i=0;i<3;i++){
+    poly([[-9+i,-4+i*4],[7-i,-4+i*4],[9-i,-1+i*4],[-10+i,-1+i*4]],i===1?color:plate);
+    box(-3,-4+i*4,5,2,i===1?'#b7e5bf':'#c6a49b');
+   }
+   poly([[-7,-8],[0,-12],[7,-8],[4,-3],[-4,-3]],shade);
+   box(-5,-8,3,2,acid);box(3,-8,3,2,acid);
+   break;
+  }
+  case 5:{
+   // Explosive caste: bulbous orange sacs instead of plates or harvesting tools.
+   for(const s of [-1,1])for(let i=0;i<2;i++){
+    line(s*7,2+i*5,s*12,5+i*6,ink,3);line(s*8,2+i*5,s*12,5+i*6,shell,1);
+   }
+   poly([[-8,-5],[4,-7],[11,-1],[13,7],[8,15],[-4,17],[-12,10],[-13,1]],ink);
+   poly([[-7,-3],[3,-5],[9,0],[10,7],[6,12],[-3,14],[-9,9],[-10,2]],'#a4534e');
+   poly([[-5,-1],[2,-3],[7,1],[8,7],[4,11],[-2,12],[-7,8],[-8,3]],orange);
+   box(-5,0,4,5,'#ffe09b');box(2,4,4,5,'#ffcc78');
+   line(-8,0,6,10,'#9d624b',2);line(6,0,-5,11,'#9d624b',2);
+   gem(0,5,3,4,'#ffe09b');
+   poly([[-6,-11],[2,-13],[7,-8],[4,-3],[-5,-3],[-8,-7]],shade);
+   box(-5,-10,9,4,color);box(-4,-8,2,2,bone);box(2,-8,2,2,bone);
+   line(-5,-11,-8,-16,'#ad8999',2);line(3,-12,6,-16,'#ad8999',2);
+   box(-9,-17,3,3,orange);box(5,-17,3,3,orange);
+   break;
+  }
+  case 6:{
+   // Armored behemoth: plated beetle hull, four heavy feet and twin ivory horns.
+   for(const s of [-1,1])for(let i=0;i<2;i++){
+    poly([[s*9,-3+i*11],[s*17,-2+i*11],[s*20,5+i*9],[s*13,8+i*9],[s*9,4+i*10]],ink);
+    box(s<0?-18:12,2+i*10,7,7,shell);box(s<0?-19:13,7+i*10,7,3,bone);
+   }
+   poly([[-11,-11],[10,-11],[17,-2],[16,11],[10,17],[-10,17],[-16,10],[-18,-1]],ink);
+   poly([[-10,-9],[9,-9],[14,-1],[13,9],[8,14],[-8,14],[-13,8],[-15,-1]],shade);
+   poly([[-10,-7],[-1,-10],[-1,12],[-8,11],[-12,5]],plate);
+   poly([[2,-10],[10,-7],[12,5],[8,11],[2,12]],shell);
+   box(-11,-3,10,4,color);box(2,-3,10,4,color);box(-8,6,7,3,color);box(2,6,7,3,color);
+   box(-1,-9,3,24,'#c5a394');
+   poly([[-8,-10],[-9,-17],[-5,-21],[-5,-14],[-2,-10]],ink);
+   poly([[8,-10],[9,-17],[5,-21],[5,-14],[2,-10]],ink);
+   poly([[-7,-11],[-7,-16],[-5,-18],[-4,-11]],bone);
+   poly([[7,-11],[7,-16],[5,-18],[4,-11]],bone);
+   poly([[-7,-12],[0,-16],[7,-12],[5,-6],[-5,-6]],shade);
+   box(-5,-11,3,2,acid);box(3,-11,3,2,acid);
+   break;
+  }
+  case 7:{
+   // Royal caste: tall crown, a segmented tapered abdomen and six bladed limbs.
+   for(const s of [-1,1]){
+    poly([[s*7,-8],[s*15,-15],[s*22,-9],[s*20,-3],[s*13,-6],[s*10,0]],ink);
+    poly([[s*10,-8],[s*15,-12],[s*19,-8],[s*18,-6],[s*13,-8]],bone);
+    line(s*12,1,s*20,6+stride,ink,5);line(s*12,1,s*20,6+stride,shell,3);
+    poly([[s*18,4+stride],[s*23,7+stride],[s*20,11],[s*18,8]],bone);
+    line(s*9,10,s*17,17-stride,ink,4);line(s*10,10,s*17,17-stride,plate,2);
+    poly([[s*15,16-stride],[s*20,18],[s*15,21]],bone);
+   }
+   poly([[-10,-10],[9,-10],[14,-2],[12,9],[7,17],[0,23],[-7,17],[-12,9],[-14,-2]],ink);
+   poly([[-9,-8],[8,-8],[11,-1],[9,8],[5,15],[0,20],[-5,15],[-9,8],[-11,-1]],shell);
+   for(let i=0;i<4;i++){
+    const w=10-i*2,yy=-4+i*6;
+    poly([[-w,yy],[0,yy-3],[w,yy],[w-2,yy+4],[0,yy+6],[-w+2,yy+4]],i%2?plate:shade);
+    box(-w+2,yy,Math.max(2,w*2-4),3,color);
+   }
+   gem(0,1,3,5,acid);box(-1,-1,2,3,'#e3f6b1');
+   poly([[-8,-14],[0,-20],[8,-14],[6,-7],[-6,-7]],ink);
+   poly([[-6,-14],[0,-17],[6,-14],[4,-9],[-4,-9]],color);
+   box(-5,-13,3,2,bone);box(3,-13,3,2,bone);
+   poly([[-7,-16],[-9,-21],[-4,-18],[0,-22],[4,-18],[9,-21],[7,-16],[0,-18]],ink);
+   poly([[-5,-17],[-6,-19],[-2,-18],[0,-20],[2,-18],[6,-19],[5,-17],[0,-16]],bone);
+   break;
+  }
+  case 8:{
+   // Parasitic overlord: three translucent infection sacs and long feeding tendrils.
+   const pulse=Math.round(Math.sin(time*4+(e.id||0)));
+   for(const s of [-1,1]){
+    line(s*9,-4,s*17,-7,ink,5);line(s*17,-7,s*20,1+pulse,ink,4);
+    line(s*20,1+pulse,s*16,9,ink,3);line(s*16,9,s*20,14,ink,3);
+    line(s*9,-4,s*17,-7,shell,3);line(s*17,-7,s*20,1+pulse,plate,2);
+    line(s*20,1+pulse,s*16,9,plate,1);line(s*16,9,s*20,14,bone,1);
+    line(s*7,9,s*12,17,ink,4);line(s*7,9,s*12,17,color,2);
+   }
+   poly([[-9,-12],[8,-12],[14,-5],[15,7],[9,16],[0,20],[-10,15],[-15,6],[-14,-5]],ink);
+   poly([[-8,-10],[7,-10],[12,-4],[12,6],[7,13],[0,17],[-8,12],[-12,5],[-11,-4]],shade);
+   poly([[-8,-7],[-1,-9],[1,-3],[-1,6],[-7,9],[-10,3]],acidShade);
+   poly([[3,-7],[8,-6],[11,0],[8,8],[2,6],[0,0]],acidShade);
+   poly([[-5,-5],[-1,-7],[0,-2],[-2,4],[-6,6],[-8,2]],acid);
+   poly([[4,-5],[7,-4],[9,0],[7,5],[3,4],[2,0]],acid);
+   poly([[-4,8],[1,5],[6,9],[4,13],[0,16],[-5,12]],acid);
+   box(-6,-4,2,4,'#e0f8a4');box(5,-3,2,3,'#e0f8a4');box(-1,9,2,3,'#e0f8a4');
+   line(-9,-8,7,-9,color,3);line(-9,9,-6,13,color,3);line(8,9,5,13,color,3);
+   poly([[-7,-15],[0,-20],[7,-15],[5,-9],[-5,-9]],ink);
+   poly([[-5,-14],[0,-18],[5,-14],[3,-10],[-3,-10]],color);box(-4,-14,2,2,bone);box(3,-14,2,2,bone);
+   for(const s of [-1,1]){line(s*5,-12,s*10,-18,shade,3);box(s<0?-12:8,-21+pulse,4,4,acid);box(s<0?-11:9,-20+pulse,2,2,'#e0f8a4');}
+   break;
+  }
+ }
+}
+
+function drawCombatUnit(g,e,{f,color,time=0}){
+ [drawHuman,drawMachine,drawElf,drawSwarm][f](g,e,{color,time});
+}
+
+for(let c of document.querySelectorAll('canvas[data-f]')){let g=c.getContext('2d');g.translate(50,54);g.scale(2,2);let e={x:0,y:0,t:+c.dataset.t,id:1,hp:100,max:100,carry:0};let options={f:+c.dataset.f,color:'#73efcb',time:0};if(e.t===0)drawWorker(g,e,options);else drawCombatUnit(g,e,options);}})();</script><script src="i18n.js"></script></html>
