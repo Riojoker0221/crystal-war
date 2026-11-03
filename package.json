@@ -1,1 +1,1 @@
-{"name":"crystal-war","version":"0.2.3","private":true,"type":"module","scripts":{"start":"node server.mjs","build":"node build-client.mjs","test":"node --test tests.mjs client-test.mjs camera-test.mjs mechanics-test.mjs server-test.mjs"}}
+{"name": "crystal-war", "version": "0.3.0", "private": true, "type": "module", "scripts": {"start": "node server.mjs", "build": "node build-client.mjs", "test": "node --test tests.mjs client-test.mjs camera-test.mjs mechanics-test.mjs server-test.mjs specialist-test.mjs render-test.mjs"}}

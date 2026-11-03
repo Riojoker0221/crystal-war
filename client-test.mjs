@@ -11,8 +11,8 @@ const [bundle,markup]=await Promise.all([
 // This fixture exercises the shipped client in a VM. It provides only the DOM,
 // timers, and drawing surface the game needs; no game handlers are reimplemented.
 function client({blockedStorage=false,protocol='file:'}={}){
-  const ids=new Map(),intervals=new Map(),timeouts=new Map();let nextTimer=1,frameCallback;
-  const context2d=Object.fromEntries(['save','restore','clearRect','scale','translate','fillRect','strokeRect','beginPath','moveTo','lineTo','closePath','fill','arc','stroke','drawImage'].map(name=>[name,()=>{}]));
+  const ids=new Map(),intervals=new Map(),timeouts=new Map();let nextTimer=1,frameCallback,drawCalls=0;
+  const context2d=Object.fromEntries(['save','restore','clearRect','scale','translate','fillRect','strokeRect','beginPath','moveTo','lineTo','closePath','fill','arc','stroke','drawImage'].map(name=>[name,()=>{drawCalls++;}]));
   class Element{
     constructor(tagName='div'){
       this.tagName=tagName.toUpperCase();this.children=[];this.style={};this.dataset={};this.attributes=new Map();
@@ -72,7 +72,7 @@ function client({blockedStorage=false,protocol='file:'}={}){
   else sandbox.sessionStorage={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};
   sandbox.window=sandbox;
   vm.runInContext(bundle,vm.createContext(sandbox),{filename:'public/game.js',timeout:1000});
-  return {get:id=>ids.get(id),tabs:tabButtons,ready:()=>sandbox.crystalReady,tick:()=>{for(const fn of intervals.values())fn();},frame:()=>frameCallback?.(16),intervalCount:()=>intervals.size};
+  return {drawCalls:()=>drawCalls,get:id=>ids.get(id),tabs:tabButtons,ready:()=>sandbox.crystalReady,tick:()=>{for(const fn of intervals.values())fn();},frame:()=>frameCallback?.(16),intervalCount:()=>intervals.size};
 }
 
 const factions=[['人类联邦','指挥中心'],['机械主脑','主脑核心'],['星界精灵','星界主殿'],['古老虫群','原初母巢']];
@@ -127,4 +127,11 @@ test('blocked browser storage does not prevent faction selection or returning to
   const c=client({blockedStorage:true});await c.get('factions').children[2].click();await c.get('start').click();
   assert.match(c.get('matchLabel').textContent,/星界精灵/);await c.get('leave').click();await Promise.resolve();
   assert.equal(c.get('lobby').hidden,false);await c.get('factions').children[1].click();await c.get('start').click();assert.match(c.get('matchLabel').textContent,/机械主脑/);
+});
+
+
+test('unchanged frames reuse fog and minimap instead of repainting thousands of cells',async()=>{
+ const c=client();await c.get('start').click();c.frame();const before=c.drawCalls();
+ for(let i=0;i<60;i++)c.frame();
+ assert.ok((c.drawCalls()-before)/60<1200,'a normal frame must not redraw the 2280-cell fog/minimap');
 });
