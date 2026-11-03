@@ -49,7 +49,7 @@ export class Game{
  constructor(opts={}){
   this.time=0;this.id=1;this.eventId=1;this.entities=[];this.effects=[];this.events=[];this.scans=[];this.seed=(Number.isFinite(opts.seed)?opts.seed:Math.floor(Math.random()*4294967296))>>>0;
   this.mines=mines.map(m=>({...m}));this.knownMines=[new Set(),new Set()];this.mode=opts.rule||'normal';this.difficulty=opts.difficulty||'normal';this.ai=opts.ai!==false;
-  this.players=[opts.f0||0,opts.f1??1].map(f=>({f,money:250,tech:[],kills:0,hold:0,control:0,larvae:4,larvaClock:0}));this.winner=null;this.reason='';this.aiClock=0;this.attackClock=0;
+  this.players=[opts.f0||0,opts.f1??1].map(f=>({f,autoChase:true,money:250,tech:[],kills:0,hold:0,control:0,larvae:4,larvaClock:0}));this.winner=null;this.reason='';this.aiClock=0;this.attackClock=0;
   const randomSides=opts.spawnLayout==='random-sides';
   const starts=randomSides?[this.sideSpawn(0),this.sideSpawn(1)]:[{x:150,y:270},{x:W-150,y:H-270}];
   for(let p=0;p<2;p++){
@@ -103,6 +103,7 @@ export class Game{
  reveal(e){e.stealth=false;e.cloakReady=this.time+12;if(e.burrowed){e.burrowed=false;e.ambush=true;}}
  command(p,c){
   if(this.winner!==null)return '对局已经结束';if(p!==0&&p!==1)return '无效玩家';let pl=this.players[p],f=factions[pl.f],e=this.entities.find(v=>v.id===c.id&&v.p===p&&v.hp>0);
+  if(c.type==='autoChase'){if(typeof c.enabled!=='boolean')return '无效指令';pl.autoChase=c.enabled;for(let u of this.own(p))u.autoTarget=null;return '';}
   if(c.type==='surrender'){this.end(1-p,'对手投降');return '';}
   if(c.type==='execute'){if(!Array.isArray(c.ids))return '请选择己方工兵';let victims=this.own(p).filter(v=>v.k==='u'&&v.t===0&&c.ids.includes(v.id));if(!victims.length)return '只能处死己方工兵';for(let u of victims){u.hp=0;u.carry=0;}this.entities=this.entities.filter(v=>v.hp>0);return '';}
   if(c.type==='pack'){
@@ -139,7 +140,7 @@ export class Game{
    if(!Array.isArray(c.ids)||!pointValid(c))return '无效指令';let target=this.entities.find(v=>v.id===c.target&&this.visible(p,v));
    let units=this.own(p).filter(v=>(v.k==='u'||v.k==='b'&&v.t===0&&v.packed)&&c.ids.includes(v.id));
    units.forEach((u,i)=>{
-    u.miningIdle=false;if(c.action==='stop'){u.order=null;return;}if(u.siege||u.burrowed)return;
+    u.miningIdle=false;u.autoTarget=null;if(c.action==='stop'){u.order=null;return;}if(u.siege||u.burrowed)return;
     if(c.action==='mine'&&u.k==='u'&&u.t===0&&Number.isInteger(c.mine)&&this.mines[c.mine]){u.order={type:'mine',mine:c.mine};u.mineClock=0;return;}
     u.order={type:target&&target.p!==p?'attack':c.action==='attack'?'attackmove':'move',x:clamp(c.x+(i%5-2)*20,15,W-15),y:clamp(c.y+Math.floor(i/5)*20,15,H-15),target:target?.id};
    });return '';
@@ -292,8 +293,15 @@ export class Game{
    let range=e.k==='b'?145:d[7];if(e.siege)range=192+(this.tech(e.p,8)?36:0);
    let groundOnly=e.k==='u'&&((f===0&&[0,5,8].includes(e.t))||(f===1&&[0,5,6].includes(e.t))||(f===2&&[0,2,3,4,5].includes(e.t))||(f===3&&[0,1,4,5,6].includes(e.t)));
    let enemies=this.entities.filter(t=>t.p!==e.p&&t.hp>0&&this.visible(e.p,t)&&(!groundOnly||!this.flying(t))),target=enemies.find(t=>t.id===e.order?.target);
-   if(!target&&e.order?.type!=='move'&&!heal)target=enemies.filter(t=>dist(e,t)<range+t.r+35).sort((a,b)=>dist(e,a)-dist(e,b))[0];
-   if(target&&!heal){if(dist(e,target)<=range+target.r){if(e.cd<=0)this.attack(e,target,enemies);}else if(e.k==='u'&&!e.siege)this.move(e,target,dt);}
+   // Manual attacks win over automatic targets; move orders remain responsive.
+   const pursuing=e.k==='u'&&e.t>0&&!heal&&!e.siege&&pl.autoChase;
+   if(!target&&e.order?.type!=='move'&&!heal){
+    const eligible=t=>dist(e,t)<(pursuing?Math.max(170,range+t.r):range+t.r+(e.order?.type==='attackmove'?35:0));
+    target=pursuing?enemies.find(t=>t.id===e.autoTarget&&eligible(t)):null;
+    if(!target)target=enemies.filter(eligible).sort((a,b)=>(pursuing?(a.k==='b')-(b.k==='b'):0)||dist(e,a)-dist(e,b)||a.id-b.id)[0];
+    e.autoTarget=pursuing?target?.id:null;
+   }
+   if(target&&!heal){if(dist(e,target)<=range+target.r){if(e.cd<=0)this.attack(e,target,enemies);}else if(e.k==='u'&&!e.siege&&(e.order?.type==='attack'||e.order?.type==='attackmove'||pursuing))this.move(e,target,dt);}
    else if(e.k==='u'&&e.order&&['move','attackmove','attack'].includes(e.order.type)){if(this.move(e,e.order,dt))e.order=null;}
   }
   let us=this.entities.filter(e=>e.k==='u'&&e.hp>0&&!e.burrowed);for(let i=0;i<us.length;i++)for(let j=i+1;j<us.length;j++){let a=us[i],b=us[j],dd=dist(a,b),rr=(a.r+b.r)*.8;if(dd>0&&dd<rr&&this.flying(a)===this.flying(b)){let push=(rr-dd)*.25,dx=(a.x-b.x)/dd,dy=(a.y-b.y)/dd;if(!a.siege){a.x=clamp(a.x+dx*push,a.r,W-a.r);a.y=clamp(a.y+dy*push,a.r,H-a.r);}if(!b.siege){b.x=clamp(b.x-dx*push,b.r,W-b.r);b.y=clamp(b.y-dy*push,b.r,H-b.r);}}}
