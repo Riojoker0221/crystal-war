@@ -6,7 +6,7 @@
 
 # 晶核战争 · Crystal War
 
-统一像素画风的浏览器即时战略游戏，当前版本 **0.2.3**。支持四阵营、三档 PVE 和真实双人对战。
+统一像素画风的浏览器即时战略游戏，当前版本 **0.3.0**。支持四阵营、三档 PVE 和真实双人对战。
 
 **[在线游玩](https://crystal-war.onrender.com)** · [游戏源码](https://github.com/Riojoker0221/crystal-war)
 
