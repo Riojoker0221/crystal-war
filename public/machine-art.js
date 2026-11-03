@@ -55,5 +55,22 @@ export function drawMachine(g,e,{color:c,time=0}){
   gem(0,-2,5,8,energy);box(-2,-6,4,8,white);box(-3,-21,6,9,ink);box(-1,-22,2,8,energy);
   box(-11,11,22,3,c);box(-5,14,10,4,steel);box(-3,17,6,4,ink);
   break;
+ case 8: // EMP adjudicator: slender chassis suspended between two tall induction rings.
+  for(const s of [-1,1]){
+   const ring=points=>points.map(([dx,dy])=>[s*13+dx,dy+pulse]);
+   poly(ring([[-5,-17],[3,-17],[7,-12],[7,4],[3,9],[-5,9],[-8,4],[-8,-12]]),ink);
+   poly(ring([[-4,-15],[2,-15],[5,-11],[5,3],[2,7],[-4,7],[-6,3],[-6,-11]]),steel);
+   poly(ring([[-2,-12],[1,-12],[3,-9],[3,1],[0,4],[-2,4],[-4,1],[-4,-9]]),dark);
+   box(s*13-4,-14+pulse,7,2,c);box(s*13-4,5+pulse,7,2,c);
+   box(s*13-7,-7+pulse,2,6,energy);box(s*13+4,-7+pulse,2,6,energy);
+   line(s*6,-2,s*10,-2,plate,3);box(s*13-1,-19+pulse,2,3,energy);
+  }
+  box(-6,2,5,12,ink);box(2,2,5,12,ink);box(-6,10,5,3,plate);box(2,10,5,3,plate);
+  poly([[-6,-12],[6,-12],[8,-2],[4,6],[-4,6],[-8,-2]],ink);
+  poly([[-4,-10],[4,-10],[5,-2],[2,3],[-2,3],[-5,-2]],c);
+  box(-2,-8,4,7,dark);box(-1,-7,2,5,energy);box(-4,2,8,3,steel);
+  box(-5,-20,10,9,ink);box(-3,-18,6,5,plate);box(-3,-17,6,2,energy);
+  box(-1,-23,2,4,steel);box(-2,-24,4,2,c);box(-3,15+pulse,6,2,energy);
+  break;
  }
 }

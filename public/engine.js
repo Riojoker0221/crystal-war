@@ -1,9 +1,9 @@
 export const W=2400,H=1520;
 export const factions=[
  {name:'人类联邦',tag:'火力 · 医疗 · 机械化',build:['指挥中心','步兵兵营','机械工厂','军事研究院','自动炮塔','雷达站'],cost:[340,140,205,220,100,110],time:[42,18,27,30,16,18],units:[['工程兵',50,8,65,0,3,1.2,24,60,1],['步枪兵',70,10,85,0,9,.8,108,60,1],['火箭兵',110,15,100,0,24,1.9,120,54,1],['医疗兵',120,18,85,0,0,1,96,62,1],['突击车',145,20,175,1,24,1.1,96,86,2],['攻城坦克',230,32,310,2,48,2.8,144,40,3],['战斗机',260,35,195,1,16,.9,108,92,3],['毁灭机甲',390,50,540,3,40,1.5,120,46,5],['爆破兵',280,38,115,1,5,1.5,80,60,2]]},
- {name:'机械主脑',tag:'重甲 · 电弧 · 能源网络',build:['主脑核心','自动装配厂','重械工厂','主脑实验室','激光防御塔','能源节点'],cost:[360,145,210,230,115,90],time:[45,19,29,32,17,14],units:[['采集机器人',50,8,70,1,2,1.2,24,58,1],['哨卫机器人',80,12,110,1,11,1.1,96,56,1],['电弧机器人',110,16,90,0,8,.8,96,64,1],['维修无人机',125,18,85,0,0,1,96,66,1],['悬浮猎手',165,23,175,1,15,.9,108,84,2],['重装巨像',250,34,410,3,37,1.6,72,36,3],['轨道炮台机',285,39,210,1,75,3.2,168,36,3],['主脑歼灭者',420,52,630,3,68,2.3,132,44,5]]},
- {name:'星界精灵',tag:'护盾 · 机动 · 奥术',build:['星界主殿','月华兵营','星辉祭坛','奥术圣殿','星晶防御塔','传送方尖碑'],cost:[350,145,205,235,110,120],time:[42,18,28,32,17,20],units:[['晶灵',50,8,55,0,2,1.2,24,62,1,25],['星弓手',85,12,65,0,12,1,120,64,1,40],['魔刃使',110,16,100,1,17,.9,24,76,1,45],['影刃刺客',150,21,85,0,25,1.3,24,90,2,55],['星界法师',175,24,80,0,30,2.4,120,54,2,80],['元素守卫',240,34,240,2,30,1.7,36,48,3,110],['虚空射手',255,36,120,0,36,2.5,168,60,3,85],['星界凤凰',400,50,300,1,34,1.7,96,88,5,220]]},
- {name:'古老虫群',tag:'孵化 · 酸液 · 数量压制',build:['原初母巢','基础孵化巢','生物变异巢','原初进化池','棘刺防御巢','育虫池'],cost:[325,135,200,225,95,105],time:[40,18,27,31,16,17],units:[['工虫',45,7,55,0,3,1.1,24,62,1],['裂爪虫',45,6,55,0,7,.6,24,80,1],['喷酸虫',85,11,75,0,13,1.4,96,56,1],['飞翼虫',110,16,95,0,9,.7,72,86,1],['掘地猎虫',145,20,165,1,23,1.1,24,72,2],['爆裂虫',120,16,65,0,75,1,24,68,1],['装甲巨兽',260,35,390,3,34,1.4,36,44,3],['原初虫王',390,48,520,2,42,1.6,84,50,5]]}
+ {name:'机械主脑',tag:'重甲 · 电弧 · 能源网络',build:['主脑核心','自动装配厂','重械工厂','主脑实验室','激光防御塔','能源节点'],cost:[360,145,210,230,115,90],time:[45,19,29,32,17,14],units:[['采集机器人',50,8,70,1,2,1.2,24,58,1],['哨卫机器人',80,12,110,1,11,1.1,96,56,1],['电弧机器人',110,16,90,0,8,.8,96,64,1],['维修无人机',125,18,85,0,0,1,96,66,1],['悬浮猎手',165,23,175,1,15,.9,108,84,2],['重装巨像',250,34,410,3,37,1.6,72,36,3],['轨道炮台机',285,39,210,1,75,3.2,168,36,3],['主脑歼灭者',420,52,630,3,68,2.3,132,44,5],['电磁裁决者',320,42,150,1,7,1.5,100,50,3]]},
+ {name:'星界精灵',tag:'护盾 · 机动 · 奥术',build:['星界主殿','月华兵营','星辉祭坛','奥术圣殿','星晶防御塔','传送方尖碑'],cost:[350,145,205,235,110,120],time:[42,18,28,32,17,20],units:[['晶灵',50,8,55,0,2,1.2,24,62,1,25],['星弓手',85,12,65,0,12,1,120,64,1,40],['魔刃使',110,16,100,1,17,.9,24,76,1,45],['影刃刺客',150,21,85,0,25,1.3,24,90,2,55],['星界法师',175,24,80,0,30,2.4,120,54,2,80],['元素守卫',240,34,240,2,30,1.7,36,48,3,110],['虚空射手',255,36,120,0,36,2.5,168,60,3,85],['星界凤凰',400,50,300,1,34,1.7,96,88,5,220],['星界织命者',300,42,100,0,6,1.4,110,60,3,70]]},
+ {name:'古老虫群',tag:'孵化 · 酸液 · 数量压制',build:['原初母巢','基础孵化巢','生物变异巢','原初进化池','棘刺防御巢','育虫池'],cost:[325,135,200,225,95,105],time:[40,18,27,31,16,17],units:[['工虫',45,7,55,0,3,1.1,24,62,1],['裂爪虫',45,6,55,0,7,.6,24,80,1],['喷酸虫',85,11,75,0,13,1.4,96,56,1],['飞翼虫',110,16,95,0,9,.7,72,86,1],['掘地猎虫',145,20,165,1,23,1.1,24,72,2],['爆裂虫',120,16,65,0,75,1,24,68,1],['装甲巨兽',260,35,390,3,34,1.4,36,44,3],['原初虫王',390,48,520,2,42,1.6,84,50,5],['寄生主宰',320,42,170,1,8,1.4,95,54,3]]}
 ];
 export const prerequisites=[-1,0,1,2,1,1];
 export const research=[{id:0,name:'武器强化',cost:130,time:22,desc:'全军伤害 +15%'},{id:1,name:'防护强化',cost:140,time:24,desc:'全军护甲 +1'},{id:2,name:'高效采集',cost:150,time:25,desc:'每次采集 +3 晶矿'},{id:3,name:'终极单位与专属协议',cost:260,time:36,desc:'解锁终极单位及阵营终极技能'},{id:4,name:'人口扩展',cost:180,time:30,desc:'永久人口上限 +12'},{id:5,name:'隐匿协议',cost:200,time:30,requires:3,desc:'新爆破兵35%获得隐身，机械猎手可隐身；隐匿单位破隐一击伤害 +15%'}];
@@ -35,6 +35,9 @@ export const abilities=[
  {id:'burrow',name:'潜伏/破土',f:3,kind:'u',types:[4],tech:null,mode:'toggle',range:0,radius:0,cooldown:0,desc:'潜伏时不能移动且隐身，破土首次攻击伤害 +50%'},
  {id:'detonate',name:'自爆',f:3,kind:'u',types:[5],tech:null,mode:'self',range:0,radius:55,cooldown:0,desc:'对周围敌军造成75伤害，爆裂虫死亡'},
  {id:'summon',name:'召唤裂爪虫',f:3,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:0,cooldown:25,desc:'召唤2只裂爪虫，持续12秒，不占人口且不计分'},
+ {id:'emp',name:'电磁封锁',f:1,kind:'u',types:[8],tech:3,mode:'point',range:300,radius:120,cooldown:45,desc:'预警1秒后造成60范围伤害；敌军攻速降低35%、主动技能与防御塔停用6秒'},
+ {id:'ward',name:'星界结界',f:2,kind:'u',types:[8],tech:3,mode:'point',range:300,radius:130,cooldown:45,desc:'结界持续8秒，友军单位获得一次80临时护盾；区域内移速+20%、远程伤害降低25%，护盾随结界消失'},
+ {id:'parasite',name:'寄生孵化',f:3,kind:'u',types:[8],tech:3,mode:'point',range:300,radius:120,cooldown:45,desc:'预警0.75秒后菌雾持续8秒，每秒8伤害并减速25%；感染战斗单位死亡孵化15秒寄生虫，每次最多6只'},
  {id:'frenzy',name:'原初狂潮',f:3,kind:'u',types:[7],tech:3,mode:'self',range:0,radius:150,cooldown:35,desc:'附近虫群攻击速度 +25%，持续12秒'}
 ];
 const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
@@ -44,7 +47,7 @@ const matches=(a,f)=>Array.isArray(a.f)?a.f.includes(f):a.f===f;
 const lineDistance=(t,a,b)=>{let dx=b.x-a.x,dy=b.y-a.y,len=dx*dx+dy*dy,q=len?clamp(((t.x-a.x)*dx+(t.y-a.y)*dy)/len,0,1):0;return Math.hypot(t.x-a.x-q*dx,t.y-a.y-q*dy);};
 export class Game{
  constructor(opts={}){
-  this.time=0;this.id=1;this.entities=[];this.effects=[];this.events=[];this.scans=[];this.seed=(Number.isFinite(opts.seed)?opts.seed:Math.floor(Math.random()*4294967296))>>>0;
+  this.time=0;this.id=1;this.eventId=1;this.entities=[];this.effects=[];this.events=[];this.scans=[];this.seed=(Number.isFinite(opts.seed)?opts.seed:Math.floor(Math.random()*4294967296))>>>0;
   this.mines=mines.map(m=>({...m}));this.knownMines=[new Set(),new Set()];this.mode=opts.rule||'normal';this.difficulty=opts.difficulty||'normal';this.ai=opts.ai!==false;
   this.players=[opts.f0||0,opts.f1??1].map(f=>({f,money:250,tech:[],kills:0,hold:0,control:0,larvae:4,larvaClock:0}));this.winner=null;this.reason='';this.aiClock=0;this.attackClock=0;
   const randomSides=opts.spawnLayout==='random-sides';
@@ -76,7 +79,7 @@ export class Game{
  spawn(p,k,t,x,y){
   let f=this.players[p].f,d=factions[f].units[t];let hp=k==='b'?[[1600,750,850,650,480,500],[1700,800,900,700,520,550],[1300,600,700,550,390,450],[1450,700,800,650,500,500]][f][t]:d[3];
   let shield=f===2?(k==='b'?[350,150,180,150,120,100][t]:d[10]||0):0;
-  let e={id:this.id++,p,k,t,x,y,hp,max:hp,shield,maxShield:shield,r:k==='b'?(t===0?34:25):(t>=5?14:9),queue:[],order:null,cd:0,lastHit:-99,build:0,fullBuild:0,packed:false,siege:false,burrowed:false,stealth:false,abilityCD:{},status:{},carry:0,larvaClock:0,larvae:0};
+  let e={id:this.id++,p,k,t,x,y,hp,max:hp,shield,maxShield:shield,r:k==='b'?(t===0?34:25):(t>=5?14:9),queue:[],order:null,cd:0,lastHit:-99,build:0,fullBuild:0,packed:false,siege:false,burrowed:false,stealth:false,abilityCD:{},status:{},carry:0,tempShield:0,tempShieldUntil:0,larvaClock:0,larvae:0};
   if(k==='b'&&f===3&&(t===0||t===5))e.larvae=t===0?4:0;
   if(k==='u'&&f===2&&t===3)e.cloakCapable=true;
   if(k==='u'&&f===0&&t===8&&this.tech(p,5)){e.cloakCapable=this.random()<.35;e.stealth=e.cloakCapable;}
@@ -84,6 +87,7 @@ export class Game{
  }
  own(p){return this.entities.filter(e=>e.p===p&&e.hp>0);}
  pop(p){return this.own(p).reduce((n,e)=>n+(e.k==='u'&&!e.summonedUntil?this.def(e)[9]:0)+(e.replacementWorker?1:0)+e.queue.reduce((a,q)=>a+(q.kind==='unit'?factions[this.players[p].f].units[q.t][9]:0),0),0);}
+ specialistCount(p){return this.own(p).reduce((n,e)=>n+(e.k==='u'&&e.t===8?1:0)+e.queue.filter(q=>q.kind==='unit'&&q.t===8).length,0);}
  capacity(p){return 36+Math.max(0,this.own(p).filter(e=>e.k==='b'&&e.t===0&&!e.build).length-1)*18+(this.tech(p,4)?12:0);}
  has(p,t){return this.own(p).some(e=>e.k==='b'&&e.t===t&&!e.build&&!e.packed);}
  sight(p,e){return e.p===p||this.scans.some(s=>s.p===p&&dist(s,e)<s.radius)||this.own(p).some(a=>dist(a,e)<(a.k==='b'?210:170));}
@@ -118,7 +122,7 @@ export class Game{
   if(c.type==='train'){
    let t=c.t;if(!Number.isInteger(t)||!f.units[t]||t<0||!e||e.k!=='b'||e.build||e.packed)return '请选择已完成且展开的生产建筑';
    if(e.t!==(t===0?0:t<4?1:2))return '生产建筑不匹配';if(t>=7&&!this.tech(p,3))return '请先研究终极单位与专属协议';let d=f.units[t];
-   if(e.queue.length>=5)return '队列已满';if(pl.money<d[1])return '晶矿不足';if(this.pop(p)+d[9]>this.capacity(p))return '人口已达上限';let l=t>=7?3:t>=4?2:1;
+   if(t===8&&this.specialistCount(p)>=2)return '终极特种兵最多2名（含生产队列）';if(e.queue.length>=5)return '队列已满';if(pl.money<d[1])return '晶矿不足';if(this.pop(p)+d[9]>this.capacity(p))return '人口已达上限';let l=t>=7?3:t>=4?2:1;
    this.syncLarvae(p);if(pl.f===3&&pl.larvae<l)return '幼虫不足';if(pl.f===3)this.spendLarvae(p,l);pl.money-=d[1];e.queue.push({kind:'unit',t,left:d[2],total:d[2],cost:d[1]});return '';
   }
   if(c.type==='research'){
@@ -144,6 +148,7 @@ export class Game{
  }
  useAbility(p,e,c){
   if(!e||e.build||e.hp<=0)return '请选择己方已完成的单位或建筑';let a=this.entityAbilities(e).find(v=>v.id===c.ability);if(!a)return '此单位没有该能力';
+  if(e.status.lockUntil>this.time)return '电磁封锁中，暂时无法使用主动技能';
   let f=this.players[p].f;if(a.tech!==null&&!this.tech(p,a.tech)&&!(a.id==='cloak'&&f===2))return '请先完成所需研究';if(e.abilityCD[a.id]>0)return '技能冷却中：'+Math.ceil(e.abilityCD[a.id])+'秒';
   if(e.packed)return '基地移动中无法使用能力';if(a.mode==='point'&&(!pointValid(c)||dist(e,c)>a.range))return '目标超出施放范围';
   if(a.mode==='point'&&!['scan','teleport','repair'].includes(a.id)&&!this.sight(p,c))return '必须先侦察目标区域';
@@ -158,6 +163,9 @@ export class Game{
    let units=[],population=0;for(let u of this.own(p).filter(v=>v.k==='u'&&!this.flying(v)&&dist(v,e)<100).sort((a,b)=>a.id-b.id)){let pop=this.def(u)[9];if(population+pop<=8){population+=pop;units.push(u.id);}}
    if(!units.length)return '方尖碑附近没有可传送地面部队';this.events.push({kind:'teleport',p,x:e.x,y:e.y,target:target.id,source:e.id,units,remaining:2,radius:100});e.abilityCD[a.id]=this.tech(p,8)?30:40;return '';
   }
+  if(a.id==='emp'){this.events.push({id:this.eventId++,kind:'emp',p,source:e.id,x:c.x,y:c.y,radius:a.radius,remaining:1,warningUntil:this.time+1});this.reveal(e);}
+  if(a.id==='ward'){let event={id:this.eventId++,kind:'ward',p,source:e.id,x:c.x,y:c.y,radius:a.radius,remaining:8,until:this.time+8,shielded:[]};this.events.push(event);this.applyZones();this.reveal(e);}
+  if(a.id==='parasite'){this.events.push({id:this.eventId++,kind:'parasite',p,source:e.id,x:c.x,y:c.y,radius:a.radius,remaining:8.75,warningUntil:this.time+.75,until:this.time+8.75,nextTick:this.time+1.75,hatched:0});this.reveal(e);}
   if(a.id==='demolition'){this.events.push({kind:'blast',p,source:e.id,x:c.x,y:c.y,radius:a.radius,damage:140,remaining:1.5});this.reveal(e);}
   if(a.id==='mechBlast'){for(let t of enemies)if(dist(t,c)<a.radius+t.r)this.hit(t,85,e);this.areaEffect(c.x,c.y,a.radius,p,'blast');this.reveal(e);}
   if(a.id==='beam'){let d=dist(e,c)||1,goal={x:e.x+(c.x-e.x)/d*a.range,y:e.y+(c.y-e.y)/d*a.range};for(let t of enemies)if(lineDistance(t,e,goal)<a.radius+t.r)this.hit(t,100,e);this.effects.push({x:e.x,y:e.y,tx:goal.x,ty:goal.y,p,life:.5,kind:'beam'});this.reveal(e);}
@@ -174,23 +182,51 @@ export class Game{
  flying(e){return e.k==='u'&&((this.players[e.p].f===0&&e.t===6)||(this.players[e.p].f===2&&e.t===7)||(this.players[e.p].f===3&&e.t===3));}
  move(e,target,dt){
   if(e.siege||e.burrowed)return false;let d=dist(e,target);if(d<3)return true;let speed=e.k==='b'?14:this.def(e)[8];
-  if(e.status.slowUntil>this.time)speed*=.75;if(e.status.overclockUntil>this.time)speed*=1.25;if(e.status.sanctuaryUntil>this.time)speed*=1.2;
+  if(e.status.slowUntil>this.time||e.status.parasiteSlowUntil>this.time)speed*=.75;if(e.status.overclockUntil>this.time)speed*=1.25;if(e.status.sanctuaryUntil>this.time||this.wardFor(e))speed*=1.2;
   let dx=(target.x-e.x)/d,dy=(target.y-e.y)/d;
   if(!this.flying(e)){for(let o of [...rocks,...this.entities.filter(b=>b.k==='b'&&b.id!==e.id&&b.hp>0)]){let rr=o.r+e.r+6,dd=dist(e,o);if(dd<rr+20){let dot=dx*(o.x-e.x)+dy*(o.y-e.y);if(dot>0){let side=dx*(o.y-e.y)-dy*(o.x-e.x)>=0?1:-1;dx+=side*dy*1.8+(e.x-o.x)/Math.max(1,dd);dy-=side*((target.x-e.x)/d)*1.8;}}}}
   let len=Math.hypot(dx,dy);if(!len)return false;e.x=clamp(e.x+dx/len*Math.min(d,speed*dt),e.r,W-e.r);e.y=clamp(e.y+dy/len*Math.min(d,speed*dt),e.r,H-e.r);return false;
  }
- hit(target,damage,source,{ignore=0}={}){
-  if(target.hp<=0)return;let f=this.players[target.p].f,armor=target.k==='b'?2:this.def(target)[4];armor+=(this.tech(target.p,1)?1:0)+(f===3&&this.tech(target.p,7)?1:0);if(target.status.acidUntil>this.time)armor--;armor=Math.max(0,armor-ignore);
-  damage=Math.max(1,damage-armor);let absorbed=Math.min(target.shield,damage);target.shield-=absorbed;target.hp-=damage-absorbed;target.lastHit=this.time;
-  if(target.hp<=0&&source?.p!==undefined&&source.p!==target.p&&!target.summonedUntil)this.players[source.p].kills++;
+ wardFor(e){return e.k==='u'&&this.events.find(a=>a.kind==='ward'&&a.p===e.p&&a.until>this.time&&dist(a,e)<=a.radius);}
+ applyZones(){
+  const active=this.events.filter(a=>a.kind==='ward'&&a.until>this.time),clouds=this.events.filter(a=>a.kind==='parasite'&&a.warningUntil<=this.time&&a.until>=this.time);
+  for(let e of this.entities){
+   if(e.hp<=0||e.k!=='u')continue;e.status.wardUntil=0;
+   for(let a of active)if(a.p===e.p&&dist(a,e)<=a.radius){e.status.wardUntil=Math.max(e.status.wardUntil,a.until);if(!a.shielded.includes(e.id)){a.shielded.push(e.id);e.tempShield=Math.max(e.tempShield||0,80);e.tempShieldUntil=Math.max(e.tempShieldUntil||0,a.until);}}
+   if(e.tempShieldUntil<=this.time)e.tempShield=0;
+   let infection=clouds.find(a=>a.p!==e.p&&dist(a,e)<=a.radius+e.r);
+   if(infection){e.status.infectionUntil=Math.min(infection.until,this.time+.3);e.status.infectionEvent=infection.id;e.status.parasiteSlowUntil=e.status.infectionUntil;}
+  }
+ }
+ hatchParasite(victim){
+  if(victim.k!=='u'||victim.t===0||victim.summonedUntil||!(victim.status.infectionUntil>=this.time))return;
+  let a=this.events.find(event=>event.kind==='parasite'&&event.id===victim.status.infectionEvent&&event.p!==victim.p);
+  if(!a||a.hatched>=6)return;a.hatched++;
+  let spot=[[0,0],[24,0],[-24,0],[0,24],[0,-24],[56,0],[-56,0],[0,56],[0,-56],[80,50],[-80,50],[80,-50],[-80,-50]].map(([dx,dy])=>({x:clamp(victim.x+dx,12,W-12),y:clamp(victim.y+dy,12,H-12)})).find(s=>this.openSpot(s.x,s.y,9))||{x:clamp(victim.x,12,W-12),y:clamp(victim.y,12,H-12)};
+  let u=this.spawn(a.p,'u',1,spot.x,spot.y);u.parasite=true;u.summonedUntil=this.time+15;
+  u.order={type:'attackmove',x:victim.x,y:victim.y};this.areaEffect(u.x,u.y,20,a.p,'parasiteHatch');
+ }
+ hit(target,damage,source,{ignore=0,dot=false,ranged=false}={}){
+  if(target.hp<=0)return;
+  const sourceRange=source?.k==='b'?145:source?.k==='u'?this.def(source)?.[7]||0:0;
+  if(!dot&&(ranged||sourceRange>40)&&this.wardFor(target))damage*=.75;
+  let f=this.players[target.p].f,armor=target.k==='b'?2:this.def(target)[4];armor+=(this.tech(target.p,1)?1:0)+(f===3&&this.tech(target.p,7)?1:0);if(target.status.acidUntil>this.time)armor--;armor=Math.max(0,armor-ignore);
+  damage=Math.max(1,damage-armor);
+  if(target.tempShieldUntil<=this.time)target.tempShield=0;
+  let temporary=Math.min(target.tempShield||0,damage);target.tempShield=Math.max(0,(target.tempShield||0)-temporary);damage-=temporary;
+  let absorbed=Math.min(target.shield,damage);target.shield-=absorbed;target.hp-=damage-absorbed;target.lastHit=this.time;
+  if(target.hp<=0){if(source?.p!==undefined&&source.p!==target.p&&!target.summonedUntil)this.players[source.p].kills++;this.hatchParasite(target);}
  }
  processEvents(dt){
+  this.applyZones();
   for(let event of this.events){event.remaining-=dt;let source=this.entities.find(e=>e.id===event.source&&e.hp>0);
-   if(event.kind==='storm'){while(this.time>=event.nextTick&&event.nextTick<=event.until){event.nextTick+=1;for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r){this.hit(t,event.damage,source||{p:event.p});t.status.slowUntil=this.time+1.1;}}}
+   if(event.kind==='storm'){while(this.time>=event.nextTick&&event.nextTick<=event.until){event.nextTick+=1;for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r){this.hit(t,event.damage,source||{p:event.p},{dot:true});t.status.slowUntil=this.time+1.1;}}}
+   if(event.kind==='parasite'){while(this.time+1e-8>=event.nextTick&&event.nextTick<=event.until+1e-8){let at=event.nextTick;event.nextTick+=1;for(let t of [...this.entities])if(t.p!==event.p&&t.k==='u'&&t.hp>0&&dist(t,event)<event.radius+t.r&&at+1e-8>=(t.status.parasiteDamageReady||0)){t.status.parasiteDamageReady=at+1;t.status.infectionEvent=event.id;t.status.infectionUntil=Math.max(t.status.infectionUntil||0,this.time);this.hit(t,8,source||{p:event.p},{dot:true});}}}
    if(event.remaining>0)continue;
-   if(event.kind==='blast'){for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r)this.hit(t,event.damage,source||{p:event.p});this.areaEffect(event.x,event.y,event.radius,event.p,'blast');}
+   if(event.kind==='emp'){for(let t of [...this.entities])if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r){this.hit(t,60,source||{p:event.p},{ranged:true});if(t.hp>0&&(t.k==='u'||t.k==='b'&&t.t===4)){t.status.empUntil=Math.max(t.status.empUntil||0,this.time+6);t.status.lockUntil=Math.max(t.status.lockUntil||0,this.time+6);}}this.areaEffect(event.x,event.y,event.radius,event.p,'emp');}
+   if(event.kind==='blast'){for(let t of this.entities)if(t.p!==event.p&&t.hp>0&&dist(t,event)<event.radius+t.r)this.hit(t,event.damage,source||{p:event.p},{ranged:true});this.areaEffect(event.x,event.y,event.radius,event.p,'blast');}
    if(event.kind==='teleport'){let target=this.entities.find(e=>e.id===event.target&&e.hp>0&&!e.build);if(source&&target){event.units.forEach((id,i)=>{let u=this.entities.find(e=>e.id===id&&e.hp>0);if(u&&dist(u,source)<120&&!u.burrowed){u.x=clamp(target.x+45+(i%3)*20,15,W-15);u.y=clamp(target.y+(Math.floor(i/3)-1)*20,15,H-15);u.order=null;}});this.areaEffect(target.x,target.y,90,event.p,'teleport');}}
-  }this.events=this.events.filter(e=>e.remaining>0);this.scans=this.scans.filter(s=>s.until>this.time);
+  }this.events=this.events.filter(e=>e.remaining>0);this.scans=this.scans.filter(s=>s.until>this.time);this.applyZones();
  }
  mining(e,dt){
   let pl=this.players[e.p],bases=this.own(e.p).filter(b=>b.k==='b'&&b.t===0&&!b.build&&!b.packed).sort((a,b)=>dist(a,e)-dist(b,e)),b=bases[0];if(!b){e.miningIdle=true;return;}
@@ -213,7 +249,8 @@ export class Game{
  }
  attack(e,target,enemies){
   let pl=this.players[e.p],f=pl.f,d=e.k==='u'?this.def(e):null,interval=e.k==='b'?1:d[6],damage=e.k==='b'?16:d[5];
-  if(!damage)return;
+  if(!damage||e.k==='b'&&e.t===4&&e.status.empUntil>this.time)return;
+  if(e.status.empUntil>this.time)interval/=.65;
   if(e.status.overclockUntil>this.time)interval/=1.25;if(e.status.frenzyUntil>this.time)interval/=1.25;
   if(f===0&&e.t===1&&this.tech(e.p,9))interval/=1.12;
   if(f===2&&e.t===2){e.combo=e.comboTarget===target.id?Math.min(5,(e.combo||0)+1):0;e.comboTarget=target.id;interval/=1+e.combo*.04;}
@@ -240,7 +277,7 @@ export class Game{
   for(let e of [...this.entities]){
    if(e.hp<=0)continue;if(e.summonedUntil&&e.summonedUntil<=this.time){e.hp=0;continue;}
    for(let id of Object.keys(e.abilityCD))e.abilityCD[id]=Math.max(0,e.abilityCD[id]-dt);e.cd-=dt;
-   while(e.status.burnTick&&e.status.burnTick<=this.time&&e.status.burnTick<=e.status.burnUntil){this.hit(e,4,{p:e.status.burnSource});e.status.burnTick+=1;}
+   while(e.status.burnTick&&e.status.burnTick<=this.time&&e.status.burnTick<=e.status.burnUntil){this.hit(e,4,{p:e.status.burnSource},{dot:true});e.status.burnTick+=1;}
    if(e.build>0){e.build=Math.max(0,e.build-dt);if(!e.build&&e.replacementWorker){let u=this.spawn(e.p,'u',0,e.x+45,e.y);u.order={type:'mine',mine:this.nearestMine(e.p,u)};e.replacementWorker=false;}continue;}
    let pl=this.players[e.p],f=pl.f;
    if(e.cloakCapable&&!e.burrowed&&e.cloakReady&&e.cloakReady<=this.time){e.stealth=true;e.cloakReady=0;}
@@ -248,7 +285,7 @@ export class Game{
    this.healAndRepair(e,dt);
    if(e.packed){if(e.order&&['move','attackmove','attack'].includes(e.order.type)&&this.move(e,e.order,dt))e.order=null;continue;}
    if(e.queue.length){let q=e.queue[0],range=170+(this.tech(e.p,7)?72:0),boost=f===1&&this.own(e.p).some(b=>b.k==='b'&&b.t===5&&!b.build&&dist(e,b)<range)?1.1:1;q.left-=dt*boost;if(q.left<=0){e.queue.shift();if(q.kind==='tech')pl.tech.push(q.t);else{let u=this.spawn(e.p,'u',q.t,e.x+(e.p?-48:48),e.y+((this.id%3)-1)*22);if(q.t===0)u.order={type:'mine',mine:this.nearestMine(e.p,u)};}}}
-   if(e.k==='b'&&e.t!==4)continue;
+   if(e.k==='b'&&(e.t!==4||e.status.empUntil>this.time))continue;
    if(e.k==='u'&&e.t===0&&e.order?.type==='mine'){this.mining(e,dt);continue;}
    if(e.k==='u'&&e.t===0&&e.order?.type==='repair')continue;
    let d=e.k==='u'?this.def(e):null,heal=d&&d[5]===0;if(e.burrowed)continue;
@@ -273,16 +310,16 @@ export class Game{
   if(level&&this.players[p].money>500&&builds.filter(e=>e.t===0).length<2){let m=[...this.knownMines[p]].map(i=>this.mines[i]).filter(m=>m.remaining>500&&dist(m,base)>220).sort((a,b)=>dist(a,base)-dist(b,base))[0];if(m){let x=m.x-80,y=m.y;if(this.validSpot(p,0,x,y))this.command(p,{type:'build',t:0,x,y});else if(workers[0])this.command(p,{type:'order',ids:[workers[0].id],action:'move',x,y});}}
   for(let b of builds.filter(e=>!e.build&&!e.queue.length&&!e.packed)){
    if(b.t===1)this.command(p,{type:'train',id:b.id,t:level===0?1:1+Math.floor(this.time/17)%3});
-   if(b.t===2)this.command(p,{type:'train',id:b.id,t:this.tech(p,3)&&Math.floor(this.time/19)%3===0?7:4+Math.floor(this.time/23)%3});
+   if(b.t===2)this.command(p,{type:'train',id:b.id,t:this.tech(p,3)&&Math.floor(this.time/19)%3===0?(this.specialistCount(p)<2&&Math.floor(this.time/57)%2?8:7):4+Math.floor(this.time/23)%3});
    if(b.t===3){let t=[0,1,3,4,6,7,8].find(t=>!this.tech(p,t));if(t!==undefined)this.command(p,{type:'research',id:b.id,t});}
   }
   let threat=this.entities.find(e=>e.p===0&&this.visible(1,e)&&dist(e,base)<260),threshold=[7,6,4][level],interval=[110,70,40][level];
   if(threat||army.length>=threshold&&this.attackClock>interval||this.mode==='timed'&&this.time>480){let goal=threat||(this.mode==='timed'&&this.time>480?{x:W/2,y:H/2}:{x:150,y:270});this.command(p,{type:'order',ids:army.map(e=>e.id),action:'attack',x:goal.x,y:goal.y,target:threat?.id});this.attackClock=0;}
   if(level===2)for(let u of army)if(u.hp<u.max*.25)this.command(p,{type:'order',ids:[u.id],action:'move',x:base.x-55,y:base.y});
-  if(level)for(let e of own){let enemy=this.entities.filter(v=>v.p!==p&&v.hp>0&&this.sight(p,v)).sort((a,b)=>dist(a,e)-dist(b,e))[0];for(let a of this.entityAbilities(e)){if(e.abilityCD[a.id]>0||a.tech!==null&&!this.tech(p,a.tech))continue;if(['overclock','frenzy','sanctuary','summon'].includes(a.id)&&enemy&&dist(enemy,e)<220)this.command(p,{type:'ability',id:e.id,ability:a.id});if(['mechBlast','beam','storm','demolition','scan'].includes(a.id)&&enemy)this.command(p,{type:'ability',id:e.id,ability:a.id,x:enemy.x,y:enemy.y});}}
+  if(level)for(let e of own){let enemy=this.entities.filter(v=>v.p!==p&&v.hp>0&&this.sight(p,v)).sort((a,b)=>dist(a,e)-dist(b,e))[0];for(let a of this.entityAbilities(e)){if(e.abilityCD[a.id]>0||a.tech!==null&&!this.tech(p,a.tech))continue;if(['overclock','frenzy','sanctuary','summon'].includes(a.id)&&enemy&&dist(enemy,e)<220)this.command(p,{type:'ability',id:e.id,ability:a.id});if(a.id==='ward'&&enemy&&dist(enemy,e)<260){let ally=own.filter(u=>u.k==='u'&&dist(u,e)<250).sort((a,b)=>a.hp/a.max-b.hp/b.max)[0]||e;this.command(p,{type:'ability',id:e.id,ability:a.id,x:ally.x,y:ally.y});}if(['mechBlast','beam','storm','demolition','scan','emp','parasite'].includes(a.id)&&enemy)this.command(p,{type:'ability',id:e.id,ability:a.id,x:enemy.x,y:enemy.y});}}
  }
  snapshot(p){
   let entities=this.entities.filter(e=>this.visible(p,e)).map(e=>({...e,queue:e.queue.map(q=>({...q})),order:e.order?{...e.order}:null,status:{...e.status},abilityCD:{...e.abilityCD},abilities:e.p===p?this.entityAbilities(e).map(a=>a.id):[]}));
-  return {time:this.time,mines:this.mines.map(m=>({...m})),mode:this.mode,players:this.players.map((v,i)=>i===p?{...v,tech:[...v.tech],pop:this.pop(i),capacity:this.capacity(i)}:{f:v.f,hold:v.hold}),entities,effects:this.effects.filter(e=>this.sight(p,e)).map(e=>({...e})),events:this.events.filter(e=>this.sight(p,e)).map(e=>({...e})),scans:this.scans.filter(s=>s.p===p).map(s=>({...s})),winner:this.winner,reason:this.reason,scores:this.winner!==null?[this.score(0),this.score(1)]:null};
+  return {time:this.time,mines:this.mines.map(m=>({...m})),mode:this.mode,players:this.players.map((v,i)=>i===p?{...v,tech:[...v.tech],pop:this.pop(i),capacity:this.capacity(i)}:{f:v.f,hold:v.hold}),entities,effects:this.effects.filter(e=>this.sight(p,e)).map(e=>({...e})),events:this.events.filter(e=>this.sight(p,e)).map(e=>({...e,...(e.units?{units:[...e.units]}:{}),...(e.shielded?{shielded:[...e.shielded]}:{})})),scans:this.scans.filter(s=>s.p===p).map(s=>({...s})),winner:this.winner,reason:this.reason,scores:this.winner!==null?[this.score(0),this.score(1)]:null};
  }
 }

@@ -94,5 +94,26 @@ export function drawElf(g,e,{color,time=0}){
   poly([[-2,-16],[0,-18],[3,-16],[4,-13],[1,-11],[-2,-12]],pearl);
   box(1,-16,2,2,'#1b3446');poly([[3,-14],[9,-12],[4,-10]],'#ecd59b');
   line(-3,7,-6,10,'#e4cf9a',2);line(3,7,6,10,'#e4cf9a',2);
+ }else if(e.t===8){
+  // Starweaver: a broad segmented ward halo surrounds a floating, open-handed robe.
+  const glow=Math.round(Math.sin(time*3+(e.id||0))),gold='#e7cc8d';
+  const halo=[[-18,1],[-18,-12],[-10,-22],[10,-22],[18,-12],[18,1],[10,12],[-10,12]];
+  for(let i=0;i<halo.length;i++){
+   const a=halo[i],b=halo[(i+1)%halo.length];
+   line(a[0],a[1],b[0],b[1],ink,5);line(a[0],a[1],b[0],b[1],i%2?cloth:gold,2);
+  }
+  for(const side of [-1,1]){
+   gem(side*18,-6,3,5,pearl);gem(side*18,-6,1,3,color);
+   line(side*5,-4,side*10,-6,ink,5);line(side*10,-6,side*13,-11,ink,4);
+   line(side*5,-4,side*10,-6,color,2);line(side*10,-6,side*13,-11,pearl,2);
+   box(side<0?-15:12,-14,3,4,skin);
+  }
+  poly([[-6,-7],[6,-7],[10,3],[14,15],[6,12],[0,19],[-6,12],[-14,15],[-10,3]],ink);
+  poly([[-4,-5],[4,-5],[7,4],[10,12],[4,10],[0,15],[-4,10],[-10,12],[-7,4]],cloth);
+  poly([[-3,-5],[3,-5],[5,5],[0,14],[-5,5]],color);line(0,-2,0,9,pearl,2);
+  poly([[-5,-17],[0,-21],[5,-17],[4,-8],[-4,-8]],ink);
+  poly([[-3,-16],[0,-19],[3,-16],[3,-10],[-3,-10]],pearl);box(-3,-15,6,2,cloth);
+  gem(0,-6,3,4,gold);box(-1,-8,2,3,white);
+  line(-7,18+glow,7,18+glow,shade,2);line(-3,20+glow,3,20+glow,color,1);
  }
 }

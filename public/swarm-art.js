@@ -6,6 +6,14 @@ export function drawSwarm(g,e,{color,time=0}){
  const shell='#73556b',shade='#453448',plate='#a27c89',bone='#e0d1a5';
  const acid='#b5ed76',acidShade='#517b51',orange='#f5a55c';
  const stride=e.order?Math.round(Math.sin(time*9+(e.id||0))):0;
+ if(e.parasite){
+  // Temporary parasites are tiny lime ticks with a thin tail, not full-sized mantises.
+  for(const s of [-1,1]){line(s*3,-1,s*8,-5,ink,3);line(s*3,3,s*8,7,ink,3);line(s*3,-1,s*7,-4,bone,1);line(s*3,3,s*7,6,bone,1);}
+  poly([[0,-8],[5,-3],[4,5],[0,9],[-4,5],[-5,-3]],ink);
+  poly([[0,-6],[3,-2],[2,4],[0,6],[-2,4],[-3,-2]],acid);
+  box(-3,-3,6,2,color);box(-2,-4,1,1,bone);box(2,-4,1,1,bone);
+  line(0,7,3,12,shade,2);line(3,12,5,11,acid,1);return;
+ }
  switch(e.t){
   case 1:{
    // Fast mantis: slim waist and two tall, unmistakable scythe arms.
@@ -139,6 +147,30 @@ export function drawSwarm(g,e,{color,time=0}){
    box(-5,-13,3,2,bone);box(3,-13,3,2,bone);
    poly([[-7,-16],[-9,-21],[-4,-18],[0,-22],[4,-18],[9,-21],[7,-16],[0,-18]],ink);
    poly([[-5,-17],[-6,-19],[-2,-18],[0,-20],[2,-18],[6,-19],[5,-17],[0,-16]],bone);
+   break;
+  }
+  case 8:{
+   // Parasitic overlord: three translucent infection sacs and long feeding tendrils.
+   const pulse=Math.round(Math.sin(time*4+(e.id||0)));
+   for(const s of [-1,1]){
+    line(s*9,-4,s*17,-7,ink,5);line(s*17,-7,s*20,1+pulse,ink,4);
+    line(s*20,1+pulse,s*16,9,ink,3);line(s*16,9,s*20,14,ink,3);
+    line(s*9,-4,s*17,-7,shell,3);line(s*17,-7,s*20,1+pulse,plate,2);
+    line(s*20,1+pulse,s*16,9,plate,1);line(s*16,9,s*20,14,bone,1);
+    line(s*7,9,s*12,17,ink,4);line(s*7,9,s*12,17,color,2);
+   }
+   poly([[-9,-12],[8,-12],[14,-5],[15,7],[9,16],[0,20],[-10,15],[-15,6],[-14,-5]],ink);
+   poly([[-8,-10],[7,-10],[12,-4],[12,6],[7,13],[0,17],[-8,12],[-12,5],[-11,-4]],shade);
+   poly([[-8,-7],[-1,-9],[1,-3],[-1,6],[-7,9],[-10,3]],acidShade);
+   poly([[3,-7],[8,-6],[11,0],[8,8],[2,6],[0,0]],acidShade);
+   poly([[-5,-5],[-1,-7],[0,-2],[-2,4],[-6,6],[-8,2]],acid);
+   poly([[4,-5],[7,-4],[9,0],[7,5],[3,4],[2,0]],acid);
+   poly([[-4,8],[1,5],[6,9],[4,13],[0,16],[-5,12]],acid);
+   box(-6,-4,2,4,'#e0f8a4');box(5,-3,2,3,'#e0f8a4');box(-1,9,2,3,'#e0f8a4');
+   line(-9,-8,7,-9,color,3);line(-9,9,-6,13,color,3);line(8,9,5,13,color,3);
+   poly([[-7,-15],[0,-20],[7,-15],[5,-9],[-5,-9]],ink);
+   poly([[-5,-14],[0,-18],[5,-14],[3,-10],[-3,-10]],color);box(-4,-14,2,2,bone);box(3,-14,2,2,bone);
+   for(const s of [-1,1]){line(s*5,-12,s*10,-18,shade,3);box(s<0?-12:8,-21+pulse,4,4,acid);box(s<0?-11:9,-20+pulse,2,2,'#e0f8a4');}
    break;
   }
  }
