@@ -135,3 +135,6 @@ test('unchanged frames reuse fog and minimap instead of repainting thousands of 
  for(let i=0;i<60;i++)c.frame();
  assert.ok((c.drawCalls()-before)/60<1200,'a normal frame must not redraw the 2280-cell fog/minimap');
 });
+
+
+test('auto pursuit button updates authoritative state and keeps its choice across ticks',async()=>{const c=client();await c.get('start').click();assert.equal(c.get('autoChase').textContent,'自动追击：开');await c.get('autoChase').click();c.tick();assert.equal(c.get('autoChase').textContent,'自动追击：关');assert.equal(c.get('autoChase').getAttribute('aria-pressed'),'false');await c.get('autoChase').click();assert.equal(c.get('autoChase').textContent,'自动追击：开');});

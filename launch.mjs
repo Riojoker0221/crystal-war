@@ -3,7 +3,7 @@ import {setTimeout as delay} from 'node:timers/promises';
 import {fileURLToPath} from 'node:url';
 import {createServer} from 'node:net';
 
-const VERSION='0.3.1';
+const VERSION='0.3.2';
 const explicitPort=Boolean(process.env.PORT);
 let port=explicitPort?Number(process.env.PORT):8787;
 const address=()=>`http://localhost:${port}`;

@@ -4,7 +4,7 @@ import {randomBytes} from 'node:crypto';
 import {networkInterfaces} from 'node:os';
 import {Game} from './public/engine.js';
 const rooms=new Map(),tokens=new Map(),rates=new Map(),maxRooms=Math.max(1,Math.min(100,Number(process.env.MAX_ROOMS)||30)),port=Number(process.env.PORT)||8787;
-export const SERVICE='crystal-war',VERSION='0.3.1';
+export const SERVICE='crystal-war',VERSION='0.3.2';
 const factionValid=n=>Number.isInteger(n)&&n>=0&&n<4;
 const connected=(r,p)=>Boolean(r.clients[p])||Date.now()-(r.pollSeen?.[p]||0)<4000;
 const token=()=>randomBytes(18).toString('hex');
