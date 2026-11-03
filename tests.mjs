@@ -1,5 +1,33 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {Game,W,H,mines} from './public/engine.js';
+import test from 'node:test';import assert from 'node:assert/strict';import {Game,W,H,mines,rocks} from './public/engine.js';
 const tick=(g,n)=>{for(let i=0;i<n*10;i++)g.step(.1);};
+test('双人随机出生覆盖左右整条安全竖线，独立抽取并避开矿石与障碍',()=>{
+ const ys=[[],[]];let sameHalf=0;
+ for(let seed=0;seed<160;seed++){
+  const g=new Game({ai:false,spawnLayout:'random-sides',seed:Math.imul(seed+1,2654435761)>>>0});
+  for(let p=0;p<2;p++){
+   const b=g.own(p)[0];ys[p].push(b.y);assert.equal(b.x,p?W-150:150);assert.ok(b.y>=140&&b.y<=H-140);
+   assert.equal(g.own(p).length,5);assert.equal(g.openSpot(b.x,b.y,b.r,b.id),true);
+   for(const e of g.own(p)){assert.ok(e.x>e.r&&e.x<W-e.r&&e.y>e.r&&e.y<H-e.r);assert.ok(rocks.every(o=>Math.hypot(e.x-o.x,e.y-o.y)>e.r+o.r));assert.ok(g.mines.every(m=>Math.hypot(e.x-m.x,e.y-m.y)>e.r+25));}
+   const m=g.mines[p];assert.equal(m.capacity,1400);assert.equal(m.remaining,1400);assert.equal(Math.hypot(m.x-b.x,m.y-b.y),Math.hypot(40,90));assert.ok(g.knownMines[p].has(p));
+   assert.deepEqual(g.mines.slice(2),mines.slice(2));assert.ok(g.mines.slice(2).every(n=>Math.hypot(n.x-m.x,n.y-m.y)>=160));
+  }
+  if((g.own(0)[0].y<H/2)===(g.own(1)[0].y<H/2))sameHalf++;
+ }
+ for(const values of ys){assert.ok(new Set(values).size>100);assert.ok(Math.min(...values)<250);assert.ok(Math.max(...values)>H-250);}
+ assert.ok(sameHalf>30&&sameHalf<130,'独立随机允许双方在同一半场，不强制对角线或镜像');
+});
+test('随机出生可复现、每局独立，PVE保留原开局',()=>{
+ const opts={ai:false,spawnLayout:'random-sides',seed:1234567},a=new Game(opts),b=new Game(opts);
+ assert.deepEqual(a.entities,b.entities);assert.deepEqual(a.mines,b.mines);a.mines[0].remaining=0;assert.equal(b.mines[0].remaining,1400);
+ const pve=new Game({seed:1234567});assert.deepEqual(pve.own(0).map(e=>[e.x,e.y])[0],[150,270]);assert.deepEqual(pve.own(1).map(e=>[e.x,e.y])[0],[W-150,H-270]);assert.deepEqual(pve.mines,mines);
+});
+test('所有阵营随机出生后可采矿，建造碰撞采用当局矿位',()=>{
+ for(let f=0;f<4;f++)for(let seed of [17,1000,234567,4294967295]){
+  let g=new Game({ai:false,spawnLayout:'random-sides',f0:f,f1:f,seed});
+  for(let p=0;p<2;p++){let m=g.mines[p];assert.equal(g.openSpot(m.x,m.y,25),false);assert.equal(g.openSpot(g.own(p)[0].x,g.own(p)[0].y,34,g.own(p)[0].id),true);}
+  tick(g,20);for(let p=0;p<2;p++){assert.ok(g.players[p].money>250);assert.ok(g.mines[p].remaining<1400);}
+ }
+});
 function miningFixture(remaining=17,workers=1){let g=new Game({ai:false});g.entities=g.entities.filter(e=>e.k==='b');g.players[0].money=0;g.mines.forEach(m=>m.remaining=0);g.mines[0].remaining=remaining;let m=g.mines[0],b=g.own(0)[0];b.x=m.x+40;b.y=m.y;let us=[];for(let i=0;i<workers;i++){let u=g.spawn(0,'u',0,m.x,m.y);u.order={type:'mine',mine:0};us.push(u);}return {g,us};}
 
 test('地图扩大四倍、18处有限矿区对称分散',()=>{assert.equal(W*H,1200*760*4);assert.equal(mines.length,18);assert.ok(mines.reduce((n,m)=>n+m.capacity,0)>40000);for(let i=0;i<mines.length;i+=2){let a=mines[i],b=mines[i+1];assert.equal(a.x+b.x,W);assert.equal(a.y+b.y,H);assert.equal(a.capacity,b.capacity);assert.equal(a.remaining,a.capacity);assert.ok(a.x>0&&a.x<W&&a.y>0&&a.y<H);}for(let i=0;i<mines.length;i++)for(let j=i+1;j<mines.length;j++)assert.ok(Math.hypot(mines[i].x-mines[j].x,mines[i].y-mines[j].y)>200);});

@@ -13,6 +13,11 @@ test('公开房间接口拒绝异常输入，保留房间可用性，同步处�
  const control=new AbortController(),stream=await fetch(base+'/events?token='+host.token,{signal:control.signal});t.after(()=>control.abort());const reader=stream.body.getReader();let buffer='';
  async function next(){for(;;){let end=buffer.indexOf('\n');while(end>=0){let line=buffer.slice(0,end);buffer=buffer.slice(end+1);if(line.startsWith('data: '))return JSON.parse(line.slice(6));end=buffer.indexOf('\n');}let {value,done}=await reader.read();assert.ok(!done);buffer+=new TextDecoder().decode(value);}}
  let initial=await next(),worker=initial.state.entities.find(e=>e.k==='u'),main=initial.state.entities.find(e=>e.k==='b');
+ let joined=await post('state',{token:guest.token}),other=joined.state.entities.find(e=>e.k==='b'&&e.t===0);
+ assert.equal(main.x,150);assert.equal(other.x,2250);assert.ok(main.y>=140&&main.y<=1380);assert.ok(other.y>=140&&other.y<=1380);
+ assert.equal(initial.state.mines[0].y,main.y-90);assert.equal(joined.state.mines[1].y,other.y+90);
+ assert.deepEqual(initial.state.mines,joined.state.mines,'双方看到同一套随机矿位');
+ let resumed=await post('state',{token:guest.token});assert.equal(resumed.state.entities.find(e=>e.id===other.id).y,other.y,'重连读取不会重新随机出生点');
  assert.match((await post('command',{token:guest.token,command:{type:'execute',ids:[worker.id]}})).error,/己方工兵/);
  assert.equal((await post('command',{token:host.token,command:{type:'execute',ids:[worker.id]}})).error,'');
  assert.equal((await post('command',{token:host.token,command:{type:'pack',id:main.id}})).error,'');
