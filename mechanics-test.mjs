@@ -29,7 +29,7 @@ test('基地收起后缓慢移动、保持归属与人口，并禁止生产',()=
   assert.equal(g.command(0,{type:'pack',id:base.id}),'');assert.equal(base.packed,true);assert.equal(g.capacity(0),36);
   assert.ok(g.command(0,{type:'train',id:base.id,t:0}));
   assert.equal(g.command(0,{type:'order',ids:[base.id],action:'move',x:800,y:400}),'');
-  let x=base.x;tick(g,1);assert.ok(base.x>x);assert.ok(base.x-x<=15,'base travels at most 14 world units/sec');assert.equal(base.p,0);assert.equal(g.winner,null);
+  let x=base.x;tick(g,1);assert.ok(base.x>x);assert.ok(base.x-x<=21,'base travels at most 20 world units/sec');assert.equal(base.p,0);assert.equal(g.winner,null);
   assert.ok(g.command(1,{type:'pack',id:base.id}));
 });
 

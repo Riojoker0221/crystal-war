@@ -61,7 +61,7 @@ function client({blockedStorage=false,protocol='file:'}={}){
   };
   ids.get('difficulty').value='normal';ids.get('enemy').value='1';
   const sandbox={
-    document,location:{protocol},console,AbortSignal,
+    document,location:{protocol},console,AbortSignal,Math:Object.assign(Object.create(Math),{random:()=>0}),
     Option:class extends Element{constructor(label,value){super('option');this.textContent=label;this.value=String(value);}},
     confirm:()=>true,addEventListener:()=>{},requestAnimationFrame:fn=>{frameCallback=fn;return 1;},
     setInterval:fn=>{let id=nextTimer++;intervals.set(id,fn);return id;},clearInterval:id=>intervals.delete(id),
@@ -78,14 +78,14 @@ function client({blockedStorage=false,protocol='file:'}={}){
 const factions=[['人类联邦','指挥中心'],['机械主脑','主脑核心'],['星界精灵','星界主殿'],['古老虫群','原初母巢']];
 
 test('selected mineral stock counts down to exhausted in the actual client',async()=>{
-  const c=client();await c.get('start').click();let board=c.get('board'),event={button:0,clientX:80,clientY:180,pointerId:1};
-  board.onpointerdown(event);board.onpointerup(event);assert.equal(c.get('mineInfo').hidden,false);assert.match(c.get('mineInfo').innerHTML,/1400 \/ 1400/);
-  for(let i=0;i<1600;i++)c.tick();c.frame();assert.match(c.get('mineInfo').innerHTML,/已枯竭/);assert.match(c.get('mineInfo').innerHTML,/剩余 0 \/ 1400/);
-  assert.match(c.get('mapView').textContent,/2400 × 1520/);
+  const c=client();await c.get('start').click();let board=c.get('board'),event={button:0,clientX:330,clientY:300,pointerId:1};
+  board.onpointerdown(event);board.onpointerup(event);assert.equal(c.get('mineInfo').hidden,false);assert.match(c.get('mineInfo').innerHTML,/1600 \/ 1600/);
+  for(let i=0;i<2300;i++)c.tick();c.frame();assert.match(c.get('mineInfo').innerHTML,/已枯竭/);assert.match(c.get('mineInfo').innerHTML,/剩余 0 \/ 1600/);
+  assert.match(c.get('mapView').textContent,/3200 × 2080/);
 });
 test('camera controls preserve mineral picking and base jump after overview',async()=>{
-  const c=client();await c.get('start').click();await c.get('mapOverview').click();c.frame();assert.match(c.get('mapView').textContent,/50%/);
-  let board=c.get('board'),event={button:0,clientX:40,clientY:90,pointerId:1};board.onpointerdown(event);board.onpointerup(event);assert.match(c.get('mineInfo').innerHTML,/晶矿 1/);
+  const c=client();await c.get('start').click();await c.get('mapOverview').click();c.frame();assert.match(c.get('mapView').textContent,/38%/);
+  let board=c.get('board'),event={button:0,clientX:123.75,clientY:115,pointerId:1};board.onpointerdown(event);board.onpointerup(event);assert.match(c.get('mineInfo').innerHTML,/晶矿 1/);
   c.get('minimap').onpointerdown({clientX:1200,clientY:760});await c.get('zoomIn').click();await c.get('home').click();c.frame();assert.match(c.get('selection').innerHTML,/指挥中心/);assert.equal(c.get('mineInfo').hidden,true);
 });
 
@@ -138,3 +138,13 @@ test('unchanged frames reuse fog and minimap instead of repainting thousands of 
 
 
 test('auto pursuit button updates authoritative state and keeps its choice across ticks',async()=>{const c=client();await c.get('start').click();assert.equal(c.get('autoChase').textContent,'自动追击：开');await c.get('autoChase').click();c.tick();assert.equal(c.get('autoChase').textContent,'自动追击：关');assert.equal(c.get('autoChase').getAttribute('aria-pressed'),'false');await c.get('autoChase').click();assert.equal(c.get('autoChase').textContent,'自动追击：开');});
+
+test('radar can be built, targeted from the minimap and confirmed in the shipped client',async()=>{
+ const c=client();await c.get('start').click();await c.get('workers').click();
+ const choose=name=>c.get('actions').children.find(b=>b.innerHTML.startsWith(name+'<small>')).click();
+ const click=(x,y)=>{const event={button:0,clientX:x,clientY:y,pointerId:1};c.get('board').onpointerdown(event);c.get('board').onpointerup(event);};
+ choose('步兵兵营');click(550,380);for(let i=0;i<210;i++)c.tick();
+ choose('雷达站');click(550,530);for(let i=0;i<210;i++)c.tick();click(550,530);assert.match(c.get('selection').innerHTML,/雷达站/);
+ choose('雷达扫描');c.get('minimap').onpointerdown({clientX:975,clientY:570});assert.match(c.get('targetInfo').textContent,/2600, 1560/);assert.equal(c.get('targetConfirm').disabled,false);
+ await c.get('targetConfirm').click();assert.equal(c.get('targetBar').hidden,true);const scan=c.get('actions').children.find(b=>b.innerHTML.startsWith('雷达扫描'));assert.equal(scan.disabled,true);assert.match(scan.innerHTML,/45秒/);
+});

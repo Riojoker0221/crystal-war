@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {fork} from 'node:child_process';import net from 'node:net';import {fileURLToPath} from 'node:url';
+import test from 'node:test';import assert from 'node:assert/strict';import {fork} from 'node:child_process';import net from 'node:net';import{spawnPoints}from'./public/engine.js';import {fileURLToPath} from 'node:url';
 test('公开房间接口拒绝异常输入，保留房间可用性，同步处死与基地迁移',{timeout:15000},async t=>{
  const probe=net.createServer();await new Promise(r=>probe.listen(0,'127.0.0.1',r));const port=probe.address().port;await new Promise(r=>probe.close(r));
  const process=fork(fileURLToPath(new URL('server.mjs',import.meta.url)),[],{env:{...globalThis.process.env,PORT:String(port),MAX_ROOMS:'2'},stdio:['ignore','ignore','ignore','ipc']});
@@ -15,8 +15,7 @@ test('公开房间接口拒绝异常输入，保留房间可用性，同步处�
  let initial=await next(),worker=initial.state.entities.find(e=>e.k==='u'),main=initial.state.entities.find(e=>e.k==='b');
  assert.equal((await post('command',{token:host.token,command:{type:'autoChase',enabled:false}})).error,'');assert.equal((await post('state',{token:host.token})).state.players[0].autoChase,false);assert.equal((await post('state',{token:guest.token})).state.players[1].autoChase,true);
  let joined=await post('state',{token:guest.token}),other=joined.state.entities.find(e=>e.k==='b'&&e.t===0);
- assert.equal(main.x,150);assert.equal(other.x,2250);assert.ok(main.y>=140&&main.y<=1380);assert.ok(other.y>=140&&other.y<=1380);
- assert.equal(initial.state.mines[0].y,main.y-90);assert.equal(joined.state.mines[1].y,other.y+90);
+ assert.ok(spawnPoints.some(p=>p.x===main.x&&p.y===main.y));assert.ok(spawnPoints.some(p=>p.x===other.x&&p.y===other.y));assert.notDeepEqual([main.x,main.y],[other.x,other.y]);
  assert.deepEqual(initial.state.mines,joined.state.mines,'双方看到同一套随机矿位');
  let resumed=await post('state',{token:guest.token});assert.equal(resumed.state.entities.find(e=>e.id===other.id).y,other.y,'重连读取不会重新随机出生点');
  assert.match((await post('command',{token:guest.token,command:{type:'execute',ids:[worker.id]}})).error,/己方工兵/);

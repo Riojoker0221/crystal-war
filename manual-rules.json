@@ -33,13 +33,29 @@
   },
   {
     "title": [
+      "地图与侦察",
+      "Terrain and scouting"
+    ],
+    "paragraphs": [
+      [
+        "第一张地图为破碎高地，尺寸 3200 × 2080。单人和双人均从四角随机选择两个不同出生点。悬崖与深渊不可建造或供地面单位通行，部队会沿宽窄道路绕行；飞行单位和起飞基地可以越过。",
+        "The first map, Shattered Highlands, measures 3200 × 2080. Both PVE and multiplayer use two different random corner starts. Cliffs and chasms cannot be built on or traversed by ground units, which follow the wide and narrow routes. Flying units and airborne bases can cross them."
+      ],
+      [
+        "四个阵营均可在基础兵营完成后建造侦察建筑：人类雷达站、机械量子探测阵列、精灵星视观测台、虫群感知孢子塔。造价均为 120 晶矿，建造时间 20 秒。选择建筑后点击雷达扫描，在战场或小地图选点，再确认释放；获得半径 240 的视野和反隐，持续 7 秒，每座建筑冷却 45 秒。扫描结束后敌军重新受迷雾规则限制。",
+        "After completing basic barracks, every faction can build a scouting structure: Human Radar Station, Machine Quantum Sensor Array, Elf Astral Observatory or Swarm Sensory Spire. Each costs 120 crystals and takes 20 seconds to build. Select the structure, click Radar Scan, choose a point on the battlefield or minimap, then confirm. The scan reveals vision and cloaked enemies within radius 240 for 7 seconds, with a 45-second cooldown per building. When it expires, enemy visibility follows the normal fog rules again."
+      ]
+    ]
+  },
+  {
+    "title": [
       "资源与人口",
       "Resources and supply"
     ],
     "paragraphs": [
       [
-        "开局拥有 4 名工兵和 250 晶矿。工兵往返采集并运回晶矿；地图共有 18 处有限矿区，储量会随开采减少，最终枯竭，需要侦察并转移到其他矿区。",
-        "Start with 4 workers and 250 crystals. Workers mine crystals and carry them back to a main base. The map has 18 finite deposits that shrink and eventually run out. Scout and move to other deposits as needed."
+        "开局拥有 4 名工兵和 250 晶矿。工兵往返采集并运回晶矿；地图共有 22 处有限矿区，储量会随开采减少，最终枯竭，需要侦察并转移到其他矿区。",
+        "Start with 4 workers and 250 crystals. Workers mine crystals and carry them back to a main base. The map has 22 finite deposits that shrink and eventually run out. Scout and move to other deposits as needed."
       ],
       [
         "训练单位时立即扣费并预占人口，完成后才出现单位；取消队列末项返还其造价的 75%。初始人口上限 36，第二座主基地完成后增加 18，人口扩容研究再增加 12。每方最多两座主基地，基地被摧毁会降低人口上限；已有部队保留，超额时暂停新增训练。",
@@ -58,8 +74,8 @@
         "Use workers to build, follow the technology tree prerequisites, then train advanced troops. Research buildings offer shared upgrades and faction technologies. Choose at most 3 faction-specific upgrades per match; mutually exclusive branches cannot be combined. Ultimate units require Ultimate Research. Each player may have at most 2 ultimate specialists, including those in production queues."
       ],
       [
-        "主基地可收拢后缓慢移动，期间暂停生产与接收运矿，展开后恢复。选中己方工兵后可选择处死，确认后释放人口，但不返还资源。",
-        "Pack up a main base to move it slowly. Production and crystal deliveries pause until it deploys again. You may execute selected friendly workers after confirming; this frees supply and refunds no resources."
+        "主基地可起飞，以每秒 20 距离移动，越过悬崖和建筑，期间暂停生产与接收运矿；必须在没有建筑、矿区或悬崖的空地降落。选中己方工兵后可选择处死，确认后释放人口，但不返还资源。",
+        "Main bases lift off and move at 20 world units per second, crossing cliffs and buildings. Production and deliveries pause in flight. Land on open ground clear of buildings, deposits and cliffs. You may execute selected friendly workers after confirming; this frees supply and refunds no resources."
       ]
     ]
   },
@@ -90,8 +106,8 @@
     ],
     "paragraphs": [
       [
-        "一人创建双人房间，另一人打开同一游戏网址，选择自己的阵营并输入房间码加入。双方分别在地图左右两侧独立随机出生，起始晶矿随基地调整。断线时对局暂停，页面会尝试重连；服务器重启后原房间无法继续，需要重新创建。",
-        "One player creates a multiplayer room. The other opens the same game website, chooses a faction and joins using the room code. Players spawn at independently randomized positions on the left and right edges, with their starting deposits placed near their bases. A disconnect pauses the match while the page tries to reconnect. If the server restarts, the room is lost and a new match must be created."
+        "一人创建双人房间，另一人打开同一游戏网址，选择自己的阵营并输入房间码加入。双方从四角出生点中随机选择两个不同的位置。断线时对局暂停，页面会尝试重连；服务器重启后原房间无法继续，需要重新创建。",
+        "One player creates a multiplayer room. The other opens the same website, chooses a faction and joins using the room code. Players spawn at two different, randomly chosen corners. A disconnect pauses the match while the page reconnects. If the server restarts, the room is lost and a new match must be created."
       ]
     ]
   }

@@ -64,7 +64,7 @@ test('电磁封锁暂停防御塔，不停止基地生产、收拢和缓慢移�
  assert.equal(h.command(1,{type:'train',id:base.id,t:0}),'');const left=base.queue[0].left;
  assert.equal(cast(h,actor,'emp'),'');tick(h,1.2);assert.ok(base.queue[0].left<left-1);
  h.command(1,{type:'cancel',id:base.id});assert.equal(h.command(1,{type:'pack',id:base.id}),'');
- const before={x:base.x,y:base.y};h.move(base,{x:900,y:400},1);near(Math.hypot(base.x-before.x,base.y-before.y),14);
+ const before={x:base.x,y:base.y};h.move(base,{x:900,y:400},1);near(Math.hypot(base.x-before.x,base.y-before.y),20);
 });
 
 test('已释放的爆破预警不会被电磁封锁取消，施法者死亡也不取消脉冲',()=>{
@@ -88,10 +88,10 @@ test('星界结界提供一次临时护盾，重复结界不叠加且建筑不�
 test('结界只在区域内提高移动速度，离开即恢复，重新进入不免费重充护盾',()=>{
  const g=arena(2);ready(g);const actor=troop(g,0,8),ally=troop(g,0,1,700,400);
  assert.equal(cast(g,actor,'ward'),'');tick(g,.05);
- const speed=factions[2].units[1][8];let x=ally.x;g.move(ally,{x:1200,y:400},.5);near(ally.x-x,speed*1.2*.5);
+ const speed=factions[2].units[1][8];let x=ally.x;g.move(ally,{x:900,y:400},.5);near(ally.x-x,speed*1.2*.5);
  g.hit(ally,40,{p:1});const shield=ally.tempShield;
- ally.x=1000;tick(g,.05);x=ally.x;g.move(ally,{x:1300,y:400},.5);near(ally.x-x,speed*.5);
- ally.x=700;tick(g,.05);assert.equal(ally.tempShield,shield);x=ally.x;g.move(ally,{x:1200,y:400},.5);near(ally.x-x,speed*1.2*.5);
+ ally.x=950;tick(g,.05);x=ally.x;g.move(ally,{x:1000,y:400},.5);near(ally.x-x,speed*.5);
+ ally.x=700;tick(g,.05);assert.equal(ally.tempShield,shield);x=ally.x;g.move(ally,{x:900,y:400},.5);near(ally.x-x,speed*1.2*.5);
 });
 
 test('结界减免远程伤害但不减免近战，临时盾先于生命吸收伤害',()=>{
